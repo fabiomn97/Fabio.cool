@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fabio Macedo · Product Manager</title>
-<meta name="description" content="Product Manager building products that make people’s lives better. Six years on BEES, AB InBev's B2B commerce app for 300,000 shopkeepers in Peru. MIT Sloan MBA '28.">
+<meta name="description" content="Product Manager building products that make people’s lives better. Six years at AB InBev, building BEES for 300,000 shopkeepers in Peru since 2021. MIT Sloan MBA '28.">
 <meta name="author" content="Fabio Macedo">
 <meta name="color-scheme" content="light dark">
 <link rel="canonical" href="https://fabiomn97.github.io/Who-I-Am/">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Fabio Macedo · Product Manager">
-<meta property="og:description" content="Six years on BEES, serving 300,000 shopkeepers in Peru. MIT Sloan MBA '28. Now shipping: Summer 2027.">
+<meta property="og:description" content="Six years at AB InBev, building BEES for 300,000 shopkeepers in Peru since 2021. MIT Sloan MBA '28. Now shipping: Summer 2027.">
 <meta property="og:url" content="https://fabiomn97.github.io/Who-I-Am/">
 <meta property="og:image" content="https://fabiomn97.github.io/Who-I-Am/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -83,6 +83,7 @@
 /* ============================== base ============================== */
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%; scroll-padding-top:76px}
+@media (max-width:1120px){html{scroll-padding-top:116px}}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{
   margin:0; background:var(--bg); color:var(--ink-2);
@@ -179,6 +180,12 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
   :root:not([data-theme="light"]) .i-moon{display:none}
 }
 @media (max-width:1120px){.nav-links{display:none}}
+.nav-strip{display:none; border-top:1px solid var(--line-2)}
+.nav-strip-in{display:flex; gap:2px; overflow-x:auto; scrollbar-width:none; padding-block:6px}
+.nav-strip-in::-webkit-scrollbar{display:none}
+.nav-strip a{flex:none; white-space:nowrap; color:var(--ink-3); text-decoration:none; font-size:13.5px; font-weight:500; padding:6px 10px; border-radius:8px}
+.nav-strip a:hover{color:var(--ink); background:var(--surface-2)}
+@media (max-width:1120px){.nav-strip{display:block}}
 @media (max-width:420px){.brand-ver{display:none} .nav .btn--sm{padding:0 12px}}
 
 /* ============================== hero ============================== */
@@ -545,7 +552,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 .ft-id{font:500 11px/1 var(--mono); letter-spacing:.06em; color:var(--ink-3)}
 .ft h3{font-size:18px; letter-spacing:-.02em; margin-top:4px}
 .ft p{font-size:15px; color:var(--ink-2)}
-@media (max-width:860px){.feats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){.feats{grid-template-columns:repeat(2,minmax(0,1fr))} .feats--3{grid-template-columns:1fr}}
 @media (max-width:560px){.feats{grid-template-columns:1fr}}
 
 /* ============================== build ============================== */
@@ -605,13 +612,13 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 
 /* ============================== print ============================== */
 @media print{
+  *{-webkit-print-color-adjust:exact!important; print-color-adjust:exact!important}
+  .gal{flex-wrap:wrap; overflow:visible} .gal-item{height:200px} .gal-bar .gal-btns{display:none!important}
   .nav,.hero::before,.hero::after,.cta::after,.seg,.skip{display:none!important}
   body{background:#fff; color:#222; font-size:12pt}
   .sec{padding-block:28px}
   .demo-col{position:static}
-  .pcard,.demo,.rel-card,.rv,.lab,.col,.term{box-shadow:none!important; break-inside:avoid}
-  .rv--feat,.cta{background:#fff!important; color:#111!important; border:1px solid #ccc}
-  .rv--feat blockquote,.cta h2,.cta p,.cta-links a{color:#111!important}
+  .pcard,.demo,.rel-card,.rv,.lab,.col,.term,.cta,.afc,.spot{box-shadow:none!important; break-inside:avoid}
   h2,h3{break-after:avoid}
 }
 </style>
@@ -642,6 +649,17 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
     </button>
     <a class="btn btn--primary btn--sm" href="#contact">Request a chat</a>
   </div>
+  <nav class="nav-strip" aria-label="Sections">
+    <div class="wrap nav-strip-in">
+      <a href="#reviews">Reviews</a>
+      <a href="#feature">Case study</a>
+      <a href="#changelog">Changelog</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#labs">Labs</a>
+      <a href="#off">Interests</a>
+      <a href="#build">Build</a>
+    </div>
+  </nav>
 </header>
 
 <main id="main">
@@ -657,7 +675,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       </a>
       <p class="hero-name">Fabio Macedo · Product Manager</p>
       <h1>Products that make people’s lives <em class="s">better.</em></h1>
-      <p class="hero-sub">Six years on <strong>BEES</strong>, AB InBev’s B2B commerce app for <strong>300,000 shopkeepers</strong> in Peru. I fixed what the ML model was optimizing for (<strong>+17.1% first-time purchases</strong>) and built BEES Peru’s first monetization strategy (<strong>$2.6M EBITDA</strong> in year one). Now at MIT Sloan, building toward products that reach <strong>millions of people</strong>.</p>
+      <p class="hero-sub">Six years at AB InBev, building <strong>BEES</strong>, its B2B commerce app, for <strong>300,000 shopkeepers</strong> in Peru since 2021. I fixed what the ML model was optimizing for (<strong>+17.1% first-time purchases</strong>) and built BEES Peru’s first monetization strategy (<strong>$2.6M EBITDA</strong> in year one). Now at MIT Sloan, building toward products that reach <strong>millions of people</strong>.</p>
       <div class="cta-row">
         <a class="btn btn--primary" href="mailto:fabiom97@mit.edu?subject=Let%E2%80%99s%20talk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>Email me</a>
         <a class="btn btn--ghost" href="https://www.linkedin.com/in/fabiomacedonaters" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.77 2.5 4.77 5.76v5.69h-4v-5.04c0-1.2-.02-2.75-1.75-2.75-1.75 0-2.02 1.31-2.02 2.66v5.13h-4v-11Z"/></svg>LinkedIn</a>
@@ -668,6 +686,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
         <span class="chip">MIT Sloan MBA ’28</span>
         <span class="chip chip--accent">PM Club VP of Recruiting</span>
         <span class="chip">Dean’s Fellow</span>
+        <span class="chip">World debate champion</span>
         <span class="chip">Ex-AB InBev · BEES</span>
               </div>
     </div>
@@ -679,20 +698,20 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       </div>
       <div class="pcard-photo">
         <img src="assets/portrait.jpg" alt="Fabio Macedo, smiling, holding up a phone showing the BEES app" width="1200" height="900">
-        <span class="tag"><span class="pulse" aria-hidden="true"></span>v5.0 · <span class="long">in development at </span>MIT Sloan</span>
+        <span class="tag"><span class="pulse" aria-hidden="true"></span>MIT Sloan MBA ’28</span>
       </div>
       <div class="pcard-body">
-        <div class="pcard-title"><h3>Fabio Macedo</h3><span>PM · 6 yrs</span></div>
+        <div class="pcard-title"><h3>Fabio Macedo</h3><span>6 yrs · AB InBev</span></div>
         <p class="pcard-role">Product Manager · <span style="white-space:nowrap">MIT Sloan MBA ’28</span></p>
         <dl class="spec-list">
           <div><dt>Built for</dt><dd>300K small businesses</dd></div>
           <div><dt>Available</dt><dd>Summer 2027</dd></div>
-          <div><dt>Ships from</dt><dd>Lima → Cambridge, MA</dd></div>
+          <div><dt>Based in</dt><dd>Lima → Cambridge, MA</dd></div>
         </dl>
       </div>
       <div class="pcard-foot">
         <a class="btn btn--ghost" href="assets/Fabio-Macedo-CV.pdf" download>
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5v8M4.5 7 8 10.5 11.5 7M3 13.5h10"/></svg><span>Download the spec sheet<span class="long"> (CV)</span></span></a>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5v8M4.5 7 8 10.5 11.5 7M3 13.5h10"/></svg><span>Download my CV</span></a>
       </div>
     </aside>
   </div>
@@ -774,7 +793,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 <section class="sec" id="specs" aria-labelledby="specs-h">
   <div class="wrap">
     <div class="sec-head">
-      <p class="kicker"><b>Spec sheet</b> · by the numbers</p>
+      <p class="kicker"><b>By the numbers</b> · impact</p>
       <h2 class="h2" id="specs-h">Six years, four roles, numbers that moved.</h2>
     </div>
     <div class="specs">
@@ -792,7 +811,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 <section class="sec sec--alt" id="feature" aria-labelledby="feature-h">
   <div class="wrap">
     <div class="sec-head">
-      <p class="kicker"><b>Headline feature</b> · case study</p>
+      <p class="kicker"><b>Case study</b> · ML recommendations</p>
       <h2 class="h2" id="feature-h">The model was rewarding the <em class="s">easy</em> sale. I made it chase the hard one.</h2>
       <p class="lede">BEES personalized offers for ~50 SKUs across 300,000 shopkeepers, at the SKU × customer × lever level (direct discounts and loyalty points). By 2025 the recommendation model had learned the wrong lesson, and our sales incentives were making it worse.</p>
     </div>
@@ -943,14 +962,13 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
         <div class="rel-meta">
           <div class="ver">v4.0</div>
           <div class="ver-date">2025 – 2026</div>
-          <span class="chip">Released</span>
         </div>
         <article class="rel-card">
           <h3>Product Manager, Online Strategy</h3>
           <p class="rel-org"><b>BEES · AB InBev</b> · Lima, Peru · B2B e-commerce marketplace serving 300K+ retailers</p>
           <ul class="notes">
             <li><span class="chip chip--accent">Shipped</span><span>ML product recommendation model with Data Science and Engineering, balancing coverage vs. precision across <strong>8M+ recommendations a month</strong>. <strong>+7.6%</strong> distinct SKUs sold, <strong>+17.1%</strong> first-time purchases. <a href="#feature">Case study ↑</a></span></li>
-            <li><span class="chip chip--ok">Added</span><span>An <strong>LLM-driven A/B testing framework</strong> and roadmap comparing direct discounts against loyalty points, which led a <strong>$2.2M</strong> company-wide investment reallocation.</span></li>
+            <li><span class="chip chip--ok">Added</span><span>An <strong>LLM-driven A/B testing framework</strong> and roadmap comparing direct discounts against loyalty points, which led to a <strong>$2.2M</strong> company-wide investment reallocation.</span></li>
             <li><span class="chip chip--info">Improved</span><span>Redesigned the loyalty program’s reward-allocation logic and secured C-suite buy-in. Share of investment driving incremental revenue: <strong>74% → 85%</strong> YoY.</span></li>
             <li><span class="chip chip--info">Improved</span><span>Brought competitive-strategy data into recommendations for the first time, with Data Science, Revenue Management and Sales, contributing to a <strong>+1 pp market share</strong> gain (H1 2026 vs. H1 2025).</span></li>
           </ul>
@@ -961,7 +979,6 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
         <div class="rel-meta">
           <div class="ver">v3.0</div>
           <div class="ver-date">2024 – 2025</div>
-          <span class="chip">Released</span>
         </div>
         <article class="rel-card">
           <h3>Monetization Manager</h3>
@@ -979,7 +996,6 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
         <div class="rel-meta">
           <div class="ver">v2.0</div>
           <div class="ver-date">2021 – 2023</div>
-          <span class="chip">Released</span>
         </div>
         <article class="rel-card">
           <h3>BEES Digitalization Lead</h3>
@@ -996,7 +1012,6 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
         <div class="rel-meta">
           <div class="ver">v1.0</div>
           <div class="ver-date">2020 – 2021</div>
-          <span class="chip">Released</span>
         </div>
         <article class="rel-card">
           <h3>Global Management Trainee</h3>
@@ -1012,7 +1027,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
         <div class="rel-meta">
           <div class="ver">v0.9</div>
           <div class="ver-date">2019 – 2020</div>
-          <span class="chip">Beta</span>
+          
         </div>
         <article class="rel-card">
           <h3>Continuous Improvement Analyst</h3>
@@ -1026,9 +1041,9 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 
       <li class="rel">
         <div class="rel-meta">
-          <div class="ver">init</div>
+          <div class="ver">Edu</div>
           <div class="ver-date">2015 – 2020</div>
-          <span class="chip">First commit</span>
+          
         </div>
         <article class="rel-card">
           <h3>BA in Business</h3>
@@ -1055,7 +1070,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
     <div class="mission">
       <p class="mission-q">I want to be the PM who always delivers the numbers, but whom people <em>remember</em> for making their lives better.</p>
       <div class="mission-p">
-        <p>For six years I worked to improve the income of <strong>300,000 families</strong> who own small shops in Peru. It’s why I designed Club B Black’s benefits (legal counsel, telemedicine and e-learning) for shopkeepers <strong>and their families</strong>, not just their businesses.</p>
+        <p>At BEES, I worked to improve the income of <strong>300,000 families</strong> who own small shops in Peru. It’s why I designed Club B Black’s benefits (legal counsel, telemedicine and e-learning) for shopkeepers <strong>and their families</strong>, not just their businesses.</p>
         <p>Now I want that work at a larger scale: products that create value for the company and for millions of people. That could be saving them time, giving them a better experience, or, like at BEES, helping them earn more to provide for their families. Product is the best way I know to do that.</p>
       </div>
     </div>
@@ -1074,7 +1089,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       </div>
       <div class="col">
         <div class="col-h"><b>Personal</b><span class="chip">Ongoing</span></div>
-        <div class="tk"><h4>Certified life coach</h4><p>Finishing my certification. Helping people figure out what they actually want is a skill I use everywhere.</p></div>
+        <div class="tk"><h4>Become a certified life coach</h4><p>The ICF certification, after the MBA. Helping people figure out what they actually want is a skill I use everywhere.</p></div>
         <div class="tk"><h4>Grow the people around me</h4><p>Teams where everyone develops, like the three reports who were all promoted and the 1,000+ reps trained through BEES School.</p></div>
       </div>
     </div>
@@ -1085,7 +1100,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
         <ul class="dayone">
           <li><span><strong>ML product tradeoffs.</strong> Coverage vs. precision, defined with Data Science, shipped with Engineering.</span></li>
           <li><span><strong>Incentive &amp; pricing design.</strong> Loyalty logic, discounts, co-funding, monetization.</span></li>
-          <li><span><strong>Partnerships &amp; new revenue.</strong> Signed BEES’s first third-party distribution deal; built BEES Peru’s first monetization strategy.</span></li>
+          <li><span><strong>Partnerships &amp; new revenue.</strong> Signed BEES Peru’s first third-party distribution deal; built BEES Peru’s first monetization strategy.</span></li>
           <li><span><strong>Go-to-market &amp; adoption.</strong> Positioning, partner messaging, and training 1,000+ reps in the field.</span></li>
         </ul>
       </div>
@@ -1144,7 +1159,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
     </div>
     <article class="afc">
       <div class="afc-text">
-        <span class="ft-id">FEAT-01</span>
+        
         <h3>Arsenal FC, #1 fan</h3>
         <p>It started with Winning Eleven and PES. I always picked Arsenal because it was first in alphabetical order. After a few years of playing as them, I started watching the real games, and then understanding what the club is about: achieving things the right way. Along the way I made my dad a fan too, and now we go to the Emirates together.</p>
         <p class="afc-motto"><span lang="la">Victoria Concordia Crescit</span><small>Victory through harmony · the club’s motto, and now mine</small></p>
@@ -1158,26 +1173,26 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
         </span>
       </div>
       <div class="gal" id="gal" tabindex="0" role="region" aria-label="Photos at the Emirates Stadium, scroll sideways for more">
-          <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/2018-front.jpg" alt="Standing in front of the Arsenal crest mural at the Emirates" width="1000" height="750" loading="lazy"><figcaption>First photo at the Emirates! · 2018</figcaption></figure>
-          <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/watford.jpg" alt="In an Arsenal scarf high in the stands before my first Arsenal game, against Watford" width="1000" height="750" loading="lazy"><figcaption>First Arsenal game! 2-0 win vs. Watford · 2018</figcaption></figure>
-          <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/four-fingers.jpg" alt="Holding up four fingers in the stands after a 4-2 win over Tottenham" width="1000" height="750" loading="lazy"><figcaption>4-2 win against Tottenham! · 2018</figcaption></figure>
-          <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/dad-stands.jpg" alt="A selfie with my dad in the stands at the Emirates, both in Arsenal shirts" width="1000" height="750" loading="lazy"><figcaption>Back at the Emirates with my dad! 3-1 vs. Nottingham Forest · 2024</figcaption></figure>
-          <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/2024-pitch.jpg" alt="Thumbs up inside the Emirates Stadium, above the pitch" width="1000" height="750" loading="lazy"><figcaption>Inside the Emirates · 2024</figcaption></figure>
-          <figure class="gal-item" style="--ar:750/1000"><img src="assets/arsenal/henry-statue.jpg" alt="With my dad by the Thierry Henry statue outside the Emirates, thumbs up in the rain" width="750" height="1000" loading="lazy"><figcaption>The Henry statue with my dad · 2024</figcaption></figure>
-          <figure class="gal-item" style="--ar:750/1000"><img src="assets/arsenal/dad-home.jpg" alt="Laughing with my dad at home in Arsenal shirts on the day Arsenal won the Premier League" width="750" height="1000" loading="lazy"><figcaption>The day we won the Premier League! · 2026</figcaption></figure>
-          <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/dad-shield-2026.jpg" alt="Celebrating with my dad at home in Lima as Arsenal lift the Community Shield on TV" width="1000" height="750" loading="lazy"><figcaption>Community Shield winners!! My last day living in Lima · 2026</figcaption></figure>
+          <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/2018-front.jpg" alt="Standing in front of the Arsenal crest mural at the Emirates" width="1000" height="750" decoding="async"><figcaption>First photo at the Emirates! · 2018</figcaption></figure>
+          <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/watford.jpg" alt="In an Arsenal scarf high in the stands before my first Arsenal game, against Watford" width="1000" height="750" decoding="async"><figcaption>First Arsenal game! 2-0 win vs. Watford · 2018</figcaption></figure>
+          <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/four-fingers.jpg" alt="Holding up four fingers in the stands after a 4-2 win over Tottenham" width="1000" height="750" decoding="async"><figcaption>4-2 win against Tottenham! · 2018</figcaption></figure>
+          <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/dad-stands.jpg" alt="A selfie with my dad in the stands at the Emirates, both in Arsenal shirts" width="1000" height="750" decoding="async"><figcaption>Back at the Emirates with my dad! 3-1 vs. Nottingham Forest · 2024</figcaption></figure>
+          <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/2024-pitch.jpg" alt="Thumbs up inside the Emirates Stadium, above the pitch" width="1000" height="750" decoding="async"><figcaption>Inside the Emirates · 2024</figcaption></figure>
+          <figure class="gal-item" style="--ar:750/1000"><img src="assets/arsenal/henry-statue.jpg" alt="With my dad by the Thierry Henry statue outside the Emirates, thumbs up in the rain" width="750" height="1000" decoding="async"><figcaption>The Henry statue with my dad · 2024</figcaption></figure>
+          <figure class="gal-item" style="--ar:750/1000"><img src="assets/arsenal/dad-home.jpg" alt="Laughing with my dad at home in Arsenal shirts on the day Arsenal won the Premier League" width="750" height="1000" decoding="async"><figcaption>The day we won the Premier League! · 2026</figcaption></figure>
+          <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/dad-shield-2026.jpg" alt="Celebrating with my dad at home in Lima as Arsenal lift the Community Shield on TV" width="1000" height="750" decoding="async"><figcaption>Community Shield winners!! My last day living in Lima · 2026</figcaption></figure>
       </div>
       </div>
     </article>
 
     <div class="feats feats--3">
-      <div class="ft"><span class="ft-id">FEAT-02</span><h3>Amateur chef, two cuisines</h3><p>Peruvian and Italian. If you want something good, ask me to cook: <strong>lomo saltado</strong>, always with a good pisco sour, or my bell pepper pasta.</p></div>
-      <div class="ft"><span class="ft-id">FEAT-03</span><h3>Call of Duty: Zombies</h3><p>How I stay in touch with my high school friends. Favorite map: the OG <strong>Kino der Toten</strong>, where my record is <strong>round 39</strong>. Call of the Dead is growing on me, though.</p></div>
-      <div class="ft"><span class="ft-id">FEAT-04</span><h3>Future certified life coach</h3><p>A dream for after the MBA: the <strong>ICF coaching certification</strong>. I wanted to be a psychologist before I chose business, and I’m still curious about that world.</p></div>
+      <div class="ft"><h3>Amateur chef, two cuisines</h3><p>Peruvian and Italian. If you want something good, ask me to cook: <strong>lomo saltado</strong>, always with a good pisco sour, or my bell pepper pasta.</p></div>
+      <div class="ft"><h3>Call of Duty: Zombies</h3><p>How I stay in touch with my high school friends. Favorite map: the OG <strong>Kino der Toten</strong>, where my record is <strong>round 39</strong>. Call of the Dead is growing on me, though.</p></div>
+      <div class="ft"><h3>Future certified life coach</h3><p>A dream for after the MBA: the <strong>ICF coaching certification</strong>. I wanted to be a psychologist before I chose business, and I’m still curious about that world.</p></div>
     </div>
     <div class="feats feats--2">
-      <div class="ft"><span class="ft-id">FEAT-05</span><h3>World debate champion</h3><p>Trained 80+ students for Model UN and won LATAM and World championships with the Peruvian Debate Society.</p></div>
-      <div class="ft"><span class="ft-id">FEAT-06</span><h3>Lima → Cambridge</h3><p>Native Spanish, professional English. I can read a room in two languages and catch what gets lost between them.</p></div>
+      <div class="ft"><h3>World debate champion</h3><p>Trained 80+ students for Model UN and won LATAM and World championships with the Peruvian Debate Society.</p></div>
+      <div class="ft"><h3>Lima → Cambridge</h3><p>Native Spanish, professional English. I can read a room in two languages and catch what gets lost between them.</p></div>
     </div>
   </div>
 </section>
@@ -1204,7 +1219,8 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       </div>
 
       <div class="tools">
-        <div class="tool"><b>Claude Code</b><span>Interviewed me over several rounds (my history, my goals, the stories behind the numbers), drew on my CV and recommendations, then wrote and designed the site in hand-written HTML and CSS. I approved the structure and every number.</span></div>
+        <div class="tool"><b>Me</b><span>Set the goal, decided what to say and what to leave out, chose every story, number and photo, and directed the design through many rounds of feedback, including from a recruiter review.</span></div>
+        <div class="tool"><b>Claude Code</b><span>Interviewed me, drafted the copy, and wrote the HTML and CSS. It also checked every version on phone and desktop before shipping.</span></div>
         <div class="tool"><b>GitHub</b><span>Hosts the code. A GitHub Actions workflow publishes it to GitHub Pages on every push, so an update goes live in about a minute.</span></div>
       </div>
     </div>
@@ -1306,6 +1322,11 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
     upd();
   }
 
+
+  // Lazy images don't load in print; load them all first.
+  window.addEventListener('beforeprint', function () {
+    document.querySelectorAll('img[loading="lazy"]').forEach(function (i) { i.loading = 'eager'; });
+  });
 
   var nav = document.getElementById('nav');
   function onScroll() { nav.classList.toggle('stuck', window.scrollY > 8); }
