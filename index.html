@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="assets/fonts.css">
 <script>
   // Apply a saved theme before first paint, so there is no flash.
+  document.documentElement.classList.add('js');
   try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
 </script>
 <style>
@@ -429,6 +430,10 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 .spot-h .chip{background:var(--accent); color:#fff}
 .spot-t{margin-top:12px; font-size:clamp(22px,2.4vw,28px); font-weight:600; letter-spacing:-.03em; line-height:1.1; color:var(--btn-fg)}
 .spot-d{margin-top:6px; font-size:15px; color:color-mix(in srgb, var(--btn-fg) 75%, transparent); max-width:52ch}
+.spot-list{display:flex; flex-wrap:wrap; gap:6px; margin-top:14px}
+.spot-list li{font:500 12px/1 var(--mono); padding:7px 9px; border-radius:7px; background:color-mix(in srgb, var(--btn-fg) 9%, transparent); border:1px solid color-mix(in srgb, var(--btn-fg) 14%, transparent); color:var(--btn-fg)}
+.spot-next{margin-top:14px; display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; font-size:14.5px; color:var(--btn-fg); font-weight:500}
+.spot-next span{font:600 11px/1 var(--mono); letter-spacing:.06em; text-transform:uppercase; color:#fff; background:var(--accent); padding:5px 7px; border-radius:6px}
 .rel-photo{margin-top:20px; border-radius:var(--r-md); overflow:hidden; position:relative}
 .rel-photo img{width:100%; aspect-ratio:16/8; object-fit:cover; object-position:50% 40%}
 .rel-photo figcaption{position:absolute; right:12px; bottom:12px; font:500 11.5px/1 var(--mono); color:#fff; background:rgba(12,12,13,.6); padding:7px 10px; border-radius:8px; -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px)}
@@ -514,6 +519,30 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 
 /* ============================== off the résumé ============================== */
 .feats{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden}
+.feats--3,.feats--2{margin-top:14px}
+.feats--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ft strong{color:var(--ink); font-weight:600}
+.afc{display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:clamp(20px,3vw,40px); align-items:center; padding:clamp(20px,3vw,32px); border-radius:var(--r-lg); background:var(--surface); border:1px solid var(--line); overflow:hidden}
+.afc h3{font-size:clamp(24px,2.6vw,32px); letter-spacing:-.03em; margin-top:10px}
+.afc-text p{margin-top:12px; font-size:16px}
+.afc-motto{margin-top:20px!important; padding:14px 16px; border-left:3px solid #DB0007; background:var(--surface-2); border-radius:0 10px 10px 0}
+.afc-motto span{display:block; font-family:var(--serif); font-style:italic; font-size:26px; line-height:1.1; color:var(--ink)}
+.afc-motto small{display:block; margin-top:6px; font:500 11px/1.3 var(--mono); letter-spacing:.05em; text-transform:uppercase; color:var(--ink-3)}
+.gal-wrap{min-width:0}
+.gal-bar{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px}
+.gal-count{font:500 12px/1 var(--mono); letter-spacing:.04em; color:var(--ink-3); text-transform:uppercase}
+.gal-count b{color:var(--ink); font-weight:600}
+.gal-btns{display:none; gap:6px}
+.js .gal-btns{display:flex}
+.gal-btns .icon-btn{width:36px; height:36px}
+.gal-btns .icon-btn:disabled{opacity:.35; cursor:default}
+.gal{display:flex; gap:10px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:10px; scrollbar-width:thin; overscroll-behavior-x:contain}
+.gal:focus-visible{outline-offset:4px}
+.gal-item{flex:none; height:clamp(240px,26vw,320px); aspect-ratio:var(--ar); margin:0; position:relative; border-radius:14px; overflow:hidden; scroll-snap-align:start; background:var(--surface-2)}
+.gal-item img{width:100%; height:100%; object-fit:cover}
+.gal-item figcaption{position:absolute; left:10px; bottom:10px; font:500 11px/1 var(--mono); color:#fff; background:rgba(12,12,13,.6); padding:6px 9px; border-radius:7px; -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px)}
+@media (max-width:860px){.afc{grid-template-columns:1fr}}
+@media (max-width:560px){.feats--2{grid-template-columns:1fr}}
 .ft{background:var(--surface); padding:24px; display:flex; flex-direction:column; gap:8px}
 .ft-id{font:500 11px/1 var(--mono); letter-spacing:.06em; color:var(--ink-3)}
 .ft h3{font-size:18px; letter-spacing:-.02em; margin-top:4px}
@@ -894,10 +923,15 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
           <div class="spot">
             <div class="spot-h"><span class="chip chip--accent">Leadership</span><span>Product Management Club</span></div>
             <p class="spot-t">VP of Recruiting</p>
-            <p class="spot-d">On the leadership team of Sloan’s Product Management Club, focused on recruiting.</p>
+            <p class="spot-d">I help Sloan students navigate recruiting for product roles: how companies open positions, when to apply, and how to get ready for interviews.</p>
+            <ul class="spot-list">
+              <li>Info sessions</li><li>Company visits: Google, Toast</li><li>Peer interview groups</li><li>1:1 interview coaching</li><li>Guest speakers</li>
+            </ul>
+            <p class="spot-next"><span>Up next</span>Leading an info session on AI PM roles · Oct 14, 2026</p>
           </div>
           <ul class="notes">
-            <li><span class="chip chip--ok">Added</span><span>Organizing the <strong>Sloan Tech Summit 2027</strong>. Member of the LATAM Club and Sloan FC.</span></li>
+            <li><span class="chip chip--ok">Added</span><span><strong>Sloan Tech Summit 2027</strong>, sponsorships committee: working with the content team to match companies with what the conference offers (networking booths, panel seats, company talks, resume books).</span></li>
+            <li><span class="chip chip--ok">Added</span><span>Member of the LATAM Club and Sloan FC.</span></li>
             <li><span class="chip chip--ok">Added</span><span>Coursework in <strong>Product Management Lab</strong>, AI Builder Seminar and Communicating with Data.</span></li>
             <li><span class="chip chip--ok">Added</span><span>Certificates in <strong>Product Management</strong> and <strong>Business Analytics</strong> (in progress). Building with AI on the side; see <a href="#labs">Labs</a>.</span></li>
           </ul>
@@ -1111,11 +1145,37 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       <p class="kicker"><b>Interests</b> · outside of work</p>
       <h2 class="h2" id="off-h">What I do when I’m not shipping.</h2>
     </div>
-    <div class="feats">
-      <div class="ft"><span class="ft-id">FEAT-01</span><h3>Arsenal FC, #1 fan</h3><p>A long-running program in resilience, expectation management, and believing in a roadmap.</p></div>
-      <div class="ft"><span class="ft-id">FEAT-02</span><h3>Amateur chef, two cuisines</h3><p>Peruvian and Italian, both taken far too seriously. I will defend ceviche and cacio e pepe at length, unprompted.</p></div>
-      <div class="ft"><span class="ft-id">FEAT-03</span><h3>Call of Duty: Zombies</h3><p>My favorite way to unwind with friends, and a product I can’t stop studying: few games keep people coming back for this many rounds.</p></div>
-      <div class="ft"><span class="ft-id">FEAT-04</span><h3>Future certified life coach</h3><p>Working toward certification. Helping someone figure out what they actually want turns out to be most of product management too.</p></div>
+    <article class="afc">
+      <div class="afc-text">
+        <span class="ft-id">FEAT-01</span>
+        <h3>Arsenal FC, #1 fan</h3>
+        <p>It started with Winning Eleven and PES. I always picked Arsenal because it was first in alphabetical order. After a few years of playing as them, I started watching the real games, and then understanding what the club is about: achieving things the right way.</p>
+        <p class="afc-motto"><span lang="la">Victoria Concordia Crescit</span><small>Victory through harmony · the club motto</small></p>
+      </div>
+      <div class="gal-wrap">
+      <div class="gal-bar">
+        <span class="gal-count">At the Emirates · <b id="gal-n">5</b> photos</span>
+        <span class="gal-btns">
+          <button class="icon-btn" type="button" data-dir="-1" aria-label="Previous photos"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg></button>
+          <button class="icon-btn" type="button" data-dir="1" aria-label="Next photos"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 3 5 5-5 5"/></svg></button>
+        </span>
+      </div>
+      <div class="gal" id="gal" tabindex="0" role="region" aria-label="Photos at the Emirates Stadium, scroll sideways for more">
+          <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/2018-scarf.jpg" alt="Holding up a Gunners scarf outside the Emirates Stadium" width="1000" height="750" loading="lazy"><figcaption>Emirates · 2018</figcaption></figure>
+          <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/2024-pitch.jpg" alt="Thumbs up inside the Emirates Stadium, above the pitch" width="1000" height="750" loading="lazy"><figcaption>Inside the Emirates · 2024</figcaption></figure>
+          <figure class="gal-item" style="--ar:749/1000"><img src="assets/arsenal/2018-ozil.jpg" alt="From behind, in an Özil 11 shirt, facing the stadium mural" width="749" height="1000" loading="lazy"><figcaption>Özil 11 · 2018</figcaption></figure>
+          <figure class="gal-item" style="--ar:750/1000"><img src="assets/arsenal/2024-rain.jpg" alt="Smiling with a fellow fan outside the Emirates on a rainy match day" width="750" height="1000" loading="lazy"><figcaption>Match day · 2024</figcaption></figure>
+          <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/2018-front.jpg" alt="Standing in front of the Arsenal crest mural at the Emirates" width="1000" height="750" loading="lazy"><figcaption>First visit · 2018</figcaption></figure>
+      </div>
+      </div>
+    </article>
+
+    <div class="feats feats--3">
+      <div class="ft"><span class="ft-id">FEAT-02</span><h3>Amateur chef, two cuisines</h3><p>Peruvian and Italian. To impress: <strong>lomo saltado</strong>, always with a good pisco sour. On the Italian side, my bell pepper pasta.</p></div>
+      <div class="ft"><span class="ft-id">FEAT-03</span><h3>Call of Duty: Zombies</h3><p>How I stay in touch with my high school friends. Favorite map: the OG <strong>Kino der Toten</strong>, though Call of the Dead is growing on me every round.</p></div>
+      <div class="ft"><span class="ft-id">FEAT-04</span><h3>Future certified life coach</h3><p>A dream for after the MBA: the <strong>ICF coaching certification</strong>. I wanted to be a psychologist before I chose business, and I’m still curious about that world.</p></div>
+    </div>
+    <div class="feats feats--2">
       <div class="ft"><span class="ft-id">FEAT-05</span><h3>World debate champion</h3><p>Trained 80+ students for Model UN and won LATAM and World championships with the Peruvian Debate Society.</p></div>
       <div class="ft"><span class="ft-id">FEAT-06</span><h3>Lima → Cambridge</h3><p>Native Spanish, professional English. I can read a room in two languages and catch what gets lost between them.</p></div>
     </div>
@@ -1227,6 +1287,24 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
     try { localStorage.setItem('theme', next); } catch (e) {}
     label();
   });
+
+  var gal = document.getElementById('gal');
+  if (gal) {
+    var btns = document.querySelectorAll('.gal-btns button');
+    document.getElementById('gal-n').textContent = gal.children.length;
+    function upd() {
+      btns[0].disabled = gal.scrollLeft < 4;
+      btns[1].disabled = gal.scrollLeft + gal.clientWidth > gal.scrollWidth - 4;
+    }
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        gal.scrollBy({ left: +b.dataset.dir * gal.clientWidth * 0.85, behavior: 'smooth' });
+      });
+    });
+    gal.addEventListener('scroll', upd, { passive: true });
+    window.addEventListener('resize', upd);
+    upd();
+  }
 
   var nav = document.getElementById('nav');
   function onScroll() { nav.classList.toggle('stuck', window.scrollY > 8); }
