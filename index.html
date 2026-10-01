@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fabio Macedo · Product Manager</title>
-<meta name="description" content="Product Manager for growth and monetization. Six years building BEES, AB InBev's $1.6B B2B commerce app, for 300,000 shopkeepers in Peru. MIT Sloan MBA '28, looking for a Summer 2027 PM internship.">
+<meta name="description" content="Product Manager for growth and monetization. Six years on BEES, AB InBev's B2B commerce app for 300,000 shopkeepers in Peru. MIT Sloan MBA '28, looking for a Summer 2027 PM internship.">
 <meta name="author" content="Fabio Macedo">
 <meta name="color-scheme" content="light dark">
 <link rel="canonical" href="https://fabiomn97.github.io/Who-I-Am/">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Fabio Macedo · Product Manager">
-<meta property="og:description" content="Six years building BEES for 300,000 shopkeepers in Peru. MIT Sloan MBA '28. Now shipping: Summer 2027.">
+<meta property="og:description" content="Six years on BEES, serving 300,000 shopkeepers in Peru. MIT Sloan MBA '28. Now shipping: Summer 2027.">
 <meta property="og:url" content="https://fabiomn97.github.io/Who-I-Am/">
 <meta property="og:image" content="https://fabiomn97.github.io/Who-I-Am/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -221,8 +221,8 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 .dots{display:flex; gap:6px}
 .dots i{width:10px; height:10px; border-radius:50%; background:var(--line); display:block}
 .pcard-top .chip{font-size:11px}
-.pcard-photo{position:relative; aspect-ratio:5/4; overflow:hidden; background:var(--surface-2)}
-.pcard-photo img{width:100%; height:100%; object-fit:cover; object-position:50% 30%}
+.pcard-photo{position:relative; aspect-ratio:4/3; overflow:hidden; background:var(--surface-2)}
+.pcard-photo img{width:100%; height:100%; object-fit:cover; object-position:50% 40%}
 .pcard-photo .tag{
   position:absolute; left:14px; bottom:14px; display:inline-flex; align-items:center; gap:8px;
   padding:7px 11px; border-radius:9px; font:500 11.5px/1 var(--mono); color:#fff;
@@ -320,7 +320,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 .app-bar span{font:500 11px/1 var(--mono); color:var(--ink-3)}
 .stage-wrap{container-type:inline-size}
 .stage{
-  --gap:7px; --cw:calc((100cqi - 5 * var(--gap)) / 6); --ch:calc(var(--cw) * 1.32); --rowy:calc(var(--ch) + 42px);
+  --gap:7px; --cw:calc((100cqi - 5 * var(--gap)) / 6); --ch:calc(var(--cw) * 1.5); --rowy:calc(var(--ch) + 42px);
   position:relative; height:calc(var(--ch) * 2 + 42px);
 }
 .slot{position:absolute; top:0; width:var(--cw); height:var(--ch); border-radius:10px; border:1.5px dashed var(--line)}
@@ -347,17 +347,21 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 .card[data-d="m"]{--c:var(--warn)}
 .card[data-d="h"]{--c:var(--accent)}
 .card .lvl{font:600 clamp(7.5px,1.9cqi,9.5px)/1 var(--mono); letter-spacing:.04em; color:var(--c); text-transform:uppercase}
-.card .can{width:42%; aspect-ratio:3/5; border-radius:4px 4px 3px 3px; background:color-mix(in srgb, var(--c) 22%, var(--surface-2)); border:1.5px solid color-mix(in srgb, var(--c) 60%, transparent); position:relative}
+.card .can{width:34%; aspect-ratio:3/5; margin-top:3px; border-radius:4px 4px 3px 3px; background:color-mix(in srgb, var(--c) 22%, var(--surface-2)); border:1.5px solid color-mix(in srgb, var(--c) 60%, transparent); position:relative}
 .card .can::before{content:""; position:absolute; left:20%; right:20%; top:-14%; height:12%; border-radius:2px 2px 0 0; background:color-mix(in srgb, var(--c) 60%, transparent)}
-.card .off{font:600 clamp(9px,2.6cqi,12.5px)/1 var(--mono); color:var(--ink); letter-spacing:-.02em}
+.card .off{font:600 clamp(8.5px,2.4cqi,12px)/1 var(--mono); color:var(--ink); letter-spacing:-.03em; padding:3px 4px; border-radius:5px; background:color-mix(in srgb, var(--c) 14%, var(--surface-2))}
+.card[data-d="h"] .off,.card[data-d="m"] .off{color:color-mix(in srgb, var(--c) 80%, var(--ink))}
 .card .off .a{display:none}
 #st-after:checked ~ .app .card .off .a{display:inline}
 #st-after:checked ~ .app .card .off .b{display:none}
-.card.hidden-b{opacity:.42; filter:saturate(.3)}
+.card.hidden-b{opacity:.55; filter:saturate(.35)}
 #st-after:checked ~ .app .card.hidden-b{opacity:1; filter:none}
-#st-after:checked ~ .app .card.hidden-a{opacity:.42; filter:saturate(.3)}
+#st-after:checked ~ .app .card.hidden-a{opacity:.55; filter:saturate(.35)}
 @media (prefers-reduced-motion:reduce){.card{transition:none}}
 
+.key{display:grid; gap:6px; margin-top:12px; font-size:12.5px; line-height:1.45; color:var(--ink-3)}
+.key b{color:var(--ink-2); font-weight:600; font-family:var(--mono); font-size:11.5px; margin-right:4px}
+.key-off{display:inline-block; font:600 11px/1 var(--mono); color:var(--ink); padding:3px 5px; border-radius:5px; background:var(--surface-2); border:1px solid var(--line); margin-right:4px}
 .demo-kpis{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:14px}
 .kpi{padding:13px 14px; border-radius:var(--r-md); border:1px solid var(--line); background:var(--surface)}
 .kpi-v{font-size:26px; font-weight:600; letter-spacing:-.04em; color:var(--ink); line-height:1}
@@ -372,9 +376,9 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 .bar .e{flex-basis:78%; background:color-mix(in srgb, var(--ink-3) 55%, transparent)}
 .bar .m{flex-basis:15%; background:var(--warn)}
 .bar .h{flex-basis:7%; background:var(--accent)}
-#st-after:checked ~ .invest .bar .e{flex-basis:42%}
-#st-after:checked ~ .invest .bar .m{flex-basis:31%}
-#st-after:checked ~ .invest .bar .h{flex-basis:27%}
+#st-after:checked ~ .invest .bar .e{flex-basis:28%}
+#st-after:checked ~ .invest .bar .m{flex-basis:38%}
+#st-after:checked ~ .invest .bar .h{flex-basis:34%}
 .legend{display:flex; flex-wrap:wrap; gap:6px 14px; margin-top:10px; font-size:12.5px; color:var(--ink-3)}
 .legend span{display:inline-flex; align-items:center; gap:6px}
 .legend i{width:9px; height:9px; border-radius:3px; display:block}
@@ -595,9 +599,9 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       <span class="brand-ver">v5.0</span>
     </a>
     <nav class="nav-links" aria-label="Sections">
+      <a href="#reviews">Reviews</a>
       <a href="#feature">Case study</a>
       <a href="#changelog">Changelog</a>
-      <a href="#reviews">Reviews</a>
       <a href="#roadmap">Roadmap</a>
       <a href="#labs">Labs</a>
       <a href="#build">How I built this</a>
@@ -623,7 +627,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       </a>
       <p class="hero-name">Fabio Macedo · Product Manager</p>
       <h1>Product for <em class="s">growth</em> &amp; <em class="s">monetization.</em></h1>
-      <p class="hero-sub">Six years building <strong>BEES</strong>, AB InBev’s $1.6B B2B commerce app, for <strong>300,000 shopkeepers</strong> in Peru. I fixed what the ML model was optimizing for, founded two business lines, and moved the numbers. Now at MIT Sloan, looking for a <strong>Summer 2027 PM internship</strong> that becomes a full-time role.</p>
+      <p class="hero-sub">Six years on <strong>BEES</strong>, AB InBev’s B2B commerce app for <strong>300,000 shopkeepers</strong> in Peru. I fixed what the ML model was optimizing for, founded two business lines, and moved the numbers. Now at MIT Sloan, looking for a <strong>Summer 2027 PM internship</strong> that becomes a full-time role.</p>
       <div class="cta-row">
         <a class="btn btn--primary" href="#contact">Request a chat
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
@@ -645,7 +649,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
         <span class="chip chip--ok"><span class="pulse" aria-hidden="true"></span>Available Summer 2027</span>
       </div>
       <div class="pcard-photo">
-        <img src="assets/portrait.jpg" alt="Fabio Macedo, smiling, outdoors on the MIT campus" width="660" height="825">
+        <img src="assets/portrait.jpg" alt="Fabio Macedo, smiling, holding up a phone showing the BEES app" width="1200" height="900">
         <span class="tag"><span class="pulse" aria-hidden="true"></span>v5.0 · <span class="long">in development at </span>MIT Sloan</span>
       </div>
       <div class="pcard-body">
@@ -660,7 +664,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       </div>
       <div class="pcard-foot">
         <a class="btn btn--ghost" href="assets/Fabio-Macedo-CV.pdf" download>
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5v8M4.5 7 8 10.5 11.5 7M3 13.5h10"/></svg>Download the spec sheet<span class="long"> (CV)</span></a>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5v8M4.5 7 8 10.5 11.5 7M3 13.5h10"/></svg><span>Download the spec sheet<span class="long"> (CV)</span></span></a>
       </div>
     </aside>
   </div>
@@ -679,18 +683,77 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
   </div>
 </div>
 
+<!-- ============================== REVIEWS ============================== -->
+<section class="sec sec--alt" id="reviews" aria-labelledby="rv-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker"><b>Reviews</b> · managers, reports, peers</p>
+      <h2 class="h2" id="rv-h">Reviewed by people above, beside and below me.</h2>
+    </div>
+    <div class="reviews">
+      <figure class="rv rv--feat">
+        <div class="rv-top"><div class="qmark" aria-hidden="true">“</div><span class="rv-src">from a recommendation letter</span></div>
+        <blockquote>I’ve had the opportunity to lead many high-performing individuals, but Fabio stands out as an exceptionally well-rounded profile.</blockquote>
+        <div class="more">
+          <p>“He gets deeply involved, asks relevant questions that bring blind spots to light, and frictionlessly challenges ongoing conventions.”</p>
+          <p>“He has my utmost trust; not only is he my go-to proxy whenever I’m out of the office, but he also stepped up and led my team flawlessly for 8 months in 2024.”</p>
+        </div>
+        <figcaption class="who">
+          <span class="av" aria-hidden="true">M</span>
+          <div><b>Mauricio</b><span>Online Strategy Senior Manager, AB InBev</span></div>
+          <span class="rel-tag">Manager</span>
+        </figcaption>
+      </figure>
+
+      <figure class="rv">
+        <div class="rv-top"><span class="rv-src">via LinkedIn</span><span class="rel-tag">Manager</span></div>
+        <blockquote>“He has an exceptional ability to break down complex challenges, identify priorities, and implement effective solutions that have directly impacted not just our area’s results but the company’s overall performance.”</blockquote>
+        <figcaption class="who"><span class="av" aria-hidden="true">MV</span><div><b>Marcela Vera Solf</b><span>Ex-AB InBev &amp; BEES · PMP</span></div></figcaption>
+      </figure>
+
+      <figure class="rv">
+        <div class="rv-top"><span class="rv-src">via LinkedIn</span><span class="rel-tag">Report</span></div>
+        <blockquote>“I have had the pleasure of working under Fabio’s leadership, and I can confidently say that he is an outstanding manager.”</blockquote>
+        <figcaption class="who"><span class="av" aria-hidden="true">RB</span><div><b>Rodrigo Begazo Yañez</b><span>Key Account Supervisor</span></div></figcaption>
+      </figure>
+
+      <figure class="rv">
+        <div class="rv-top"><span class="rv-src">via LinkedIn</span><span class="rel-tag">Peer</span></div>
+        <blockquote>“He takes full ownership of his projects and consistently delivers excellent outcomes.”</blockquote>
+        <figcaption class="who"><span class="av" aria-hidden="true">VL</span><div><b>Valeria Lizarzaburu</b><span>Digital Comms Manager, BEES · AB InBev</span></div></figcaption>
+      </figure>
+
+      <figure class="rv">
+        <div class="rv-top"><span class="rv-src">via LinkedIn</span><span class="rel-tag">Peer</span></div>
+        <blockquote>“A sharp, solution-oriented professional with a strategic mindset that adds tremendous value… someone who elevates any team he’s part of.”</blockquote>
+        <figcaption class="who"><span class="av" aria-hidden="true">SM</span><div><b>Sandra Marusic</b><span>KAM, Modern Trade · B2B</span></div></figcaption>
+      </figure>
+
+      <figure class="rv">
+        <div class="rv-top"><span class="rv-src">via LinkedIn</span><span class="rel-tag">Classmate</span></div>
+        <blockquote>“His analytical skillset is truly exceptional, enabling him to develop comprehensive solutions to complex challenges with clarity and precision.”</blockquote>
+        <figcaption class="who"><span class="av" aria-hidden="true">PG</span><div><b>Paolo Ghio, CFA</b><span>Senior Investment Associate, J.P. Morgan</span></div></figcaption>
+      </figure>
+    </div>
+    <p class="reviews-foot">
+      <span>Quoted from a recommendation letter and public LinkedIn recommendations.</span>
+      <a href="https://www.linkedin.com/in/fabiomacedonaters/details/recommendations/" target="_blank" rel="noopener">Read all on LinkedIn ↗</a>
+    </p>
+  </div>
+</section>
+
 <!-- ============================== SPECS ============================== -->
 <section class="sec" id="specs" aria-labelledby="specs-h">
   <div class="wrap">
     <div class="sec-head">
       <p class="kicker"><b>Spec sheet</b> · by the numbers</p>
-      <h2 class="h2" id="specs-h">Six years, one platform, numbers that moved.</h2>
+      <h2 class="h2" id="specs-h">Six years, four roles, numbers that moved.</h2>
     </div>
     <div class="specs">
-      <div class="spec"><div class="spec-num">$1.6B</div><p class="spec-label">Annual commerce on BEES Peru, the platform I spent six years building</p><p class="spec-src">AB InBev · 2020–26</p></div>
+      <div class="spec"><div class="spec-num">$500K</div><p class="spec-label">Year-one GMV from BEES’s first third-party distribution line, which I founded from zero</p><p class="spec-src">Digitalization Lead</p></div>
       <div class="spec"><div class="spec-num">8M<small>+/mo</small></div><p class="spec-label">Recommendations served by the ML model I re-pointed at harder sales</p><p class="spec-src">PM, Online Strategy</p></div>
       <div class="spec"><div class="spec-num">+17.1%</div><p class="spec-label">First-time purchases, H1 2026 vs. H1 2025, after the new model launched</p><p class="spec-src">Case study ↓</p></div>
-      <div class="spec"><div class="spec-num">$3M</div><p class="spec-label">All-time-high monetization (+15% YoY) from a co-funding model with no precedent</p><p class="spec-src">Monetization Manager</p></div>
+      <div class="spec"><div class="spec-num">10K<small>+</small></div><p class="spec-label">Retailers on a co-funding model I created with no precedent, adding $100/mo to their income</p><p class="spec-src">Monetization Manager</p></div>
       <div class="spec"><div class="spec-num">$2.6M</div><p class="spec-label">Year-one EBITDA from BEES Peru’s first monetization strategy, 13 partner companies</p><p class="spec-src">Digitalization Lead</p></div>
       <div class="spec"><div class="spec-num">100%</div><p class="spec-label">Promotion rate across my three direct reports</p><p class="spec-src">People leadership</p></div>
     </div>
@@ -756,7 +819,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
           </div>
 
           <div class="app">
-            <div class="app-bar"><b>Recommended for you</b><span>5 slots + see more</span></div>
+            <div class="app-bar"><b>Recommended for you</b><span>5 slots, then “see more”</span></div>
             <div class="stage-wrap">
               <div class="stage">
                 <span class="slot" style="left:0"></span>
@@ -768,20 +831,27 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
                 <span class="fold">Behind “see more”</span>
 
                 <!-- --bx/--by = position before, --ax/--ay = after. Row 1 is hidden behind "see more". -->
-                <div class="card hidden-a" data-d="e" style="--bx:0;--by:0;--ax:3;--ay:1"><span class="lvl">Easy</span><span class="can"></span><span class="off"><span class="b">−22%</span><span class="a">−6%</span></span></div>
-                <div class="card" data-d="e" style="--bx:1;--by:0;--ax:2;--ay:0"><span class="lvl">Easy</span><span class="can"></span><span class="off"><span class="b">−20%</span><span class="a">−8%</span></span></div>
-                <div class="card" data-d="e" style="--bx:2;--by:0;--ax:3;--ay:0"><span class="lvl">Easy</span><span class="can"></span><span class="off"><span class="b">−18%</span><span class="a">−6%</span></span></div>
-                <div class="card" data-d="e" style="--bx:3;--by:0;--ax:4;--ay:0"><span class="lvl">Easy</span><span class="can"></span><span class="off"><span class="b">−18%</span><span class="a">−5%</span></span></div>
-                <div class="card hidden-a" data-d="e" style="--bx:4;--by:0;--ax:2;--ay:1"><span class="lvl">Easy</span><span class="can"></span><span class="off"><span class="b">−15%</span><span class="a">−5%</span></span></div>
-                <div class="card hidden-b" data-d="m" style="--bx:0;--by:1;--ax:1;--ay:0"><span class="lvl">Med</span><span class="can"></span><span class="off"><span class="b">−5%</span><span class="a">−20%</span></span></div>
-                <div class="card hidden-b" data-d="h" style="--bx:1;--by:1;--ax:0;--ay:0"><span class="lvl">Hard</span><span class="can"></span><span class="off"><span class="b">−4%</span><span class="a">−25%</span></span></div>
+                <div class="card" data-d="e" style="--bx:0;--by:0;--ax:4;--ay:0"><span class="lvl">Easy</span><span class="can"></span><span class="off"><span class="b">−22%</span><span class="a">−6%</span></span></div>
+                <div class="card hidden-a" data-d="e" style="--bx:1;--by:0;--ax:0;--ay:1"><span class="lvl">Easy</span><span class="can"></span><span class="off"><span class="b">−20%</span><span class="a">−5%</span></span></div>
+                <div class="card hidden-a" data-d="e" style="--bx:2;--by:0;--ax:1;--ay:1"><span class="lvl">Easy</span><span class="can"></span><span class="off"><span class="b">−18%</span><span class="a">−5%</span></span></div>
+                <div class="card hidden-a" data-d="e" style="--bx:3;--by:0;--ax:2;--ay:1"><span class="lvl">Easy</span><span class="can"></span><span class="off"><span class="b">−18%</span><span class="a">−4%</span></span></div>
+                <div class="card hidden-a" data-d="e" style="--bx:4;--by:0;--ax:3;--ay:1"><span class="lvl">Easy</span><span class="can"></span><span class="off"><span class="b">−15%</span><span class="a">−4%</span></span></div>
+                <div class="card hidden-b" data-d="h" style="--bx:0;--by:1;--ax:0;--ay:0"><span class="lvl">Hard</span><span class="can"></span><span class="off"><span class="b">−4%</span><span class="a">−25%</span></span></div>
+                <div class="card hidden-b" data-d="m" style="--bx:1;--by:1;--ax:1;--ay:0"><span class="lvl">Med</span><span class="can"></span><span class="off"><span class="b">−5%</span><span class="a">−20%</span></span></div>
+                <div class="card hidden-b" data-d="h" style="--bx:2;--by:1;--ax:2;--ay:0"><span class="lvl">Hard</span><span class="can"></span><span class="off"><span class="b">−3%</span><span class="a">−22%</span></span></div>
+                <div class="card hidden-b" data-d="m" style="--bx:3;--by:1;--ax:3;--ay:0"><span class="lvl">Med</span><span class="can"></span><span class="off"><span class="b">−4%</span><span class="a">−18%</span></span></div>
               </div>
             </div>
           </div>
 
+          <div class="key">
+            <span><span class="key-off">−20%</span> discount offered on that product</span>
+            <span><b>Easy · Med · Hard</b> how likely the shopkeeper was to buy it anyway</span>
+          </div>
+
           <div class="demo-kpis">
             <div class="kpi"><div class="kpi-v"><span class="b">3%</span><span class="a">10%</span></div><p class="kpi-l">Medium/hard share of distinct SKUs sold</p></div>
-            <div class="kpi"><div class="kpi-v"><span class="b">#6+</span><span class="a">#1–2</span></div><p class="kpi-l">Where medium/hard recommendations appear</p></div>
+            <div class="kpi"><div class="kpi-v"><span class="b">#6+</span><span class="a">#1–2</span></div><p class="kpi-l">Where medium/hard recommendations start in the carousel</p></div>
           </div>
 
           <div class="invest">
@@ -794,7 +864,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
             </div>
           </div>
 
-          <p class="demo-note"><b>Real:</b> carousel positions, share of SKUs sold, and the results. <b>Illustrative:</b> individual discounts and the budget split, which varied by SKU and customer.</p>
+          <p class="demo-note"><b>Real:</b> medium/hard recommendations moving from #6+ to the top of the carousel, their share of SKUs sold, and the results. <b>Illustrative:</b> the specific products, discounts and budget split, which varied by SKU and customer.</p>
         </div>
       </div>
     </div>
@@ -807,7 +877,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
     <div class="sec-head">
       <p class="kicker"><b>Changelog</b> · experience</p>
       <h2 class="h2" id="log-h">From trainee to PM in six years, four releases.</h2>
-      <p class="lede">I joined AB InBev as a Global Management Trainee and left running online strategy for a $1.6B platform. Every release shipped with numbers.</p>
+      <p class="lede">I joined AB InBev as a Global Management Trainee and left as Product Manager for BEES Peru’s online strategy. Every release shipped with numbers.</p>
     </div>
 
     <ol class="log">
@@ -840,7 +910,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
         </div>
         <article class="rel-card">
           <h3>Product Manager, Online Strategy</h3>
-          <p class="rel-org"><b>BEES · AB InBev</b> · Lima, Peru · $1.6B platform, 300K+ retailers</p>
+          <p class="rel-org"><b>BEES · AB InBev</b> · Lima, Peru · B2B commerce app serving 300K+ retailers</p>
           <ul class="notes">
             <li><span class="chip chip--accent">Shipped</span><span>ML product recommendation model with Data Science, balancing coverage vs. precision across <strong>8M+ monthly touchpoints</strong>. <strong>+7.6%</strong> total distribution, <strong>+17.1%</strong> first-time purchases. <a href="#feature">Case study ↑</a></span></li>
             <li><span class="chip chip--info">Improved</span><span>Redesigned loyalty reward-allocation logic and won Strategy VP buy-in. Share of investment driving incremental revenue: <strong>74% → 85%</strong> YoY.</span></li>
@@ -860,7 +930,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
           <p class="rel-org"><b>BEES · AB InBev</b> · Lima, Peru</p>
           <ul class="notes">
             <li><span class="chip chip--accent">Shipped</span><span>Loyalty rewards for first-time purchases, surfaced in the app’s highest-traffic sections, with Analytics and Design. Users earning purchase rewards: <strong>44% → 83%</strong>.</span></li>
-            <li><span class="chip chip--ok">Added</span><span>A retailer co-funding model with no precedent, built from research into unmet needs. <strong>10K+ retailers</strong>, all-time-high <strong>$3M</strong> monetization (+15% YoY), <strong>+$100/mo</strong> in retailer income.</span></li>
+            <li><span class="chip chip--ok">Added</span><span>A retailer co-funding model with no precedent, built from research into unmet needs. Scaled to <strong>10K+ retailers</strong> and <strong>+$100/mo</strong> in retailer income, helping monetization reach an all-time high of <strong>$3M</strong> (+15% YoY, up from $2.6M).</span></li>
             <li><span class="chip chip--ok">Added</span><span><strong>BEES School</strong>: bi-weekly training for 1,000+ sales reps, closing the gap between product launches and field execution.</span></li>
             <li><span class="chip chip--info">Improved</span><span>Led my manager’s team as acting lead for <strong>8 months</strong> in 2024.</span></li>
           </ul>
@@ -939,67 +1009,8 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
   </div>
 </section>
 
-<!-- ============================== REVIEWS ============================== -->
-<section class="sec sec--alt" id="reviews" aria-labelledby="rv-h">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="kicker"><b>Reviews</b> · managers, reports, peers</p>
-      <h2 class="h2" id="rv-h">Reviewed by people above, beside and below me.</h2>
-    </div>
-    <div class="reviews">
-      <figure class="rv rv--feat">
-        <div class="rv-top"><div class="qmark" aria-hidden="true">“</div><span class="rv-src">from a recommendation letter</span></div>
-        <blockquote>I’ve had the opportunity to lead many high-performing individuals, but Fabio stands out as an exceptionally well-rounded profile.</blockquote>
-        <div class="more">
-          <p>“He gets deeply involved, asks relevant questions that bring blind spots to light, and frictionlessly challenges ongoing conventions.”</p>
-          <p>“He has my utmost trust; not only is he my go-to proxy whenever I’m out of the office, but he also stepped up and led my team flawlessly for 8 months in 2024.”</p>
-        </div>
-        <figcaption class="who">
-          <span class="av" aria-hidden="true">M</span>
-          <div><b>Mauricio</b><span>Online Strategy Senior Manager, AB InBev</span></div>
-          <span class="rel-tag">Manager</span>
-        </figcaption>
-      </figure>
-
-      <figure class="rv">
-        <div class="rv-top"><span class="rv-src">via LinkedIn</span><span class="rel-tag">Manager</span></div>
-        <blockquote>“He has an exceptional ability to break down complex challenges, identify priorities, and implement effective solutions that have directly impacted not just our area’s results but the company’s overall performance.”</blockquote>
-        <figcaption class="who"><span class="av" aria-hidden="true">MV</span><div><b>Marcela Vera Solf</b><span>Ex-AB InBev &amp; BEES · PMP</span></div></figcaption>
-      </figure>
-
-      <figure class="rv">
-        <div class="rv-top"><span class="rv-src">via LinkedIn</span><span class="rel-tag">Report</span></div>
-        <blockquote>“I have had the pleasure of working under Fabio’s leadership, and I can confidently say that he is an outstanding manager.”</blockquote>
-        <figcaption class="who"><span class="av" aria-hidden="true">RB</span><div><b>Rodrigo Begazo Yañez</b><span>Key Account Supervisor</span></div></figcaption>
-      </figure>
-
-      <figure class="rv">
-        <div class="rv-top"><span class="rv-src">via LinkedIn</span><span class="rel-tag">Peer</span></div>
-        <blockquote>“He takes full ownership of his projects and consistently delivers excellent outcomes.”</blockquote>
-        <figcaption class="who"><span class="av" aria-hidden="true">VL</span><div><b>Valeria Lizarzaburu</b><span>Digital Comms Manager, BEES · AB InBev</span></div></figcaption>
-      </figure>
-
-      <figure class="rv">
-        <div class="rv-top"><span class="rv-src">via LinkedIn</span><span class="rel-tag">Peer</span></div>
-        <blockquote>“A sharp, solution-oriented professional with a strategic mindset that adds tremendous value… someone who elevates any team he’s part of.”</blockquote>
-        <figcaption class="who"><span class="av" aria-hidden="true">SM</span><div><b>Sandra Marusic</b><span>KAM, Modern Trade · B2B</span></div></figcaption>
-      </figure>
-
-      <figure class="rv">
-        <div class="rv-top"><span class="rv-src">via LinkedIn</span><span class="rel-tag">Classmate</span></div>
-        <blockquote>“His analytical skillset is truly exceptional, enabling him to develop comprehensive solutions to complex challenges with clarity and precision.”</blockquote>
-        <figcaption class="who"><span class="av" aria-hidden="true">PG</span><div><b>Paolo Ghio, CFA</b><span>Senior Investment Associate, J.P. Morgan</span></div></figcaption>
-      </figure>
-    </div>
-    <p class="reviews-foot">
-      <span>Quoted from a recommendation letter and public LinkedIn recommendations.</span>
-      <a href="https://www.linkedin.com/in/fabiomacedonaters/details/recommendations/" target="_blank" rel="noopener">Read all on LinkedIn ↗</a>
-    </p>
-  </div>
-</section>
-
 <!-- ============================== ROADMAP ============================== -->
-<section class="sec" id="roadmap" aria-labelledby="rm-h">
+<section class="sec sec--alt" id="roadmap" aria-labelledby="rm-h">
   <div class="wrap">
     <div class="sec-head">
       <p class="kicker"><b>Roadmap</b> · what’s next</p>
@@ -1059,7 +1070,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 </section>
 
 <!-- ============================== LABS ============================== -->
-<section class="sec sec--alt" id="labs" aria-labelledby="labs-h">
+<section class="sec" id="labs" aria-labelledby="labs-h">
   <div class="wrap">
     <div class="sec-head">
       <p class="kicker"><b>Labs</b> · side projects</p>
@@ -1101,7 +1112,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 </section>
 
 <!-- ============================== OFF THE RÉSUMÉ ============================== -->
-<section class="sec" id="off" aria-labelledby="off-h">
+<section class="sec sec--alt" id="off" aria-labelledby="off-h">
   <div class="wrap">
     <div class="sec-head">
       <p class="kicker"><b>Known features</b> · off the résumé</p>
@@ -1119,7 +1130,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 </section>
 
 <!-- ============================== BUILD ============================== -->
-<section class="sec sec--alt" id="build" aria-labelledby="build-h">
+<section class="sec" id="build" aria-labelledby="build-h">
   <div class="wrap build-grid">
     <div>
       <p class="kicker"><b>How I built this</b> · tools &amp; process</p>
