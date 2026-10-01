@@ -432,13 +432,6 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 .spot-d{margin-top:6px; font-size:15px; color:color-mix(in srgb, var(--btn-fg) 75%, transparent); max-width:52ch}
 .spot-list{display:flex; flex-wrap:wrap; gap:6px; margin-top:14px}
 .spot-list li{font:500 12px/1 var(--mono); padding:7px 9px; border-radius:7px; background:color-mix(in srgb, var(--btn-fg) 9%, transparent); border:1px solid color-mix(in srgb, var(--btn-fg) 14%, transparent); color:var(--btn-fg)}
-.spot-next{margin-top:14px; display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; font-size:14.5px; color:var(--btn-fg); font-weight:500}
-.spot-next span{font:600 11px/1 var(--mono); letter-spacing:.06em; text-transform:uppercase; color:#fff; background:var(--accent); padding:5px 7px; border-radius:6px}
-.sched{margin-top:10px; display:grid; gap:0; border-top:1px solid color-mix(in srgb, var(--btn-fg) 14%, transparent)}
-.sched li{display:grid; grid-template-columns:62px minmax(0,1fr) auto; gap:12px; align-items:center; padding:9px 0; border-bottom:1px solid color-mix(in srgb, var(--btn-fg) 10%, transparent); font-size:14.5px; color:var(--btn-fg)}
-.sched li:last-child{border-bottom:0}
-.sched time{font:600 12px/1 var(--mono); color:color-mix(in srgb, var(--btn-fg) 60%, transparent)}
-.sched b{font:600 10.5px/1 var(--mono); letter-spacing:.05em; text-transform:uppercase; color:#fff; background:var(--accent); padding:5px 7px; border-radius:6px}
 .rel-photo{margin-top:20px; border-radius:var(--r-md); overflow:hidden; position:relative}
 .rel-photo img{width:100%; aspect-ratio:16/8; object-fit:cover; object-position:50% 40%}
 .rel-photo figcaption{position:absolute; right:12px; bottom:12px; font:500 11.5px/1 var(--mono); color:#fff; background:rgba(12,12,13,.6); padding:7px 10px; border-radius:8px; -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px)}
@@ -932,19 +925,6 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
             <ul class="spot-list">
               <li>Info sessions</li><li>Company visits: Google, Toast</li><li>Peer interview groups</li><li>1:1 interview coaching</li><li>Guest speakers</li>
             </ul>
-            <div class="spot-sched" id="sched">
-              <p class="spot-next"><span>Coming up</span>Fall 2026 recruiting events</p>
-              <ol class="sched">
-              <li data-date="2026-10-13"><time datetime="2026-10-13">Oct 13</time><span>Google site visit</span></li>
-              <li data-date="2026-10-13"><time datetime="2026-10-13">Oct 13</time><span>Case jam</span></li>
-              <li data-date="2026-10-14"><time datetime="2026-10-14">Oct 14</time><span>AI PM roles info session</span><b>Leading</b></li>
-              <li data-date="2026-10-17"><time datetime="2026-10-17">Oct 17</time><span>Technical interviews</span></li>
-              <li data-date="2026-10-21"><time datetime="2026-10-21">Oct 21</time><span>Product analytics</span></li>
-              <li data-date="2026-10-28"><time datetime="2026-10-28">Oct 28</time><span>Product execution</span></li>
-              <li data-date="2026-11-04"><time datetime="2026-11-04">Nov 4</time><span>The GTM and sales side of PM</span></li>
-              <li data-date="2026-11-18"><time datetime="2026-11-18">Nov 18</time><span>Startup recruiting</span></li>
-              </ol>
-            </div>
           </div>
           <ul class="notes">
             <li><span class="chip chip--ok">Added</span><span><strong>Sloan Tech Summit 2027</strong>, sponsorships committee: working with the content team to match companies with what the conference offers (networking booths, panel seats, company talks, resume books).</span></li>
@@ -1326,17 +1306,6 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
     upd();
   }
 
-  // Hide club events once they have passed; hide the block when none are left.
-  var sched = document.getElementById('sched');
-  if (sched) {
-    var today = new Date(); today.setHours(0, 0, 0, 0);
-    var left = 0;
-    sched.querySelectorAll('li[data-date]').forEach(function (li) {
-      var d = new Date(li.dataset.date + 'T23:59:59');
-      if (d < today) li.hidden = true; else left++;
-    });
-    if (!left) sched.hidden = true;
-  }
 
   var nav = document.getElementById('nav');
   function onScroll() { nav.classList.toggle('stuck', window.scrollY > 8); }
