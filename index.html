@@ -200,8 +200,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
   content:""; position:absolute; z-index:-1; width:720px; height:520px; right:-160px; top:-120px;
   background:radial-gradient(closest-side, var(--accent-soft), transparent); filter:blur(10px);
 }
-.hero-grid{display:block}
-.hero-grid > div{max-width:880px}
+.hero-grid{display:grid; grid-template-columns:minmax(0,1.32fr) minmax(0,.88fr); gap:clamp(36px,5vw,72px); align-items:center}
 .announce{
   display:inline-flex; align-items:center; gap:10px; max-width:100%;
   padding:7px 8px 7px 12px; border-radius:99px; text-decoration:none;
@@ -228,6 +227,49 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 .cta-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:32px}
 .hero-meta{display:flex; flex-wrap:wrap; gap:8px; margin-top:26px}
 
+
+/* product card */
+.pcard{
+  position:relative; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-xl);
+  box-shadow:var(--shadow-lg); overflow:hidden; max-width:430px; justify-self:end; width:100%;
+}
+.pcard-top{display:flex; align-items:center; justify-content:space-between; padding:12px 14px 12px 16px; border-bottom:1px solid var(--line-2)}
+.dots{display:flex; gap:6px}
+.dots i{width:10px; height:10px; border-radius:50%; background:var(--line); display:block}
+.pcard-top .chip{font-size:11px}
+.pcard-photo{position:relative; aspect-ratio:4/3; overflow:hidden; background:var(--surface-2)}
+.pcard-photo img{width:100%; height:100%; object-fit:cover; object-position:50% 40%}
+.pcard-photo .tag{
+  position:absolute; left:14px; bottom:14px; display:inline-flex; align-items:center; gap:8px;
+  padding:7px 11px; border-radius:9px; font:500 11.5px/1 var(--mono); color:#fff;
+  background:rgba(12,12,13,.62); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+}
+.pcard-photo .tag .pulse{color:#FF8B64}
+.pcard-body{padding:18px 18px 8px}
+.pcard-title{display:flex; align-items:baseline; justify-content:space-between; gap:12px}
+.pcard-title h3{font-size:21px; letter-spacing:-.025em}
+.pcard-title span{font:500 12px/1 var(--mono); color:var(--ink-3)}
+.pcard-role{margin-top:4px; font-size:14.5px; color:var(--ink-3)}
+.spec-list{margin-top:14px; border-top:1px solid var(--line-2)}
+.spec-list div{display:flex; justify-content:space-between; gap:16px; padding:9px 0; border-bottom:1px solid var(--line-2); font-size:14px}
+.spec-list div:last-child{border-bottom:0}
+.spec-list dt{color:var(--ink-3); font:500 12px/1.6 var(--mono); letter-spacing:.02em; text-transform:uppercase; flex:none}
+.spec-list dd{margin:0; color:var(--ink); text-align:right; font-weight:500}
+.pcard-foot{padding:0 18px 18px}
+.pcard-foot .btn{width:100%}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .pcard{justify-self:start; max-width:520px}
+}
+
+/* trust strip */
+.trust{border-top:1px solid var(--line-2); border-bottom:1px solid var(--line-2); background:var(--surface)}
+.trust-in{display:flex; align-items:center; gap:clamp(16px,3vw,40px); padding-block:20px; flex-wrap:wrap}
+.trust-label{font:500 11.5px/1 var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); flex:none}
+.trust-list{display:flex; flex-wrap:wrap; gap:10px clamp(18px,3vw,38px); align-items:center}
+.trust-list li{font-weight:620; font-size:16px; letter-spacing:-.02em; color:var(--ink-2); white-space:nowrap}
+.trust-list li small{font:500 11px/1 var(--mono); letter-spacing:.04em; color:var(--ink-3); margin-left:6px; text-transform:uppercase}
 
 /* ============================== specs ============================== */
 .specs{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden; background:var(--surface)}
@@ -518,6 +560,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 .feats{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden}
 .feats--3,.feats--2,.feats--4{margin-top:14px}
 .feats--4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.feats--4 > .ft:last-child:nth-child(odd){grid-column:1 / -1}
 @media (max-width:560px){.feats--4{grid-template-columns:1fr}}
 .feats--2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .ft strong{color:var(--ink); font-weight:600}
@@ -627,6 +670,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       <a href="#feature">Case study</a>
       <a href="#reviews">Reviews</a>
       <a href="#changelog">Changelog</a>
+      <a href="#roadmap">Roadmap</a>
       <a href="#labs">Labs</a>
       <a href="#off">Interests</a>
       <a href="#build">Build</a>
@@ -642,6 +686,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       <a href="#feature">Case study</a>
       <a href="#reviews">Reviews</a>
       <a href="#changelog">Changelog</a>
+      <a href="#roadmap">Roadmap</a>
       <a href="#labs">Labs</a>
       <a href="#off">Interests</a>
       <a href="#build">Build</a>
@@ -660,7 +705,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
         <span><strong>Now shipping</strong> · <span class="long">Available </span>Summer 2027</span>
         <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </a>
-      <div class="hero-id"><img src="assets/avatar-lg.jpg" alt="Fabio Macedo" width="240" height="240"><div><p class="hero-who">Fabio Macedo</p><p class="hero-name">MIT Sloan MBA ’28 · 6 years at AB InBev, 1 as Product Manager</p></div></div>
+      <p class="hero-name">Fabio Macedo · 6 years at AB InBev, 1 as Product Manager</p>
       <h1>Products that make people’s lives <em class="s">better.</em></h1>
       <p class="hero-tag">I make marketplaces reward the right behavior.</p>
       <p class="hero-sub">Six years at AB InBev, five of them on <strong>BEES</strong>, its B2B commerce app for <strong>300,000 shopkeepers</strong> in Peru, and the last as its Product Manager. I fixed what the ML model was optimizing for (<strong>+17.1% first-time purchases vs. a control group</strong>) and built BEES Peru’s first monetization strategy (<strong>$2.6M EBITDA</strong> in year one). Now at MIT Sloan, building toward products that reach <strong>millions of people</strong>.</p>
@@ -676,11 +721,46 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
         <span class="chip">1 of 3 from 1,700+ · AB InBev LDP</span>
         <span class="chip">Harvard WorldMUN 2018 champions · head delegate</span>
         <span class="chip">Dean’s Fellow</span>
-              </div>
+      </div>
     </div>
 
+    <aside class="pcard" aria-label="Product listing card">
+      <div class="pcard-top">
+        <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <span class="chip chip--ok"><span class="pulse" aria-hidden="true"></span>Available Summer 2027</span>
+      </div>
+      <div class="pcard-photo">
+        <img src="assets/portrait.jpg" alt="Fabio Macedo, smiling, holding up a phone showing the BEES app" width="1200" height="900">
+        <span class="tag"><span class="pulse" aria-hidden="true"></span>MIT Sloan MBA ’28</span>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-title"><h3>Fabio Macedo</h3><span>6 yrs · AB InBev</span></div>
+        <p class="pcard-role">Product Manager · <span style="white-space:nowrap">MIT Sloan MBA ’28</span></p>
+        <dl class="spec-list">
+          <div><dt>Built for</dt><dd>300K shopkeepers</dd></div>
+          <div><dt>Available</dt><dd>Summer 2027</dd></div>
+          <div><dt>Based in</dt><dd>Lima → Cambridge, MA</dd></div>
+        </dl>
+      </div>
+      <div class="pcard-foot">
+        <a class="btn btn--ghost" href="assets/Fabio-Macedo-CV.pdf" download>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5v8M4.5 7 8 10.5 11.5 7M3 13.5h10"/></svg><span>Download my CV</span></a>
+      </div>
+    </aside>
   </div>
 </section>
+
+<div class="trust">
+  <div class="wrap trust-in">
+    <span class="trust-label">Where I’ve worked and studied</span>
+    <ul class="trust-list">
+      <li>AB InBev<small>BEES</small></li>
+      <li>The Adecco Group</li>
+      <li>MIT Sloan<small>MBA ’28</small></li>
+      <li>Universidad del Pacífico<small>BA</small></li>
+    </ul>
+  </div>
+</div>
 
 <!-- ============================== SPECS ============================== -->
 <section class="sec" id="specs" aria-labelledby="specs-h">
@@ -1037,6 +1117,44 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
   </div>
 </section>
 
+<!-- ============================== ROADMAP ============================== -->
+<section class="sec sec--alt" id="roadmap" aria-labelledby="rm-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker"><b>Roadmap</b> · objectives</p>
+      <h2 class="h2" id="rm-h">Built for 300,000 shopkeepers. Next: <em class="s">millions</em> of people.</h2>
+    </div>
+
+    <div class="mission">
+      <p class="mission-q">I want to be the PM who always delivers the numbers, but whom people <em>remember</em> for making their lives better.</p>
+      <div class="mission-p">
+        <p>At BEES, I worked to improve the income of <strong>300,000 families</strong> who own small shops in Peru. It’s why I designed Club B Black’s benefits (legal counsel, telemedicine and e-learning) for shopkeepers <strong>and their families</strong>, not just their businesses.</p>
+        <p>Now I want that work at a larger scale: products that create value for the company and for millions of people. That could be saving them time, giving them a better experience, or, like at BEES, helping them earn more to provide for their families. Product is the best way I know to do that.</p>
+      </div>
+    </div>
+
+    <div class="board">
+      <div class="col">
+        <div class="col-h"><b>Professional</b><span class="chip">Long term</span></div>
+        <div class="tk tk--hot"><h4>Products used by millions</h4><p>Take what worked for 300,000 shopkeepers to products millions of people use: saving them time, giving them a better experience, helping them earn more.</p></div>
+        <div class="tk"><h4>Results people remember</h4><p>Keep delivering the numbers, and make sure the work improves someone’s life along the way.</p></div>
+        <div class="tk"><h4>Work on what I love</h4><p>Technology and digital platforms, gaming, movies and TV: products I already use and care about.</p></div>
+      </div>
+      <div class="col">
+        <div class="col-h"><b>Learning</b><span class="chip chip--accent"><span class="pulse" aria-hidden="true"></span>In progress</span></div>
+        <div class="tk"><h4>MIT Sloan MBA, Class of 2028</h4><p>Product Management Lab, AI Builder Seminar, and the Product Management and Business Analytics certificates.</p></div>
+        <div class="tk"><h4>Building with AI</h4><p>Shipping small tools for my own workflow, to keep the build half of the job sharp. See <a href="#labs">Labs</a>.</p></div>
+      </div>
+      <div class="col">
+        <div class="col-h"><b>Personal</b><span class="chip">Ongoing</span></div>
+        <div class="tk"><h4>Become a certified life coach</h4><p>The ICF certification, after the MBA. Helping people figure out what they actually want is a skill I use everywhere.</p></div>
+        <div class="tk"><h4>Grow the people around me</h4><p>Teams where everyone develops, like the three reports who were all promoted and the 1,000+ reps trained through BEES School.</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ============================== LABS ============================== -->
 <section class="sec" id="labs" aria-labelledby="labs-h">
   <div class="wrap">
@@ -1108,6 +1226,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       <div class="ft"><h3>Call of Duty: Zombies</h3><p>How I stay in touch with my high school friends. Favorite map: the OG <strong>Kino der Toten</strong>, where my record is <strong>round 39</strong>. Call of the Dead is growing on me, though.</p></div>
       <div class="ft"><h3>Future certified life coach</h3><p>A dream for after the MBA: the <strong>ICF coaching certification</strong>. I wanted to be a psychologist before I chose business, and I’m still curious about that world.</p></div>
       <div class="ft"><h3>Harvard WorldMUN 2018 champions</h3><p>Head delegate of the Peruvian team that won Harvard World Model United Nations 2018. I also trained 80+ students for Model UN.</p></div>
+      <div class="ft"><h3>Lima → Cambridge</h3><p>Native Spanish, professional English. I can read a room in two languages and catch what gets lost between them.</p></div>
     </div>
   </div>
 </section>
@@ -1133,13 +1252,34 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
         </a>
       </div>
 
-    </div>
-    <div>
-      <div class="tools tools--side">
+
+      <div class="tools">
         <div class="tool"><b>Me</b><span>Set the goal, decided what to say and what to leave out, chose every story, number and photo, and directed the design through many rounds of feedback, including from a recruiter review.</span></div>
         <div class="tool"><b>Claude Code</b><span>Interviewed me, drafted the copy, and wrote the HTML and CSS. It also checked every version on phone and desktop before shipping.</span></div>
         <div class="tool"><b>GitHub</b><span>Hosts the code. A GitHub Actions workflow publishes it to GitHub Pages on every push, so an update goes live in about a minute.</span></div>
       </div>
+    </div>
+    <div class="term" aria-label="A summary of the build, shown as a terminal session">
+      <div class="term-top"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><span>~/who-i-am</span></div>
+<pre><span class="p">❯</span> <span class="w">claude</span> "Help me build a profile that
+  showcases my history in an organized,
+  intuitive way. Interview me first."
+
+<span class="c">● Interview · what it asked me</span>
+  ├ What do you want to do next, and why?
+  ├ Which story best shows how you work?
+  ├ What was your part, and the team’s?
+  ├ What failed, and what did you change?
+  ├ Who can speak to your work?
+  └ How should the page look and feel?
+
+<span class="c">● Build</span>
+  ├ index.html    HTML + CSS, no framework
+  └ checks        light/dark, mobile, a11y
+
+<span class="p">❯</span> <span class="w">git push</span> origin main
+<span class="ok">✓</span> GitHub Actions · deploy to Pages
+<span class="ok">✓</span> live at fabiomn97.github.io/Who-I-Am</pre>
     </div>
   </div>
 </section>
