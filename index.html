@@ -525,6 +525,23 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 .fit-box{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:20px 22px}
 .fit-box h3{font-size:clamp(20px,2vw,24px); letter-spacing:-.025em; color:var(--ink)}
 .fit--specs .fit-box{padding:26px 28px}
+.str{margin-top:18px; border-top:1px solid var(--line)}
+.str-row{display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.1fr) minmax(0,1.4fr); gap:24px; padding:16px 0; border-bottom:1px solid var(--line-2); align-items:start}
+.str-row:last-child{border-bottom:0; padding-bottom:4px}
+.str-head{padding:12px 0; font:600 11.5px/1 var(--mono); letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3)}
+.str-name{font-size:16.5px; font-weight:620; color:var(--ink); letter-spacing:-.015em; line-height:1.35; display:flex; gap:10px}
+.str-name::before{content:""; width:7px; height:7px; border-radius:2px; background:var(--accent); flex:none; margin-top:8px}
+.str-how{font-size:15px; color:var(--ink-2); line-height:1.55}
+.str-proof{font-size:15px; color:var(--ink-2); line-height:1.55; padding-left:16px; border-left:2px solid var(--accent-soft)}
+.str-proof strong{color:var(--ink); font-weight:600}
+.str-lbl{display:none}
+.str-head > div:last-child{padding-left:18px}
+@media (max-width:760px){
+  .str-head{display:none}
+  .str-row{grid-template-columns:1fr; gap:8px; padding:18px 0}
+  .str-proof{padding-left:12px}
+  .str-lbl{display:block; margin-bottom:4px; font:600 10.5px/1 var(--mono); letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3)}
+}
 .dayone{margin-top:14px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px 32px}
 .dayone li:last-child:nth-child(odd){grid-column:1 / -1}
 @media (max-width:760px){.dayone{grid-template-columns:1fr}}
@@ -762,13 +779,14 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
     <div class="fit fit--specs">
       <div class="fit-box">
         <h3>What I bring on day one</h3>
-        <ul class="dayone">
-          <li><span><strong>Trade-offs, made on purpose.</strong> I decide what to optimize and say what it costs: coverage vs. precision across 8M+ monthly recommendations, settled with Data Science and shipped with Engineering.</span></li>
-          <li><span><strong>A view of the whole business.</strong> I read a product through its P&amp;L: pricing, loyalty and monetization that built $2.6M in year-one EBITDA.</span></li>
-          <li><span><strong>People on board.</strong> A skeptical boss won over with data, C-suite buy-in for the loyalty redesign, and 1,000+ sales reps trained to use what we shipped.</span></li>
-          <li><span><strong>Customer obsession.</strong> I start with the shopkeeper: rewards they never saw, a co-funding model built on their unmet needs, +$100 a month in their income.</span></li>
-          <li><span><strong>A good person to work with.</strong> Three direct reports, all promoted. Managers, peers and reports describe me the same way: empathetic, collaborative, someone who lifts the team.</span></li>
-        </ul>
+        <div class="str" role="table" aria-label="What I bring on day one">
+          <div class="str-row str-head" role="row"><div role="columnheader">Strength</div><div role="columnheader">How I work</div><div role="columnheader">Where I’ve shown it</div></div>
+          <div class="str-row" role="row"><div class="str-name" role="rowheader">Trade-offs, made on purpose</div><div class="str-how" role="cell"><span class="str-lbl">How I work</span>I use data to decide what to optimize, and I’m explicit about what it costs.</div><div class="str-proof" role="cell"><span class="str-lbl">Where I’ve shown it</span>Coverage vs. precision across <strong>8M+ monthly recommendations</strong>, settled with Data Science and shipped with Engineering.</div></div>
+          <div class="str-row" role="row"><div class="str-name" role="rowheader">A view of the whole business</div><div class="str-how" role="cell"><span class="str-lbl">How I work</span>I read a product through its P&amp;L: pricing, loyalty and monetization.</div><div class="str-proof" role="cell"><span class="str-lbl">Where I’ve shown it</span>A new monetization model that built <strong>$2.6M in year-one EBITDA</strong> and strengthened loyalty at the same time.</div></div>
+          <div class="str-row" role="row"><div class="str-name" role="rowheader">One shared vision of success</div><div class="str-how" role="cell"><span class="str-lbl">How I work</span>I bring people on board and align them on what success looks like.</div><div class="str-proof" role="cell"><span class="str-lbl">Where I’ve shown it</span>Skeptical bosses won over with data, <strong>C‑suite buy-in</strong> for the loyalty redesign, and <strong>1,000+ sales reps</strong> trained to use what we shipped.</div></div>
+          <div class="str-row" role="row"><div class="str-name" role="rowheader">Customer obsession</div><div class="str-how" role="cell"><span class="str-lbl">How I work</span>I start with the customer: what they value, what problems they have, and what we can do about them.</div><div class="str-proof" role="cell"><span class="str-lbl">Where I’ve shown it</span>A co-funding model built on shopkeepers’ unmet needs, adding <strong>$100 a month</strong> to their income.</div></div>
+          <div class="str-row" role="row"><div class="str-name" role="rowheader">A good person to work with</div><div class="str-how" role="cell"><span class="str-lbl">How I work</span>I put people first. Empathy and shared goals are how a team grows together.</div><div class="str-proof" role="cell"><span class="str-lbl">Where I’ve shown it</span><strong>Three direct reports, all promoted.</strong> Managers, peers and reports describe me the same way: empathetic, collaborative, someone who lifts the team.</div></div>
+        </div>
       </div>
     </div>
   </div>
