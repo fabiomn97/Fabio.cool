@@ -2,12 +2,12 @@
 
 **Live site → [fabiomn97.github.io/Who-I-Am](https://fabiomn97.github.io/Who-I-Am/)**
 
-My personal website as a Product Manager: six years at AB InBev, building BEES for 300,000
-shopkeepers in Peru, now an MIT Sloan MBA ’28.
+My personal website as a Product Manager: six years at AB InBev, the last as Product Manager
+for BEES, serving 300,000 shopkeepers in Peru, now an MIT Sloan MBA ’28.
 
-It's designed as a product launch page: a headline case study with an interactive
-before/after demo, a versioned changelog of my career, reviews from managers, reports
-and peers, a roadmap of what I want to do next, and side projects.
+It's designed as a product launch page: the key numbers, a headline case study with an
+interactive before/after demo, a product decision, reviews from managers and a direct report,
+a versioned changelog of my career, side projects, and interests.
 
 ## How it was built
 

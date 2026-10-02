@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fabio Macedo · Product Manager</title>
-<meta name="description" content="Product Manager building products that make people’s lives better. Six years at AB InBev, building BEES for 300,000 shopkeepers in Peru since 2021. MIT Sloan MBA '28.">
+<meta name="description" content="Product Manager building products that make people’s lives better. Six years at AB InBev, the last as Product Manager for BEES, serving 300,000 shopkeepers in Peru. MIT Sloan MBA '28.">
 <meta name="author" content="Fabio Macedo">
 <meta name="color-scheme" content="light dark">
 <link rel="canonical" href="https://fabiomn97.github.io/Who-I-Am/">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Fabio Macedo · Product Manager">
-<meta property="og:description" content="Six years at AB InBev, building BEES for 300,000 shopkeepers in Peru since 2021. MIT Sloan MBA '28. Now shipping: Summer 2027.">
+<meta property="og:description" content="Six years at AB InBev, the last as Product Manager for BEES, serving 300,000 shopkeepers in Peru. MIT Sloan MBA '28. Now shipping: Summer 2027.">
 <meta property="og:url" content="https://fabiomn97.github.io/Who-I-Am/">
 <meta property="og:image" content="https://fabiomn97.github.io/Who-I-Am/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -200,7 +200,8 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
   content:""; position:absolute; z-index:-1; width:720px; height:520px; right:-160px; top:-120px;
   background:radial-gradient(closest-side, var(--accent-soft), transparent); filter:blur(10px);
 }
-.hero-grid{display:grid; grid-template-columns:minmax(0,1.32fr) minmax(0,.88fr); gap:clamp(36px,5vw,72px); align-items:center}
+.hero-grid{display:block}
+.hero-grid > div{max-width:880px}
 .announce{
   display:inline-flex; align-items:center; gap:10px; max-width:100%;
   padding:7px 8px 7px 12px; border-radius:99px; text-decoration:none;
@@ -213,57 +214,20 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 .announce strong{color:var(--ink); font-weight:600}
 .announce .go{display:inline-grid; place-items:center; width:22px; height:22px; border-radius:50%; background:var(--surface-2); color:var(--ink); flex:none}
 .announce .go svg{width:12px; height:12px}
+.hero-id{margin-top:28px; display:flex; align-items:center; gap:14px}
+.hero-id img{width:56px; height:56px; border-radius:50%; object-fit:cover; box-shadow:0 0 0 1px var(--line), var(--shadow-sm); flex:none}
+.hero-who{font-size:17px; font-weight:620; color:var(--ink); letter-spacing:-.02em}
+.hero-id .hero-name{margin-top:5px; line-height:1.4}
+.hero-tag{margin-top:18px; font-size:clamp(19px,2vw,23px); font-weight:560; color:var(--ink); letter-spacing:-.02em}
 .hero-name{margin-top:30px; font:500 13px/1 var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3)}
 .hero h1{margin-top:14px; font-size:clamp(42px,6.6vw,82px); letter-spacing:-.045em; line-height:.98; font-weight:600}
 .hero h1 em.s{font-size:1.06em; letter-spacing:-.02em; padding-right:.04em}
 .hero-sub{margin-top:24px; max-width:56ch; font-size:clamp(17px,1.6vw,19.5px); line-height:1.55; color:var(--ink-2)}
 .hero-sub strong{color:var(--ink); font-weight:600}
-.hero-ai{margin-top:18px; display:flex; flex-wrap:wrap; align-items:center; gap:8px 10px; font-size:15.5px; color:var(--ink-2); max-width:60ch; line-height:1.5}
+.hero-ai{margin-top:18px; display:block; font-size:15.5px; color:var(--ink-2); max-width:60ch; line-height:1.5}
 .cta-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:32px}
 .hero-meta{display:flex; flex-wrap:wrap; gap:8px; margin-top:26px}
 
-/* product card */
-.pcard{
-  position:relative; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-xl);
-  box-shadow:var(--shadow-lg); overflow:hidden; max-width:430px; justify-self:end; width:100%;
-}
-.pcard-top{display:flex; align-items:center; justify-content:space-between; padding:12px 14px 12px 16px; border-bottom:1px solid var(--line-2)}
-.dots{display:flex; gap:6px}
-.dots i{width:10px; height:10px; border-radius:50%; background:var(--line); display:block}
-.pcard-top .chip{font-size:11px}
-.pcard-photo{position:relative; aspect-ratio:4/3; overflow:hidden; background:var(--surface-2)}
-.pcard-photo img{width:100%; height:100%; object-fit:cover; object-position:50% 40%}
-.pcard-photo .tag{
-  position:absolute; left:14px; bottom:14px; display:inline-flex; align-items:center; gap:8px;
-  padding:7px 11px; border-radius:9px; font:500 11.5px/1 var(--mono); color:#fff;
-  background:rgba(12,12,13,.62); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
-}
-.pcard-photo .tag .pulse{color:#FF8B64}
-.pcard-body{padding:18px 18px 8px}
-.pcard-title{display:flex; align-items:baseline; justify-content:space-between; gap:12px}
-.pcard-title h3{font-size:21px; letter-spacing:-.025em}
-.pcard-title span{font:500 12px/1 var(--mono); color:var(--ink-3)}
-.pcard-role{margin-top:4px; font-size:14.5px; color:var(--ink-3)}
-.spec-list{margin-top:14px; border-top:1px solid var(--line-2)}
-.spec-list div{display:flex; justify-content:space-between; gap:16px; padding:9px 0; border-bottom:1px solid var(--line-2); font-size:14px}
-.spec-list div:last-child{border-bottom:0}
-.spec-list dt{color:var(--ink-3); font:500 12px/1.6 var(--mono); letter-spacing:.02em; text-transform:uppercase; flex:none}
-.spec-list dd{margin:0; color:var(--ink); text-align:right; font-weight:500}
-.pcard-foot{padding:0 18px 18px}
-.pcard-foot .btn{width:100%}
-
-@media (max-width:900px){
-  .hero-grid{grid-template-columns:1fr}
-  .pcard{justify-self:start; max-width:520px}
-}
-
-/* trust strip */
-.trust{border-top:1px solid var(--line-2); border-bottom:1px solid var(--line-2); background:var(--surface)}
-.trust-in{display:flex; align-items:center; gap:clamp(16px,3vw,40px); padding-block:20px; flex-wrap:wrap}
-.trust-label{font:500 11.5px/1 var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); flex:none}
-.trust-list{display:flex; flex-wrap:wrap; gap:10px clamp(18px,3vw,38px); align-items:center}
-.trust-list li{font-weight:620; font-size:16px; letter-spacing:-.02em; color:var(--ink-2); white-space:nowrap}
-.trust-list li small{font:500 11px/1 var(--mono); letter-spacing:.04em; color:var(--ink-3); margin-left:6px; text-transform:uppercase}
 
 /* ============================== specs ============================== */
 .specs{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden; background:var(--surface)}
@@ -432,7 +396,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 .cta-row .short{display:none}
 @media (max-width:560px){.cta-row{display:grid; grid-template-columns:1fr 1fr} .cta-row .long{display:none} .cta-row .short{display:inline}}
 @media (max-width:440px){.announce .long{display:none} .app-bar span{display:none}}
-@media (max-width:370px){.pcard .long{display:none} .brand-name{display:none} .result b{font-size:19px; white-space:nowrap}}
+@media (max-width:370px){ .brand-name{display:none} .result b{font-size:19px; white-space:nowrap}}
 
 /* ============================== changelog ============================== */
 .log{position:relative}
@@ -552,7 +516,9 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 
 /* ============================== off the résumé ============================== */
 .feats{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden}
-.feats--3,.feats--2{margin-top:14px}
+.feats--3,.feats--2,.feats--4{margin-top:14px}
+.feats--4{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:560px){.feats--4{grid-template-columns:1fr}}
 .feats--2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .ft strong{color:var(--ink); font-weight:600}
 .afc{display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:clamp(20px,3vw,40px); align-items:center; padding:clamp(20px,3vw,32px); border-radius:var(--r-lg); background:var(--surface); border:1px solid var(--line); overflow:hidden}
@@ -561,14 +527,9 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 .afc-motto{margin-top:20px!important; padding:14px 16px; border-left:3px solid #DB0007; background:var(--surface-2); border-radius:0 10px 10px 0}
 .afc-motto span{display:block; font-family:var(--serif); font-style:italic; font-size:26px; line-height:1.1; color:var(--ink)}
 .afc-motto small{display:block; margin-top:6px; font:500 11px/1.3 var(--mono); letter-spacing:.05em; text-transform:uppercase; color:var(--ink-3)}
-.gal-wrap{min-width:0}
-.gal-bar{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px}
-.gal-count{font:500 12px/1 var(--mono); letter-spacing:.04em; color:var(--ink-3); text-transform:uppercase}
-.gal-count b{color:var(--ink); font-weight:600}
-.gal-btns{display:none; gap:6px}
-.js .gal-btns{display:flex}
-.gal-btns .icon-btn{width:36px; height:36px}
-.gal-btns .icon-btn:disabled{opacity:.35; cursor:default}
+.gal--grid{display:grid!important; grid-template-columns:1fr 1fr; gap:10px; overflow:visible!important; padding:0!important}
+.gal--grid .gal-item{height:auto!important; aspect-ratio:4/3!important; width:100%}
+.gal--grid .gal-item:first-child{grid-column:1 / -1; aspect-ratio:16/9!important}
 .gal{display:flex; gap:10px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:10px; scrollbar-width:thin; overscroll-behavior-x:contain}
 .gal:focus-visible{outline-offset:4px}
 .gal-item{flex:none; height:clamp(240px,26vw,320px); aspect-ratio:var(--ar); margin:0; position:relative; border-radius:14px; overflow:hidden; scroll-snap-align:start; background:var(--surface-2)}
@@ -593,6 +554,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 .lnk b{display:block; font-size:13px; font-weight:500; color:var(--ink-3); font-family:var(--mono); letter-spacing:.03em; text-transform:uppercase}
 .lnk span{display:block; font-size:15.5px; font-weight:560; overflow-wrap:anywhere}
 .lnk .arr{margin-left:auto; color:var(--ink-3); flex:none}
+.tools--side{margin-top:0!important}
 .tools{margin-top:30px; display:grid; gap:10px}
 .tool{display:grid; grid-template-columns:150px minmax(0,1fr); gap:14px; padding:14px 0; border-top:1px solid var(--line)}
 .tool:last-child{border-bottom:1px solid var(--line)}
@@ -641,13 +603,12 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 /* ============================== print ============================== */
 @media print{
   *{-webkit-print-color-adjust:exact!important; print-color-adjust:exact!important}
-  .gal{flex-wrap:wrap; overflow:visible} .gal-item{height:200px} .gal-bar .gal-btns{display:none!important}
+  .gal{flex-wrap:wrap; overflow:visible} .gal-item{height:200px} 
   .nav,.hero::before,.hero::after,.cta::after,.seg,.skip{display:none!important}
   body{background:#fff; color:#222; font-size:12pt}
   .sec{padding-block:28px}
   .demo-col{position:static}
-  .pcard,.demo,.rel-card,.rv,.lab,.col,.term,.cta,.afc,.spot{box-shadow:none!important; break-inside:avoid}
-  h2,h3{break-after:avoid}
+    h2,h3{break-after:avoid}
 }
 </style>
 </head>
@@ -666,7 +627,6 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       <a href="#feature">Case study</a>
       <a href="#reviews">Reviews</a>
       <a href="#changelog">Changelog</a>
-      <a href="#roadmap">Roadmap</a>
       <a href="#labs">Labs</a>
       <a href="#off">Interests</a>
       <a href="#build">Build</a>
@@ -682,7 +642,6 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       <a href="#feature">Case study</a>
       <a href="#reviews">Reviews</a>
       <a href="#changelog">Changelog</a>
-      <a href="#roadmap">Roadmap</a>
       <a href="#labs">Labs</a>
       <a href="#off">Interests</a>
       <a href="#build">Build</a>
@@ -696,15 +655,16 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <a class="announce" href="#roadmap">
+      <a class="announce" href="#contact">
         <span class="pulse" aria-hidden="true"></span>
         <span><strong>Now shipping</strong> · <span class="long">Available </span>Summer 2027</span>
         <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </a>
-      <p class="hero-name">Fabio Macedo · Product Manager</p>
+      <div class="hero-id"><img src="assets/avatar-lg.jpg" alt="Fabio Macedo" width="240" height="240"><div><p class="hero-who">Fabio Macedo</p><p class="hero-name">MIT Sloan MBA ’28 · 6 years at AB InBev, 1 as Product Manager</p></div></div>
       <h1>Products that make people’s lives <em class="s">better.</em></h1>
-      <p class="hero-sub">Six years at AB InBev, building <strong>BEES</strong>, its B2B commerce app, for <strong>300,000 shopkeepers</strong> in Peru since 2021. I fixed what the ML model was optimizing for (<strong>+17.1% first-time purchases</strong>) and built BEES Peru’s first monetization strategy (<strong>$2.6M EBITDA</strong> in year one). Now at MIT Sloan, building toward products that reach <strong>millions of people</strong>.</p>
-      <p class="hero-ai"><span class="chip chip--info">Builds with AI</span>An LLM-assisted A/B testing workflow at BEES, and a Claude Code bot at Sloan that 15+ classmates asked to build for themselves.</p>
+      <p class="hero-tag">I make marketplaces reward the right behavior.</p>
+      <p class="hero-sub">Six years at AB InBev, five of them on <strong>BEES</strong>, its B2B commerce app for <strong>300,000 shopkeepers</strong> in Peru, and the last as its Product Manager. I fixed what the ML model was optimizing for (<strong>+17.1% first-time purchases vs. a control group</strong>) and built BEES Peru’s first monetization strategy (<strong>$2.6M EBITDA</strong> in year one). Now at MIT Sloan, building toward products that reach <strong>millions of people</strong>.</p>
+      <p class="hero-ai"><span class="chip chip--info" style="margin-right:8px; vertical-align:2px">Builds with AI</span>~20 LLM-assisted A/B tests at BEES, and a Claude Code bot at Sloan that 5 classmates now run.</p>
       <div class="cta-row">
         <a class="btn btn--primary" href="mailto:fabiom97@mit.edu?subject=Let%E2%80%99s%20talk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>Email me</a>
         <a class="btn btn--ghost" href="https://www.linkedin.com/in/fabiomacedonaters" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.77 2.5 4.77 5.76v5.69h-4v-5.04c0-1.2-.02-2.75-1.75-2.75-1.75 0-2.02 1.31-2.02 2.66v5.13h-4v-11Z"/></svg>LinkedIn</a>
@@ -712,52 +672,15 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
         <a class="btn btn--ghost" href="tel:+18572508074" aria-label="Call +1 (857) 250-8074"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3l1.5 4.5-2 1.3a12 12 0 0 0 7.2 7.2l1.3-2 4.5 1.5v3a2 2 0 0 1-2 2A16.5 16.5 0 0 1 3 5.5a2 2 0 0 1 2-2Z"/></svg><span class="long">+1 (857) 250-8074</span><span class="short">Call</span></a>
       </div>
       <div class="hero-meta">
-        <span class="chip">MIT Sloan MBA ’28</span>
         <span class="chip chip--accent">PM Club VP of Recruiting</span>
+        <span class="chip">1 of 3 from 1,700+ · AB InBev LDP</span>
+        <span class="chip">Harvard WorldMUN 2018 champions · head delegate</span>
         <span class="chip">Dean’s Fellow</span>
-        <span class="chip">World debate champion</span>
-        <span class="chip">Ex-AB InBev · BEES</span>
               </div>
     </div>
 
-    <aside class="pcard" aria-label="Product listing card">
-      <div class="pcard-top">
-        <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
-        <span class="chip chip--ok"><span class="pulse" aria-hidden="true"></span>Available Summer 2027</span>
-      </div>
-      <div class="pcard-photo">
-        <img src="assets/portrait.jpg" alt="Fabio Macedo, smiling, holding up a phone showing the BEES app" width="1200" height="900">
-        <span class="tag"><span class="pulse" aria-hidden="true"></span>MIT Sloan MBA ’28</span>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-title"><h3>Fabio Macedo</h3><span>6 yrs · AB InBev</span></div>
-        <p class="pcard-role">Product Manager · <span style="white-space:nowrap">MIT Sloan MBA ’28</span></p>
-        <dl class="spec-list">
-          <div><dt>Built for</dt><dd>300K small businesses</dd></div>
-          <div><dt>Available</dt><dd>Summer 2027</dd></div>
-          <div><dt>Based in</dt><dd>Lima → Cambridge, MA</dd></div>
-        </dl>
-      </div>
-      <div class="pcard-foot">
-        <a class="btn btn--ghost" href="assets/Fabio-Macedo-CV.pdf" download>
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5v8M4.5 7 8 10.5 11.5 7M3 13.5h10"/></svg><span>Download my CV</span></a>
-      </div>
-    </aside>
   </div>
 </section>
-
-<div class="trust">
-  <div class="wrap trust-in">
-    <span class="trust-label">Previously shipped at</span>
-    <ul class="trust-list">
-      <li>AB InBev</li>
-      <li>BEES</li>
-      <li>The Adecco Group</li>
-      <li>MIT Sloan<small>MBA ’28</small></li>
-      <li>Universidad del Pacífico<small>BA</small></li>
-    </ul>
-  </div>
-</div>
 
 <!-- ============================== SPECS ============================== -->
 <section class="sec" id="specs" aria-labelledby="specs-h">
@@ -767,12 +690,23 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       <h2 class="h2" id="specs-h">Six years, four roles, numbers that moved.</h2>
     </div>
     <div class="specs">
-      <div class="spec"><div class="spec-num">$2.2M</div><p class="spec-label">Reallocated company-wide after LLM-assisted A/B tests of discounts vs. loyalty points</p><p class="spec-src">PM, Online Strategy</p></div>
+      <div class="spec"><div class="spec-num">$2.2M</div><p class="spec-label">Promotional budget moved to volume-driving discounts after ~20 LLM-assisted A/B tests</p><p class="spec-src">PM, Online Strategy</p></div>
       <div class="spec"><div class="spec-num">8M<small>+/mo</small></div><p class="spec-label">Recommendations shown by the ML model I re-pointed at harder sales</p><p class="spec-src">PM, Online Strategy</p></div>
-      <div class="spec"><div class="spec-num">+17.1%</div><p class="spec-label">First-time purchases, H1 2026 vs. H1 2025, with a 10% control group on the old model</p><p class="spec-src">Case study ↓</p></div>
-      <div class="spec"><div class="spec-num">10K<small>+</small></div><p class="spec-label">Retailers on a co-funding model I created with no precedent, adding $100/mo to their income</p><p class="spec-src">Monetization Manager</p></div>
+      <div class="spec"><div class="spec-num">+17.1%</div><p class="spec-label">First-time purchases vs. a 10% control group (difference-in-differences)</p><p class="spec-src">Case study ↓</p></div>
+      <div class="spec"><div class="spec-num">10K<small>+</small></div><p class="spec-label">Shopkeepers on a co-funding model I created with no precedent, adding $100/mo to their income</p><p class="spec-src">Monetization Manager</p></div>
       <div class="spec"><div class="spec-num">$2.6M</div><p class="spec-label">Year-one EBITDA from BEES Peru’s first monetization strategy, 13 partner companies</p><p class="spec-src">Digitalization Lead</p></div>
       <div class="spec"><div class="spec-num">100%</div><p class="spec-label">Promotion rate across my three direct reports</p><p class="spec-src">People leadership</p></div>
+    </div>
+    <div class="fit fit--specs">
+      <div class="fit-box">
+        <h3>What I bring on day one</h3>
+        <ul class="dayone">
+          <li><span><strong>ML product tradeoffs.</strong> Coverage vs. precision, defined with Data Science, shipped with Engineering.</span></li>
+          <li><span><strong>Incentive &amp; pricing design.</strong> Loyalty logic, discounts, co-funding, monetization.</span></li>
+          <li><span><strong>Partnerships &amp; new revenue.</strong> Signed BEES Peru’s first third-party distribution deal; built BEES Peru’s first monetization strategy.</span></li>
+          <li><span><strong>Go-to-market &amp; adoption.</strong> Positioning, partner messaging, and training 1,000+ reps in the field.</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -810,14 +744,14 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
           <li class="step step--win">
             <h3>What moved</h3>
             <div class="results">
-              <div class="result"><b>+17.1%</b><span>First-time purchases, H1 2026 vs. H1 2025</span></div>
+              <div class="result"><b>+17.1%</b><span>First-time purchases vs. control, H1 2026</span></div>
               <div class="result"><b>+7.6%</b><span>Distinct SKUs sold, year over year</span></div>
               <div class="result"><b>3% → 10%</b><span>Medium/hard recommendations’ share of distinct SKUs sold</span></div>
               <div class="result"><b>#6+ → #1–2</b><span>Carousel position of medium/hard recommendations</span></div>
             </div>
           </li>
         </ol>
-        <p class="method"><b>How we measured it</b> A control group of 10% of retailers stayed on the old model, so the lift could be measured against them, not just against last year.</p>
+        <p class="method"><b>How we measured it</b> Difference-in-differences. A control group of 10% of shopkeepers stayed on the old model. We compared each group’s growth from H1 2025 to H1 2026; first-time purchases grew 17.1% more in the test group. The other results are year over year.</p>
         <div class="context">
           <b>What I took from it</b>
           The model was doing exactly what we rewarded. When a metric is hit and the goal is missed, look at the incentives before the algorithm.
@@ -900,7 +834,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       <div class="dc-text">
         <p><strong>The problem.</strong> Loyalty rewards lived in one section of the app that shopkeepers didn’t need to visit to place an order, and they had to “accept” a promotion to earn the points. Most never saw them.</p>
         <p><strong>The decision.</strong> Surface the rewards in the steps every order already goes through: the home page, the product page and checkout. I defined the user stories and requirements with Analytics and Design.</p>
-        <div class="dc-result"><b>44% → 83%</b><span>Share of users earning rewards, 2022 → 2023</span></div>
+        <div class="dc-result"><b>44% → 83%</b><span>Share of users earning rewards, 2022 → 2023. No control group, but it was the only major loyalty release that year.</span></div>
       </div>
       <div class="dc-flow" role="img" aria-label="Before: rewards only in an optional section off the purchase path. After: rewards shown on home, product page and checkout.">
         <div class="flow">
@@ -925,8 +859,8 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 <section class="sec sec--alt" id="reviews" aria-labelledby="rv-h">
   <div class="wrap">
     <div class="sec-head">
-      <p class="kicker"><b>Reviews</b> · managers, reports, peers</p>
-      <h2 class="h2" id="rv-h">Reviewed by people above, beside and below me.</h2>
+      <p class="kicker"><b>Reviews</b> · managers and reports</p>
+      <h2 class="h2" id="rv-h">Reviewed by my managers and my team.</h2>
     </div>
     <div class="reviews">
       <figure class="rv rv--feat">
@@ -951,26 +885,8 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 
       <figure class="rv">
         <div class="rv-top"><span class="rv-src">via LinkedIn</span><span class="rel-tag">Report</span></div>
-        <blockquote>“I have had the pleasure of working under Fabio’s leadership, and I can confidently say that he is an outstanding manager.”</blockquote>
+        <blockquote>“He leads a team with clarity and motivation… ensuring that each team member feels valued and supported.”</blockquote>
         <figcaption class="who"><span class="av" aria-hidden="true">RB</span><div><b>Rodrigo Begazo Yañez</b><span>Key Account Supervisor</span></div></figcaption>
-      </figure>
-
-      <figure class="rv">
-        <div class="rv-top"><span class="rv-src">via LinkedIn</span><span class="rel-tag">Peer</span></div>
-        <blockquote>“He takes full ownership of his projects and consistently delivers excellent outcomes.”</blockquote>
-        <figcaption class="who"><span class="av" aria-hidden="true">VL</span><div><b>Valeria Lizarzaburu</b><span>Digital Comms Manager, BEES · AB InBev</span></div></figcaption>
-      </figure>
-
-      <figure class="rv">
-        <div class="rv-top"><span class="rv-src">via LinkedIn</span><span class="rel-tag">Peer</span></div>
-        <blockquote>“A sharp, solution-oriented professional with a strategic mindset that adds tremendous value… someone who elevates any team he’s part of.”</blockquote>
-        <figcaption class="who"><span class="av" aria-hidden="true">SM</span><div><b>Sandra Marusic</b><span>KAM, Modern Trade · B2B</span></div></figcaption>
-      </figure>
-
-      <figure class="rv">
-        <div class="rv-top"><span class="rv-src">via LinkedIn</span><span class="rel-tag">Classmate</span></div>
-        <blockquote>“His analytical skillset is truly exceptional, enabling him to develop comprehensive solutions to complex challenges with clarity and precision.”</blockquote>
-        <figcaption class="who"><span class="av" aria-hidden="true">PG</span><div><b>Paolo Ghio, CFA</b><span>Senior Investment Associate, J.P. Morgan</span></div></figcaption>
       </figure>
     </div>
     <p class="reviews-foot">
@@ -985,7 +901,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
   <div class="wrap">
     <div class="sec-head">
       <p class="kicker"><b>Changelog</b> · experience</p>
-      <h2 class="h2" id="log-h">From trainee to PM in six years, four releases.</h2>
+      <h2 class="h2" id="log-h">Six years at AB InBev, the last as Product Manager.</h2>
       <p class="lede">I joined AB InBev as a Global Management Trainee and left as Product Manager for BEES Peru’s online strategy. Every release shipped with numbers.</p>
     </div>
 
@@ -1014,7 +930,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
             <li><span class="chip chip--ok">Added</span><span>Certificates in <strong>Product Management</strong> and <strong>Business Analytics</strong> (in progress). Building with AI on the side; see <a href="#labs">Labs</a>.</span></li>
           </ul>
           <figure class="rel-photo">
-            <img src="assets/scene.jpg" alt="Fabio taking a selfie in front of the MIT Sloan School of Management sign" width="1100" height="619" loading="lazy">
+            <img src="assets/scene.jpg" alt="Fabio taking a selfie in front of the MIT Sloan School of Management sign" width="1100" height="619" decoding="async">
             <figcaption>Week one. No regrets.</figcaption>
           </figure>
         </article>
@@ -1027,10 +943,10 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
         </div>
         <article class="rel-card">
           <h3>Product Manager, Online Strategy</h3>
-          <p class="rel-org"><b>BEES · AB InBev</b> · Lima, Peru · B2B e-commerce marketplace serving 300K+ retailers</p>
+          <p class="rel-org"><b>BEES · AB InBev</b> · Lima, Peru · B2B e-commerce marketplace serving 300K+ shopkeepers</p>
           <ul class="notes">
-            <li><span class="chip chip--accent">Shipped</span><span>ML product recommendation model with Data Science and Engineering, balancing coverage vs. precision across <strong>8M+ recommendations a month</strong>. <strong>+7.6%</strong> distinct SKUs sold, <strong>+17.1%</strong> first-time purchases. <a href="#feature">Case study ↑</a></span></li>
-            <li><span class="chip chip--ok">Added</span><span>An <strong>LLM-assisted A/B testing workflow</strong>. We gave the LLM a test template (variables to hold fixed and variables to test); it designed and split several test groups against one control, then analyzed the results for uplift and statistical significance. Testing direct discounts against loyalty points this way led to a <strong>$2.2M</strong> company-wide investment reallocation.</span></li>
+            <li><span class="chip chip--accent">Shipped</span><span>ML product recommendation model with Data Science and Engineering, balancing coverage vs. precision across <strong>8M+ recommendations a month</strong>. <strong>+17.1%</strong> first-time purchases vs. a control group; <strong>+7.6%</strong> distinct SKUs sold YoY. <a href="#feature">Case study ↑</a></span></li>
+            <li><span class="chip chip--ok">Added</span><span>An <strong>LLM-assisted A/B testing workflow</strong> in Microsoft Copilot. From a test template (variables to hold fixed and to test), it designed and split several test groups against one control, then read out uplift and statistical significance; Data Science validated every readout. About <strong>5 tests a month for 4 months</strong> comparing discounts with loyalty points moved <strong>$2.2M</strong> into volume-driving promotions, in a year company volume grew 4%.</span></li>
             <li><span class="chip chip--info">Improved</span><span>Redesigned the loyalty program’s reward-allocation logic and secured C-suite buy-in. Share of investment driving incremental revenue: <strong>74% → 85%</strong> YoY.</span></li>
             <li><span class="chip chip--info">Improved</span><span>Brought competitive-strategy data into recommendations for the first time, with Data Science, Revenue Management and Sales, contributing to a <strong>+1 pp market share</strong> gain (H1 2026 vs. H1 2025).</span></li>
           </ul>
@@ -1046,8 +962,8 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
           <h3>Monetization Manager</h3>
           <p class="rel-org"><b>BEES · AB InBev</b> · Lima, Peru</p>
           <ul class="notes">
-            <li><span class="chip chip--ok">Added</span><span>A retailer co-funding model with no precedent, built from research into unmet needs. Scaled to <strong>10K+ retailers</strong> and <strong>+$100/mo</strong> in retailer income, helping monetization reach an all-time high of <strong>$3M</strong> in 2024 (+15% YoY).</span></li>
-            <li><span class="chip chip--accent">Shipped</span><span><strong>Pay with Points</strong>: retailers pay for orders with loyalty points at a better conversion rate. Monetization <strong>+18%</strong> in 2025.</span></li>
+            <li><span class="chip chip--ok">Added</span><span>A co-funding model for shopkeepers with no precedent, built from research into unmet needs. Scaled to <strong>10K+ shopkeepers</strong> and <strong>+$100/mo</strong> in their income, helping monetization reach an all-time high of <strong>$3M</strong> in 2024 (+15% YoY).</span></li>
+            <li><span class="chip chip--accent">Shipped</span><span><strong>Pay with Points</strong>: shopkeepers pay for orders with loyalty points at a better conversion rate. Monetization <strong>+18%</strong> in 2025.</span></li>
             <li><span class="chip chip--ok">Added</span><span><strong>BEES School</strong>: bi-weekly training for 1,000+ sales reps on new features and adoption. Reps’ adherence to recommended app use <strong>+15 pp</strong>.</span></li>
             <li><span class="chip chip--info">Improved</span><span>Managed three direct reports on personalized growth plans: <strong>100% promotion rate</strong>. Led my manager’s team as acting lead for <strong>8 months</strong> in 2024.</span></li>
           </ul>
@@ -1121,55 +1037,6 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
   </div>
 </section>
 
-<!-- ============================== ROADMAP ============================== -->
-<section class="sec sec--alt" id="roadmap" aria-labelledby="rm-h">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="kicker"><b>Roadmap</b> · objectives</p>
-      <h2 class="h2" id="rm-h">Built for 300,000 shopkeepers. Next: <em class="s">millions</em> of people.</h2>
-    </div>
-
-    <div class="mission">
-      <p class="mission-q">I want to be the PM who always delivers the numbers, but whom people <em>remember</em> for making their lives better.</p>
-      <div class="mission-p">
-        <p>At BEES, I worked to improve the income of <strong>300,000 families</strong> who own small shops in Peru. It’s why I designed Club B Black’s benefits (legal counsel, telemedicine and e-learning) for shopkeepers <strong>and their families</strong>, not just their businesses.</p>
-        <p>Now I want that work at a larger scale: products that create value for the company and for millions of people. That could be saving them time, giving them a better experience, or, like at BEES, helping them earn more to provide for their families. Product is the best way I know to do that.</p>
-      </div>
-    </div>
-
-    <div class="board">
-      <div class="col">
-        <div class="col-h"><b>Professional</b><span class="chip">Long term</span></div>
-        <div class="tk tk--hot"><h4>Products used by millions</h4><p>Take what worked for 300,000 shopkeepers to products millions of people use: saving them time, giving them a better experience, helping them earn more.</p></div>
-        <div class="tk"><h4>Results people remember</h4><p>Keep delivering the numbers, and make sure the work improves someone’s life along the way.</p></div>
-        <div class="tk"><h4>Work on what I love</h4><p>Technology and digital platforms, gaming, movies and TV: products I already use and care about.</p></div>
-      </div>
-      <div class="col">
-        <div class="col-h"><b>Learning</b><span class="chip chip--accent"><span class="pulse" aria-hidden="true"></span>In progress</span></div>
-        <div class="tk"><h4>MIT Sloan MBA, Class of 2028</h4><p>Product Management Lab, AI Builder Seminar, and the Product Management and Business Analytics certificates.</p></div>
-        <div class="tk"><h4>Building with AI</h4><p>Shipping small tools for my own workflow, to keep the build half of the job sharp. See <a href="#labs">Labs</a>.</p></div>
-      </div>
-      <div class="col">
-        <div class="col-h"><b>Personal</b><span class="chip">Ongoing</span></div>
-        <div class="tk"><h4>Become a certified life coach</h4><p>The ICF certification, after the MBA. Helping people figure out what they actually want is a skill I use everywhere.</p></div>
-        <div class="tk"><h4>Grow the people around me</h4><p>Teams where everyone develops, like the three reports who were all promoted and the 1,000+ reps trained through BEES School.</p></div>
-      </div>
-    </div>
-
-    <div class="fit">
-      <div class="fit-box">
-        <h3>What I bring on day one</h3>
-        <ul class="dayone">
-          <li><span><strong>ML product tradeoffs.</strong> Coverage vs. precision, defined with Data Science, shipped with Engineering.</span></li>
-          <li><span><strong>Incentive &amp; pricing design.</strong> Loyalty logic, discounts, co-funding, monetization.</span></li>
-          <li><span><strong>Partnerships &amp; new revenue.</strong> Signed BEES Peru’s first third-party distribution deal; built BEES Peru’s first monetization strategy.</span></li>
-          <li><span><strong>Go-to-market &amp; adoption.</strong> Positioning, partner messaging, and training 1,000+ reps in the field.</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============================== LABS ============================== -->
 <section class="sec" id="labs" aria-labelledby="labs-h">
   <div class="wrap">
@@ -1187,7 +1054,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
         <h3>Sloan task simplifier</h3>
         <p><strong>Problem:</strong> deadlines are spread across Canvas, clubs and recruiting, and it’s easy to miss one.</p>
         <p><strong>Build:</strong> a bot I made with Claude Code that runs on my laptop, scans Canvas every day and emails me what’s due in the coming week, from Gmail to my MIT inbox.</p>
-        <p class="lab-metric"><b>15+</b> Sloan classmates asked for the build guide to set it up themselves.</p>
+        <p class="lab-metric"><b>5</b> classmates run it today; 15+ asked for the build guide.</p>
         <a class="link" href="https://github.com/fabiomn97/Sloan-Daily-Tasks" target="_blank" rel="noopener">View on GitHub
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
       </article>
@@ -1223,40 +1090,24 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
     </div>
     <article class="afc">
       <div class="afc-text">
-        
         <h3>Arsenal FC, #1 fan</h3>
         <p>It started with Winning Eleven and PES. I always picked Arsenal because it was first in alphabetical order. After a few years of playing as them, I started watching the real games, and then understanding what the club is about: achieving things the right way. Along the way I made my dad a fan too, and now we go to the Emirates together.</p>
         <p class="afc-motto"><span lang="la">Victoria Concordia Crescit</span><small>Victory through harmony · the club’s motto, and now mine</small></p>
       </div>
       <div class="gal-wrap">
-      <div class="gal-bar">
-        <span class="gal-count">Arsenal · <b id="gal-n">8</b> photos</span>
-        <span class="gal-btns">
-          <button class="icon-btn" type="button" data-dir="-1" aria-label="Previous photos"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg></button>
-          <button class="icon-btn" type="button" data-dir="1" aria-label="Next photos"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 3 5 5-5 5"/></svg></button>
-        </span>
-      </div>
-      <div class="gal" id="gal" tabindex="0" role="region" aria-label="Photos at the Emirates Stadium, scroll sideways for more">
-          <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/2018-front.jpg" alt="Standing in front of the Arsenal crest mural at the Emirates" width="1000" height="750" decoding="async"><figcaption>First photo at the Emirates! · 2018</figcaption></figure>
+      <div class="gal gal--grid" aria-label="Arsenal photos">
           <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/watford.jpg" alt="In an Arsenal scarf high in the stands before my first Arsenal game, against Watford" width="1000" height="750" decoding="async"><figcaption>First Arsenal game! 2-0 win vs. Watford · 2018</figcaption></figure>
-          <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/four-fingers.jpg" alt="Holding up four fingers in the stands after a 4-2 win over Tottenham" width="1000" height="750" decoding="async"><figcaption>4-2 win against Tottenham! · 2018</figcaption></figure>
           <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/dad-stands.jpg" alt="A selfie with my dad in the stands at the Emirates, both in Arsenal shirts" width="1000" height="750" decoding="async"><figcaption>Back at the Emirates with my dad! 3-1 vs. Nottingham Forest · 2024</figcaption></figure>
-          <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/2024-pitch.jpg" alt="Thumbs up inside the Emirates Stadium, above the pitch" width="1000" height="750" decoding="async"><figcaption>Inside the Emirates · 2024</figcaption></figure>
-          <figure class="gal-item" style="--ar:750/1000"><img src="assets/arsenal/henry-statue.jpg" alt="With my dad by the Thierry Henry statue outside the Emirates, thumbs up in the rain" width="750" height="1000" decoding="async"><figcaption>The Henry statue with my dad · 2024</figcaption></figure>
-          <figure class="gal-item" style="--ar:750/1000"><img src="assets/arsenal/dad-home.jpg" alt="Laughing with my dad at home in Arsenal shirts on the day Arsenal won the Premier League" width="750" height="1000" decoding="async"><figcaption>The day we won the Premier League! · 2026</figcaption></figure>
           <figure class="gal-item" style="--ar:1000/750"><img src="assets/arsenal/dad-shield-2026.jpg" alt="Celebrating with my dad at home in Lima as Arsenal lift the Community Shield on TV" width="1000" height="750" decoding="async"><figcaption>Community Shield winners!! My last day living in Lima · 2026</figcaption></figure>
       </div>
       </div>
     </article>
 
-    <div class="feats feats--3">
+    <div class="feats feats--4">
       <div class="ft"><h3>Amateur chef, two cuisines</h3><p>Peruvian and Italian. If you want something good, ask me to cook: <strong>lomo saltado</strong>, always with a good pisco sour, or my bell pepper pasta.</p></div>
       <div class="ft"><h3>Call of Duty: Zombies</h3><p>How I stay in touch with my high school friends. Favorite map: the OG <strong>Kino der Toten</strong>, where my record is <strong>round 39</strong>. Call of the Dead is growing on me, though.</p></div>
       <div class="ft"><h3>Future certified life coach</h3><p>A dream for after the MBA: the <strong>ICF coaching certification</strong>. I wanted to be a psychologist before I chose business, and I’m still curious about that world.</p></div>
-    </div>
-    <div class="feats feats--2">
-      <div class="ft"><h3>World debate champion</h3><p>Trained 80+ students for Model UN and won LATAM and World championships with the Peruvian Debate Society.</p></div>
-      <div class="ft"><h3>Lima → Cambridge</h3><p>Native Spanish, professional English. I can read a room in two languages and catch what gets lost between them.</p></div>
+      <div class="ft"><h3>Harvard WorldMUN 2018 champions</h3><p>Head delegate of the Peruvian team that won Harvard World Model United Nations 2018. I also trained 80+ students for Model UN.</p></div>
     </div>
   </div>
 </section>
@@ -1282,34 +1133,13 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
         </a>
       </div>
 
-      <div class="tools">
+    </div>
+    <div>
+      <div class="tools tools--side">
         <div class="tool"><b>Me</b><span>Set the goal, decided what to say and what to leave out, chose every story, number and photo, and directed the design through many rounds of feedback, including from a recruiter review.</span></div>
         <div class="tool"><b>Claude Code</b><span>Interviewed me, drafted the copy, and wrote the HTML and CSS. It also checked every version on phone and desktop before shipping.</span></div>
         <div class="tool"><b>GitHub</b><span>Hosts the code. A GitHub Actions workflow publishes it to GitHub Pages on every push, so an update goes live in about a minute.</span></div>
       </div>
-    </div>
-
-    <div class="term" aria-label="A summary of the build, shown as a terminal session">
-      <div class="term-top"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><span>~/who-i-am</span></div>
-<pre><span class="p">❯</span> <span class="w">claude</span> "Help me build a profile that
-  showcases my history in an organized,
-  intuitive way. Interview me first."
-
-<span class="c">● Interview · what it asked me</span>
-  ├ What do you want to do next, and why?
-  ├ Which story best shows how you work?
-  ├ What was your part, and the team’s?
-  ├ What failed, and what did you change?
-  ├ Who can speak to your work?
-  └ How should the page look and feel?
-
-<span class="c">● Build</span>
-  ├ index.html    HTML + CSS, no framework
-  └ checks        light/dark, mobile, a11y
-
-<span class="p">❯</span> <span class="w">git push</span> origin main
-<span class="ok">✓</span> GitHub Actions · deploy to Pages
-<span class="ok">✓</span> live at fabiomn97.github.io/Who-I-Am</pre>
     </div>
   </div>
 </section>
@@ -1367,24 +1197,6 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
     try { localStorage.setItem('theme', next); } catch (e) {}
     label();
   });
-
-  var gal = document.getElementById('gal');
-  if (gal) {
-    var btns = document.querySelectorAll('.gal-btns button');
-    document.getElementById('gal-n').textContent = gal.children.length;
-    function upd() {
-      btns[0].disabled = gal.scrollLeft < 4;
-      btns[1].disabled = gal.scrollLeft + gal.clientWidth > gal.scrollWidth - 4;
-    }
-    btns.forEach(function (b) {
-      b.addEventListener('click', function () {
-        gal.scrollBy({ left: +b.dataset.dir * gal.clientWidth * 0.85, behavior: 'smooth' });
-      });
-    });
-    gal.addEventListener('scroll', upd, { passive: true });
-    window.addEventListener('resize', upd);
-    upd();
-  }
 
 
   // Lazy images don't load in print; load them all first.
