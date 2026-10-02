@@ -13,7 +13,8 @@ a versioned changelog of my career, side projects, and interests.
 
 | Tool | What it did |
 |---|---|
-| **Claude Code** | Interviewed me over several rounds (positioning, target roles, the stories behind the numbers), drew on my CV and recommendations, then wrote and designed the site. I approved the structure and every number. |
+| **Me** | Set the goal, chose every story, number and photo, and directed the design through several rounds of feedback, including recruiter reviews. |
+| **Claude Code** | Interviewed me, drafted the copy, and wrote the HTML and CSS; checked every version on phone and desktop before shipping. |
 | **GitHub** | Hosts the code. A GitHub Actions workflow (`.github/workflows/deploy.yml`) publishes it to GitHub Pages on every push to `main`. |
 
 No framework and no build step: one hand-written `index.html` (HTML, CSS and a few lines of
