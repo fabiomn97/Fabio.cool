@@ -1,6 +1,6 @@
 # Who I Am · Fabio Macedo
 
-**Live site → [fabiomn97.github.io/Who-I-Am](https://fabiomn97.github.io/Who-I-Am/)**
+**Live site → [fabio.cool](https://fabio.cool/)**
 
 My personal website as a Product Manager: six years at AB InBev, the last as Product Manager
 for BEES, serving 300,000 shopkeepers in Peru, now an MIT Sloan MBA ’28.
@@ -37,6 +37,10 @@ live about a minute later. To update the CV, replace `assets/Fabio-Macedo-CV.pdf
 
 One-time setup (do this once): **Settings → Pages → Build and deployment → Source:
 GitHub Actions.**
+
+Custom domain: **fabio.cool**, set in Settings → Pages → Custom domain, with DNS at the
+registrar (A/AAAA records for the apex pointing to GitHub Pages, `www` CNAME to
+`fabiomn97.github.io`). The old `fabiomn97.github.io/Who-I-Am` address redirects to it.
 
 ## Notes
 
