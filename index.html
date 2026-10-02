@@ -294,13 +294,18 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 }
 
 /* ============================== feature / case study ============================== */
-.dc{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(28px,4vw,56px); align-items:center}
+.dc{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(28px,4vw,56px); align-items:start}
 .dc-text{display:grid; gap:14px; font-size:16px}
 .dc-text strong{color:var(--ink); font-weight:600}
 .dc-result{margin-top:6px; padding:14px 16px; border-radius:var(--r-md); background:var(--surface); border:1px solid var(--line); display:flex; align-items:baseline; gap:12px; flex-wrap:wrap}
 .dc-result b{font-size:28px; letter-spacing:-.04em; color:var(--ink); font-weight:600}
 .dc-result span{font-size:14px; color:var(--ink-3)}
 .dc-flow{display:grid; gap:14px}
+.dc-shot{margin:0; display:grid; grid-template-columns:minmax(0,230px) minmax(0,1fr); gap:16px; align-items:center; padding:14px; border-radius:var(--r-lg); background:var(--surface); border:1px solid var(--line)}
+.dc-shot img{width:100%; height:auto; aspect-ratio:640/830; object-fit:cover; object-position:top; border-radius:14px; border:1px solid var(--line)}
+.dc-shot figcaption{font-size:14px; color:var(--ink-3); line-height:1.5}
+@media (max-width:420px){.dc-shot{grid-template-columns:1fr}}
+.dc-shot figcaption b{display:block; color:var(--ink); font-weight:600; margin-bottom:4px}
 .flow{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:18px}
 .flow--after{border-color:color-mix(in srgb, var(--accent) 35%, transparent); box-shadow:0 0 0 4px var(--accent-soft)}
 .flow-h{font:600 11.5px/1 var(--mono); letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3)}
@@ -929,6 +934,10 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
             <span class="step-b step-b--on">Home<small>★ rewards</small></span><i>→</i><span class="step-b step-b--on">Product<small>★ rewards</small></span><i>→</i><span class="step-b step-b--on">Checkout<small>★ rewards</small></span>
           </div>
         </div>
+        <figure class="dc-shot">
+          <img src="assets/bees-home-rewards.jpg" alt="The BEES app home page today: products in the Pedido Fácil carousel show yellow 'Gana 900 puntos' and 'Gana 4,000 puntos' reward badges next to the price" width="640" height="1123" loading="lazy" decoding="async">
+          <figcaption><b>BEES today.</b> Rewards sit on the home page, next to the price: “Gana 900 puntos” means “earn 900 points.”</figcaption>
+        </figure>
       </div>
     </div>
   </div>
