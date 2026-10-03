@@ -670,6 +670,14 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 }
 @media (max-width:900px){.hero-grid{grid-template-columns:minmax(0,1fr)!important} .hero .pcard{max-width:260px!important; justify-self:start}}
 .hero-meta .chip{white-space:normal; line-height:1.35; max-width:100%}
+.hero-idrow{display:flex; align-items:center; gap:14px; margin-top:30px}
+.hero-idrow .hero-name{margin-top:0; line-height:1.45}
+.hero-avatar{display:none}
+@media (max-width:900px){
+  .hero .pcard{display:none!important}
+  .hero-avatar{display:block; width:76px; height:76px; flex:none; border-radius:18px; object-fit:cover; box-shadow:0 0 0 1px var(--line), var(--shadow-md)}
+  .hero-idrow{margin-top:24px}
+}
 </style>
 </head>
 <body>
@@ -722,7 +730,10 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
         <span><strong>Now shipping</strong> · <span class="long">Available </span>Summer 2027</span>
         <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </a>
-      <p class="hero-name">Fabio Macedo · MIT Sloan MBA ’28 · 6 years at AB InBev, 1 as Product Manager</p>
+      <div class="hero-idrow">
+        <img class="hero-avatar" src="assets/avatar-face.jpg" alt="Fabio Macedo" width="240" height="240">
+        <p class="hero-name">Fabio Macedo · MIT Sloan MBA ’28 · 6 years at AB InBev, 1 as Product Manager</p>
+      </div>
       <h1>Building platforms that pay off for <em class="s" style="white-space:nowrap">both sides.</em></h1>
       <p class="hero-sub">At <strong>BEES</strong>, AB InBev’s B2B commerce app for <strong>300,000 shopkeepers</strong> in Peru, I fixed what the product recommendation model was optimizing for (<strong>+17.1% first-time purchases</strong>), built the first monetization strategy (<strong>$2.6M EBITDA</strong> in year one), and created a co-funding model that adds <strong>$100 a month</strong> to 10,000+ shopkeepers’ income.</p>
       <p class="hero-ai"><span class="chip chip--info" style="margin-right:8px; vertical-align:2px">Builds with AI</span>~20 LLM-assisted A/B tests at BEES, and a Claude Code bot at Sloan that 5 classmates now run.</p>
