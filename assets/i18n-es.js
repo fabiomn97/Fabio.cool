@@ -37,7 +37,6 @@ window.I18N_ES = {
 "Monetization Manager": "Monetization Manager",
 "Year-one EBITDA from BEES Peru’s first monetization strategy, 13 partner companies": "EBITDA del primer año de la primera estrategia de monetización de BEES Perú, con 13 empresas socias",
 "Digitalization Lead": "Digitalization Lead",
-"Promotion rate across my three direct reports": "Tasa de ascenso de mis tres reportes directos",
 "People leadership": "Liderazgo de personas",
 "What I bring on day one": "Lo que aporto desde el primer día",
 "What I bring": "Lo que aporto",
@@ -57,7 +56,6 @@ window.I18N_ES = {
 "Where I’ve shown itA co-funding model built on shopkeepers’ unmet needs, adding $100 a month to their income.": "<span class=\"str-lbl\">Dónde lo demostré</span>Un modelo de cofinanciamiento basado en necesidades no cubiertas de los bodegueros, que suma <strong>$100 al mes</strong> a su ingreso.",
 "A good person to work with": "Una buena persona para trabajar",
 "How I workI put people first. Empathy and shared goals are how a team grows together.": "<span class=\"str-lbl\">Cómo trabajo</span>Pongo a las personas primero. La empatía y los objetivos comunes son la forma en que un equipo crece junto.",
-"Where I’ve shown itThree direct reports, all promoted. Managers, peers and reports describe me the same way: empathetic, collaborative, someone who lifts the team.": "<span class=\"str-lbl\">Dónde lo demostré</span><strong>Tres reportes directos, todos ascendidos.</strong> Jefes, pares y reportes me describen igual: empático, colaborador, alguien que levanta al equipo.",
 "Case study · ML recommendations": "<b>Caso de estudio</b> · recomendaciones con ML",
 "The model was rewarding the easy sale. I made it chase the hard one.": "El modelo premiaba la venta <em class=\"s\">fácil</em>. Lo hice ir por la difícil.",
 "BEES personalized offers for ~50 SKUs across 300,000 shopkeepers, at the SKU × customer × lever level (direct discounts and loyalty points). By 2025 the recommendation model had learned the wrong lesson, and our sales incentives were making it worse.": "BEES personalizaba ofertas para ~50 SKUs entre 300,000 bodegueros, a nivel SKU × cliente × palanca (descuentos directos y puntos de lealtad). Para 2025, el modelo de recomendación había aprendido la lección equivocada, y nuestros incentivos de ventas lo empeoraban.",
@@ -165,7 +163,6 @@ window.I18N_ES = {
 "AddedA co-funding model for shopkeepers with no precedent, built from research into unmet needs. Scaled to 10K+ shopkeepers and +$100/mo in their income, helping monetization reach an all-time high of $3M in 2024 (+15% YoY).": "<span class=\"chip chip--ok\">Nuevo</span><span>Un modelo de cofinanciamiento para bodegueros sin precedentes, construido a partir de investigación sobre necesidades no cubiertas. Escaló a <strong>más de 10K bodegueros</strong> y <strong>+$100 al mes</strong> en su ingreso, ayudando a que la monetización llegara a un máximo histórico de <strong>$3M</strong> en 2024 (+15% año contra año).</span>",
 "ShippedPay with Points: shopkeepers pay for orders with loyalty points at a better conversion rate. Monetization +18% in 2025.": "<span class=\"chip chip--accent\">Lanzado</span><span><strong>Pay with Points</strong>: los bodegueros pagan sus pedidos con puntos de lealtad a una mejor tasa de conversión. Monetización <strong>+18%</strong> en 2025.</span>",
 "AddedBEES School: bi-weekly training for 1,000+ sales reps on new features and adoption. Reps’ adherence to recommended app use +15 pp.": "<span class=\"chip chip--ok\">Nuevo</span><span><strong>BEES School</strong>: capacitación quincenal para más de 1,000 vendedores sobre nuevas funciones y adopción. Adherencia de los vendedores al uso recomendado de la app: <strong>+15 pp</strong>.</span>",
-"ImprovedManaged three direct reports on personalized growth plans: 100% promotion rate. Led my manager’s team as acting lead for 8 months in 2024.": "<span class=\"chip chip--info\">Mejorado</span><span>Lideré a tres reportes directos con planes de crecimiento personalizados: <strong>100% de ascensos</strong>. Lideré el equipo de mi jefe como encargado durante <strong>8 meses</strong> en 2024.</span>",
 "v2.0": "v2.0",
 "2021 – 2023": "2021 – 2023",
 "BEES Digitalization Lead": "BEES Digitalization Lead",
@@ -213,7 +210,6 @@ window.I18N_ES = {
 "Personal": "Personal",
 "Ongoing": "Siempre",
 "Grow the people around me": "Hacer crecer a quienes me rodean",
-"Teams where everyone develops, like the three reports who were all promoted and the 1,000+ reps trained through BEES School.": "Equipos donde todos se desarrollan, como los tres reportes que ascendieron y los más de 1,000 vendedores capacitados en BEES School.",
 "Labs · side projects": "<b>Labs</b> · proyectos personales",
 "I build the tools I wish I had.": "Construyo las herramientas que me gustaría tener.",
 "Small, real products for my own life at Sloan, built with AI. They’re where I practice the build half of the job.": "Productos pequeños y reales para mi vida en Sloan, hechos con IA. Es donde practico la parte de “construir” del rol.",
@@ -269,5 +265,9 @@ window.I18N_ES = {
 "Now shipping · Available Summer 2027": "<strong>Disponible</strong> · <span class=\"long\">Verano </span>2027",
 "Open it for a random fun fact about me. 19 inside.": "Ábrela y te saldrá un dato curioso sobre mí. Hay 19 adentro.",
 "Open →": "Abrir →",
-"It started with Winning Eleven and PES. I always picked Arsenal because it was first in alphabetical order. After a few years of playing as them, I started watching the real games, and then understanding what the club is about: achieving things the right way. Along the way I made my dad a fan too, and we’ve watched them together at the Emirates.": "Empezó con Winning Eleven y PES. Siempre elegía al Arsenal porque era el primero en orden alfabético. Después de unos años jugando con ellos, empecé a ver los partidos de verdad y a entender de qué se trata el club: lograr las cosas de la forma correcta. En el camino hice hincha a mi papá, y ya los vimos juntos en el Emirates."
+"It started with Winning Eleven and PES. I always picked Arsenal because it was first in alphabetical order. After a few years of playing as them, I started watching the real games, and then understanding what the club is about: achieving things the right way. Along the way I made my dad a fan too, and we’ve watched them together at the Emirates.": "Empezó con Winning Eleven y PES. Siempre elegía al Arsenal porque era el primero en orden alfabético. Después de unos años jugando con ellos, empecé a ver los partidos de verdad y a entender de qué se trata el club: lograr las cosas de la forma correcta. En el camino hice hincha a mi papá, y ya los vimos juntos en el Emirates.",
+"Promotion rate across my three direct reports in 2024": "Tasa de ascenso de mis tres reportes directos en 2024",
+"Where I’ve shown itIn 2024, all three of my direct reports were promoted. Managers, peers and reports describe me the same way: empathetic, collaborative, someone who lifts the team.": "<span class=\"str-lbl\">Dónde lo demostré</span><strong>En 2024, mis tres reportes directos fueron ascendidos.</strong> Jefes, pares y reportes me describen igual: empático, colaborador, alguien que levanta al equipo.",
+"ImprovedManaged three direct reports on personalized growth plans: 100% promotion rate in 2024. Led my manager’s team as acting lead for 8 months in 2024.": "<span class=\"chip chip--info\">Mejorado</span><span>Lideré a tres reportes directos con planes de crecimiento personalizados: <strong>100% de ascensos</strong> en 2024. Lideré el equipo de mi jefe como encargado durante <strong>8 meses</strong> en 2024.</span>",
+"Teams where everyone develops, like the three reports who were all promoted in 2024 and the 1,000+ reps trained through BEES School.": "Equipos donde todos se desarrollan, como los tres reportes que ascendieron en 2024 y los más de 1,000 vendedores capacitados en BEES School."
 };

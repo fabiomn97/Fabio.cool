@@ -735,11 +735,24 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 .mbox-foot{margin-top:24px; display:flex; align-items:center; justify-content:space-between; gap:12px}
 .mbox-count{font:500 12px/1 var(--mono); color:var(--ink-3)}
 .mbox-again{display:inline-flex; align-items:center; gap:8px; height:42px; padding:0 18px; border-radius:11px; border:0; cursor:pointer; background:var(--btn); color:var(--btn-fg); font:560 15px/1 var(--sans)}
+.mbox-again[hidden]{display:none}
 .mbox-again:disabled{opacity:.5; cursor:default}
 @keyframes mboxPop{0%{transform:scale(.96); opacity:0}100%{transform:none; opacity:1}}
 .mbox-fact,.mbox-val{animation:mboxPop .35s var(--ease) both}
 @media (prefers-reduced-motion:reduce){.mbox-fact,.mbox-val{animation:none}}
 @media print{.mbox-cta,.mbox{display:none!important}}
+.mbox-nav{width:38px; height:38px; flex:none; display:grid; place-items:center; border-radius:10px; border:0; cursor:pointer; background:var(--accent); color:#fff; font:700 20px/1 var(--serif); box-shadow:0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent), 0 0 16px color-mix(in srgb, var(--accent) 45%, transparent); transition:transform .18s var(--ease)}
+.mbox-nav:hover{transform:translateY(-1px) rotate(-6deg)}
+.kbd-btn kbd{display:none}
+.kbd-btn{width:38px; justify-content:center; padding:0}
+.mbox-intro{display:flex; flex-direction:column; align-items:center; gap:18px; text-align:center}
+.mbox-big{width:112px; height:112px; border-radius:24px; border:0; cursor:pointer; background:var(--accent); color:#fff; font:700 64px/1 var(--serif); box-shadow:0 0 0 6px var(--accent-soft), 0 0 40px color-mix(in srgb, var(--accent) 55%, transparent); transition:transform .2s var(--ease)}
+.mbox-big:hover{transform:translateY(-3px) rotate(-5deg)}
+.mbox-big.shake{animation:mboxShake .7s ease-in-out}
+@keyframes mboxShake{0%,100%{transform:none}15%{transform:rotate(-10deg) scale(1.04)}30%{transform:rotate(9deg)}45%{transform:rotate(-7deg)}60%{transform:rotate(6deg)}75%{transform:rotate(-3deg)}}
+.mbox-prompt{font-size:17px; color:var(--ink-2)}
+@media (prefers-reduced-motion:reduce){.mbox-big.shake{animation:none}}
+@media print{.mbox-nav{display:none!important}}
 </style>
 </head>
 <body>
@@ -762,6 +775,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       <a href="#off">Interests</a>
       <a href="#build">Build</a>
     </nav>
+    <button class="mbox-nav" id="mbox-nav" type="button" aria-haspopup="dialog" aria-label="Mystery Box: a fun fact about me" title="Mystery Box" data-noi18n>?</button>
     <button class="kbd-btn" id="cmdk-open" type="button" aria-label="Open command menu" data-noi18n><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><kbd id="cmdk-hint">⌘K</kbd></button>
     <button class="icon-btn lang-btn" id="lang" type="button" aria-label="Ver en español" data-noi18n>ES</button>
     <button class="icon-btn" id="theme" type="button" aria-label="Toggle dark mode">
@@ -849,7 +863,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       <div class="spec"><div class="spec-num">+17.1%</div><p class="spec-label">First-time purchases, H1 2026 vs. H1 2025, after the new model launched</p><p class="spec-src">Case study ↓</p></div>
       <div class="spec"><div class="spec-num">10K<small>+</small></div><p class="spec-label">Shopkeepers on a co-funding model I created with no precedent, adding $100/mo to their income</p><p class="spec-src">Monetization Manager</p></div>
       <div class="spec"><div class="spec-num">$2.6M</div><p class="spec-label">Year-one EBITDA from BEES Peru’s first monetization strategy, 13 partner companies</p><p class="spec-src">Digitalization Lead</p></div>
-      <div class="spec"><div class="spec-num">100%</div><p class="spec-label">Promotion rate across my three direct reports</p><p class="spec-src">People leadership</p></div>
+      <div class="spec"><div class="spec-num">100%</div><p class="spec-label">Promotion rate across my three direct reports in 2024</p><p class="spec-src">People leadership</p></div>
     </div>
     <div class="fit fit--specs">
       <div class="fit-box">
@@ -860,7 +874,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
           <div class="str-row" role="row"><div class="str-name" role="rowheader">A view of the whole business</div><div class="str-how" role="cell"><span class="str-lbl">How I work</span>I read a product through its P&amp;L: pricing, loyalty and monetization.</div><div class="str-proof" role="cell"><span class="str-lbl">Where I’ve shown it</span>A new monetization model that built <strong>$2.6M in year-one EBITDA</strong> and strengthened loyalty at the same time.</div></div>
           <div class="str-row" role="row"><div class="str-name" role="rowheader">One shared vision of success</div><div class="str-how" role="cell"><span class="str-lbl">How I work</span>I bring people on board and align them on what success looks like.</div><div class="str-proof" role="cell"><span class="str-lbl">Where I’ve shown it</span>Skeptical bosses won over with data, <strong>C‑suite buy-in</strong> for the loyalty redesign, and <strong>1,000+ sales reps</strong> trained to use what we shipped.</div></div>
           <div class="str-row" role="row"><div class="str-name" role="rowheader">Customer obsession</div><div class="str-how" role="cell"><span class="str-lbl">How I work</span>I start with the customer: what they value, what problems they have, and what we can do about them.</div><div class="str-proof" role="cell"><span class="str-lbl">Where I’ve shown it</span>A co-funding model built on shopkeepers’ unmet needs, adding <strong>$100 a month</strong> to their income.</div></div>
-          <div class="str-row" role="row"><div class="str-name" role="rowheader">A good person to work with</div><div class="str-how" role="cell"><span class="str-lbl">How I work</span>I put people first. Empathy and shared goals are how a team grows together.</div><div class="str-proof" role="cell"><span class="str-lbl">Where I’ve shown it</span><strong>Three direct reports, all promoted.</strong> Managers, peers and reports describe me the same way: empathetic, collaborative, someone who lifts the team.</div></div>
+          <div class="str-row" role="row"><div class="str-name" role="rowheader">A good person to work with</div><div class="str-how" role="cell"><span class="str-lbl">How I work</span>I put people first. Empathy and shared goals are how a team grows together.</div><div class="str-proof" role="cell"><span class="str-lbl">Where I’ve shown it</span><strong>In 2024, all three of my direct reports were promoted.</strong> Managers, peers and reports describe me the same way: empathetic, collaborative, someone who lifts the team.</div></div>
         </div>
       </div>
     </div>
@@ -1126,7 +1140,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
             <li><span class="chip chip--ok">Added</span><span>A co-funding model for shopkeepers with no precedent, built from research into unmet needs. Scaled to <strong>10K+ shopkeepers</strong> and <strong>+$100/mo</strong> in their income, helping monetization reach an all-time high of <strong>$3M</strong> in 2024 (+15% YoY).</span></li>
             <li><span class="chip chip--accent">Shipped</span><span><strong>Pay with Points</strong>: shopkeepers pay for orders with loyalty points at a better conversion rate. Monetization <strong>+18%</strong> in 2025.</span></li>
             <li><span class="chip chip--ok">Added</span><span><strong>BEES School</strong>: bi-weekly training for 1,000+ sales reps on new features and adoption. Reps’ adherence to recommended app use <strong>+15 pp</strong>.</span></li>
-            <li><span class="chip chip--info">Improved</span><span>Managed three direct reports on personalized growth plans: <strong>100% promotion rate</strong>. Led my manager’s team as acting lead for <strong>8 months</strong> in 2024.</span></li>
+            <li><span class="chip chip--info">Improved</span><span>Managed three direct reports on personalized growth plans: <strong>100% promotion rate</strong> in 2024. Led my manager’s team as acting lead for <strong>8 months</strong> in 2024.</span></li>
           </ul>
         </article>
       </li>
@@ -1228,7 +1242,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       </div>
       <div class="col">
         <div class="col-h"><b>Personal</b><span class="chip">Ongoing</span></div>
-                <div class="tk"><h4>Grow the people around me</h4><p>Teams where everyone develops, like the three reports who were all promoted and the 1,000+ reps trained through BEES School.</p></div>
+                <div class="tk"><h4>Grow the people around me</h4><p>Teams where everyone develops, like the three reports who were all promoted in 2024 and the 1,000+ reps trained through BEES School.</p></div>
       </div>
     </div>
 

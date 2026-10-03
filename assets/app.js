@@ -76,7 +76,7 @@
     if (lb) { lb.textContent = t().langBtn; lb.setAttribute('aria-label', t().langLabel); }
     renderVersion();
     if (cmd.list) cmd.render();
-    if (MB.w && MB.w.classList.contains('open')) MB.paint();
+    if (MB.w && MB.w.classList.contains('open')) { if (MB.cur === null) MB.intro(); else MB.paint(); }
     store('lang', lang);
   }
   var langBtn = document.getElementById('lang');
@@ -127,6 +127,7 @@
   var isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
   var hint = document.getElementById('cmdk-hint');
   if (hint) hint.textContent = isMac ? '⌘K' : 'Ctrl K';
+  var cmdBtn = document.getElementById('cmdk-open'); if (cmdBtn) cmdBtn.title = 'Search (' + (isMac ? '⌘K' : 'Ctrl+K') + ')';
   function toast(msg) {
     var el = document.querySelector('.toast');
     if (!el) { el = document.createElement('div'); el.className = 'toast'; el.setAttribute('role', 'status'); document.body.appendChild(el); }
@@ -242,8 +243,8 @@
   ];
   var MB = {
     L: {
-      en: {title: 'Mystery Box', again: 'Another one', again2: 'Shuffle again', of: ' of ', close: 'Close', spin: ['Rolling the box…', 'Shaking it…', 'Almost…'], done: 'You found all of them. Shuffling the box again.', cmd: 'Open the Mystery Box'},
-      es: {title: 'Mystery Box', again: 'Otro más', again2: 'Mezclar de nuevo', of: ' de ', close: 'Cerrar', spin: ['Girando la caja…', 'Agitándola…', 'Casi…'], done: 'Los encontraste todos. Mezclando la caja otra vez.', cmd: 'Abrir la Mystery Box'}
+      en: {title: 'Mystery Box', prompt: 'Click the box for a fun fact about me', again: 'Another one', again2: 'Shuffle again', of: ' of ', close: 'Close', spin: ['Rolling the box…', 'Shaking it…', 'Almost…'], done: 'You found all of them. Shuffling the box again.', cmd: 'Open the Mystery Box'},
+      es: {title: 'Mystery Box', prompt: 'Haz clic en la caja para un dato curioso sobre mí', again: 'Otro más', again2: 'Mezclar de nuevo', of: ' de ', close: 'Cerrar', spin: ['Girando la caja…', 'Agitándola…', 'Casi…'], done: 'Los encontraste todos. Mezclando la caja otra vez.', cmd: 'Abrir la Mystery Box'}
     },
     deck: [], seen: 0, cur: null, busy: false,
     shuffle: function () { var a = FACTS.map(function (_, i) { return i; }); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var x = a[i]; a[i] = a[j]; a[j] = x; } this.deck = a; this.seen = 0; },
@@ -259,7 +260,7 @@
       this.btn.addEventListener('click', function () { self.draw(); });
       w.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') { e.preventDefault(); self.close(); }
-        if (e.key === 'Tab') { var f = [w.querySelector('.mbox-x'), self.btn], i = f.indexOf(document.activeElement); e.preventDefault(); f[(i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus(); }
+        if (e.key === 'Tab') { var f = [w.querySelector('.mbox-x'), self.big && self.big.isConnected ? self.big : self.btn], i = f.indexOf(document.activeElement); e.preventDefault(); f[(i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus(); }
       });
     },
     labels: function () {
@@ -272,7 +273,7 @@
     paint: function () {
       if (this.cur === null) return;
       var f = FACTS[this.cur];
-      this.stage.innerHTML = '<p class="mbox-fact">' + f[lang] + '</p><span class="mbox-val">→ ' + f.v[lang === 'es' ? 1 : 0] + '</span>';
+      this.stage.innerHTML = '<p class="mbox-fact">' + f[lang] + '</p>';
       this.labels();
     },
     draw: function () {
@@ -280,20 +281,29 @@
       if (this.seen >= FACTS.length) this.shuffle();
       var self = this, L = this.L[lang], reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
       var next = this.deck[this.seen++];
-      if (reduce) { this.cur = next; this.paint(); return; }
-      this.busy = true; this.btn.disabled = true; var k = 0;
-      this.stage.innerHTML = '<p class="mbox-spin"></p>';
-      var el = this.stage.firstChild;
+      if (reduce) { this.btn.hidden = false; this.cur = next; this.paint(); return; }
+      this.busy = true; this.btn.disabled = true; this.btn.hidden = false; var k = 0;
+      var el;
+      if (this.big && this.big.isConnected) { this.big.classList.add('shake'); el = this.stage.querySelector('.mbox-prompt'); }
+      else { this.stage.innerHTML = '<p class="mbox-spin"></p>'; el = this.stage.firstChild; }
       var timer = setInterval(function () { el.textContent = L.spin[k % L.spin.length]; k++; }, 220);
       el.textContent = L.spin[0];
       setTimeout(function () { clearInterval(timer); self.busy = false; self.btn.disabled = false; self.cur = next; self.paint(); self.btn.focus(); }, 700);
+    },
+    intro: function () {
+      var self = this, L = this.L[lang];
+      this.cur = null;
+      this.stage.innerHTML = '<div class="mbox-intro"><button class="mbox-big" type="button" aria-label="' + L.prompt + '">?</button><p class="mbox-prompt">' + L.prompt + '</p></div>';
+      this.big = this.stage.querySelector('.mbox-big');
+      this.big.addEventListener('click', function () { self.draw(); });
+      this.btn.hidden = true; this.labels();
     },
     show: function () {
       if (!this.w) this.build();
       if (!this.deck.length) this.shuffle();
       this.last = document.activeElement;
       this.w.classList.add('open'); document.body.style.overflow = 'hidden';
-      this.labels(); this.btn.focus(); this.draw();
+      this.intro(); this.big.focus();
     },
     close: function () {
       if (!this.w) return;
@@ -301,8 +311,7 @@
       if (this.last && this.last.focus) this.last.focus();
     }
   };
-  var mbBtn = document.getElementById('mbox-open');
-  if (mbBtn) mbBtn.addEventListener('click', function () { MB.show(); });
+  ['mbox-open', 'mbox-nav'].forEach(function (id) { var b = document.getElementById(id); if (b) b.addEventListener('click', function () { MB.show(); }); });
 
   /* ------------------------------------------------------------------ */
   /* Start                                                               */
