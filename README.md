@@ -45,5 +45,10 @@ registrar (A/AAAA records for the apex pointing to GitHub Pages, `www` CNAME to
 ## Notes
 
 - Light and dark themes: follows the OS, with a toggle that remembers the choice.
+- English / Spanish toggle (`assets/i18n-es.js`, keyed by the English text; anything without a
+  translation stays in English, and recommendation quotes are never translated).
+- Command menu (⌘K / Ctrl+K) to jump to sections, copy the email or download the CV.
+- Live version: the nav and footer read the latest commit from the GitHub API.
+- Case-study simulator: an illustrative model of the discount-budget trade-off (`assets/app.js`).
 - Responsive from 320 px; the case-study demo works without JavaScript (it's pure CSS).
 - Prints cleanly; respects reduced-motion settings.
