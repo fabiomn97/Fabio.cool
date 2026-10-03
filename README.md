@@ -1,4 +1,4 @@
-# Who I Am · Fabio Macedo
+# Personal Website · Fabio.cool
 
 **Live site → [fabio.cool](https://fabio.cool/)**
 
