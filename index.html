@@ -708,6 +708,38 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 .toast.show{opacity:1; transform:translateX(-50%) translateY(0)}
 @media print{.kbd-btn,.lang-btn,.cmdk,.toast{display:none!important}}
 .nav-links a[href="#roadmap"],.nav-links a[href="#build"]{display:none}
+
+/* ============================== mystery box ============================== */
+.mbox-cta{margin-top:14px; width:100%; display:flex; align-items:center; gap:16px; text-align:left; padding:18px 20px; border-radius:var(--r-lg); cursor:pointer; color:var(--btn-fg); background:var(--btn); border:1px solid transparent; position:relative; overflow:hidden; font:inherit; transition:transform .18s var(--ease)}
+.mbox-cta::after{content:""; position:absolute; width:340px; height:340px; right:-120px; top:-170px; background:radial-gradient(closest-side, color-mix(in srgb, var(--accent) 55%, transparent), transparent); pointer-events:none}
+.mbox-cta:hover{transform:translateY(-2px)}
+.mbox-ico{width:48px; height:48px; flex:none; display:grid; place-items:center; border-radius:12px; background:var(--accent); color:#fff; font:700 26px/1 var(--serif); box-shadow:0 0 24px color-mix(in srgb, var(--accent) 60%, transparent)}
+.mbox-txt{display:grid; gap:3px; position:relative; z-index:1}
+.mbox-txt b{font-size:18px; font-weight:620; letter-spacing:-.02em}
+.mbox-txt span{font-size:14.5px; opacity:.75}
+.mbox-go{margin-left:auto; font:600 12px/1 var(--mono); letter-spacing:.05em; text-transform:uppercase; padding:9px 12px; border-radius:9px; background:color-mix(in srgb, var(--btn-fg) 12%, transparent); position:relative; z-index:1; flex:none}
+@media (max-width:480px){.mbox-go{display:none}}
+.mbox{position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center; padding:16px; background:rgba(10,10,12,.55); -webkit-backdrop-filter:blur(5px); backdrop-filter:blur(5px)}
+.mbox.open{display:flex}
+.mbox-card{position:relative; width:100%; max-width:520px; border-radius:22px; padding:28px; background:var(--surface); border:1px solid var(--line); box-shadow:var(--shadow-lg); overflow:hidden}
+.mbox-card::before{content:""; position:absolute; inset:0 0 auto; height:5px; background:linear-gradient(90deg, var(--accent), var(--warn))}
+.mbox-top{display:flex; align-items:center; justify-content:space-between; gap:12px}
+.mbox-kick{display:flex; align-items:center; gap:10px; font:600 12px/1 var(--mono); letter-spacing:.07em; text-transform:uppercase; color:var(--accent-ink)}
+.mbox-kick i{width:28px; height:28px; display:grid; place-items:center; border-radius:8px; background:var(--accent); color:#fff; font:700 16px/1 var(--serif); font-style:normal}
+.mbox-x{width:34px; height:34px; border-radius:9px; border:1px solid var(--line); background:transparent; color:var(--ink-2); cursor:pointer; font-size:18px; line-height:1}
+.mbox-stage{min-height:170px; margin-top:22px; display:flex; flex-direction:column; justify-content:center}
+.mbox-fact{font-size:clamp(18px,2.4vw,21px); line-height:1.5; color:var(--ink-2); letter-spacing:-.01em}
+.mbox-fact strong{color:var(--ink); font-weight:620}
+.mbox-val{margin-top:16px; align-self:flex-start; font:600 12px/1 var(--mono); letter-spacing:.04em; padding:7px 10px; border-radius:8px; background:var(--accent-soft); color:var(--accent-ink)}
+.mbox-spin{font:600 clamp(18px,2.4vw,21px)/1.4 var(--mono); color:var(--ink-3); text-align:center; filter:blur(.4px)}
+.mbox-foot{margin-top:24px; display:flex; align-items:center; justify-content:space-between; gap:12px}
+.mbox-count{font:500 12px/1 var(--mono); color:var(--ink-3)}
+.mbox-again{display:inline-flex; align-items:center; gap:8px; height:42px; padding:0 18px; border-radius:11px; border:0; cursor:pointer; background:var(--btn); color:var(--btn-fg); font:560 15px/1 var(--sans)}
+.mbox-again:disabled{opacity:.5; cursor:default}
+@keyframes mboxPop{0%{transform:scale(.96); opacity:0}100%{transform:none; opacity:1}}
+.mbox-fact,.mbox-val{animation:mboxPop .35s var(--ease) both}
+@media (prefers-reduced-motion:reduce){.mbox-fact,.mbox-val{animation:none}}
+@media print{.mbox-cta,.mbox{display:none!important}}
 </style>
 </head>
 <body>
@@ -1257,7 +1289,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
     <article class="afc">
       <div class="afc-text">
         <h3>Arsenal FC, #1 fan</h3>
-        <p>It started with Winning Eleven and PES. I always picked Arsenal because it was first in alphabetical order. After a few years of playing as them, I started watching the real games, and then understanding what the club is about: achieving things the right way. Along the way I made my dad a fan too, and now we go to the Emirates together.</p>
+        <p>It started with Winning Eleven and PES. I always picked Arsenal because it was first in alphabetical order. After a few years of playing as them, I started watching the real games, and then understanding what the club is about: achieving things the right way. Along the way I made my dad a fan too, and we’ve watched them together at the Emirates.</p>
         <p class="afc-motto"><span lang="la">Victoria Concordia Crescit</span><small>Victory through harmony · the club’s motto, and now mine</small></p>
       </div>
       <div class="gal-wrap">
@@ -1276,6 +1308,11 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       <div class="ft"><h3>Harvard WorldMUN 2018 champions</h3><p>Head delegate of the Peruvian team that won Harvard World Model United Nations 2018. I also trained 80+ students for Model UN.</p></div>
       <div class="ft"><h3>Lima → Cambridge</h3><p>Native Spanish, professional English. I can read a room in two languages and catch what gets lost between them.</p></div>
     </div>
+    <button class="mbox-cta" id="mbox-open" type="button" aria-haspopup="dialog">
+      <span class="mbox-ico" aria-hidden="true">?</span>
+      <span class="mbox-txt"><b>Mystery Box</b><span>Open it for a random fun fact about me. 19 inside.</span></span>
+      <span class="mbox-go" aria-hidden="true">Open →</span>
+    </button>
   </div>
 </section>
 

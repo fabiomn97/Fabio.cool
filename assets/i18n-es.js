@@ -234,7 +234,6 @@ window.I18N_ES = {
 "Interests · outside of work": "<b>Intereses</b> · fuera del trabajo",
 "What I do when I’m not shipping.": "Lo que hago cuando no estoy lanzando productos.",
 "Arsenal FC, #1 fan": "Arsenal FC, hincha #1",
-"It started with Winning Eleven and PES. I always picked Arsenal because it was first in alphabetical order. After a few years of playing as them, I started watching the real games, and then understanding what the club is about: achieving things the right way. Along the way I made my dad a fan too, and now we go to the Emirates together.": "Empezó con Winning Eleven y PES. Siempre elegía al Arsenal porque era el primero en orden alfabético. Después de unos años jugando con ellos, empecé a ver los partidos de verdad y a entender de qué se trata el club: lograr las cosas de la forma correcta. En el camino hice hincha a mi papá, y ahora vamos juntos al Emirates.",
 "Victoria Concordia CrescitVictory through harmony · the club’s motto, and now mine": "<span lang=\"la\">Victoria Concordia Crescit</span><small>La victoria a través de la armonía · el lema del club, y ahora el mío</small>",
 "First Arsenal game! 2-0 win vs. Watford · 2018": "¡Primer partido del Arsenal! 2-0 a Watford · 2018",
 "Back at the Emirates with my dad! 3-1 vs. Nottingham Forest · 2024": "¡De vuelta en el Emirates con mi papá! 3-1 a Nottingham Forest · 2024",
@@ -267,5 +266,8 @@ window.I18N_ES = {
 "Added": "Nuevo",
 "Improved": "Mejorado",
 "What I took from it The model was doing exactly what we rewarded. When a metric is hit and the goal is missed, look at the incentives before the algorithm.": "<b>Qué aprendí</b> El modelo hacía exactamente lo que premiábamos. Cuando una métrica se cumple y la meta no, revisa los incentivos antes que el algoritmo.",
-"Now shipping · Available Summer 2027": "<strong>Disponible</strong> · <span class=\"long\">Verano </span>2027"
+"Now shipping · Available Summer 2027": "<strong>Disponible</strong> · <span class=\"long\">Verano </span>2027",
+"Open it for a random fun fact about me. 19 inside.": "Ábrela y te saldrá un dato curioso sobre mí. Hay 19 adentro.",
+"Open →": "Abrir →",
+"It started with Winning Eleven and PES. I always picked Arsenal because it was first in alphabetical order. After a few years of playing as them, I started watching the real games, and then understanding what the club is about: achieving things the right way. Along the way I made my dad a fan too, and we’ve watched them together at the Emirates.": "Empezó con Winning Eleven y PES. Siempre elegía al Arsenal porque era el primero en orden alfabético. Después de unos años jugando con ellos, empecé a ver los partidos de verdad y a entender de qué se trata el club: lograr las cosas de la forma correcta. En el camino hice hincha a mi papá, y ya los vimos juntos en el Emirates."
 };

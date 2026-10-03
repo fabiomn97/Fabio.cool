@@ -46,8 +46,8 @@
   /*    in assets/i18n-es.js. Anything without a translation stays in     */
   /*    English, and quotes from recommendations are never translated.    */
   /* ------------------------------------------------------------------ */
-  var SEL = '.context,.announce>span:not(.pulse):not(.go),h1,h2,h3,h4,p,li,dt,dd,figcaption,.chip,.kicker,.btn,.nav-links a,.nav-strip a,.str-head>div,.str-name,.str-how,.str-proof,.spec-src,.result span,.kpi-l,.demo-title,.seg label,.app-bar b,.app-bar span,.fold,.see-more,.key>span,.invest-h span,.legend span,.flow-h,.step-b,.col-h b,.lab .link,.lnk b,.tool b,.tool span,.ft h3,.rv-src,.rel-tag,.trust-label,.ver-date,.rel-org,.lvl,.reviews-foot a,.cta-links small,.spec-label,.dc-result span,.patch-h,.ver,.gal-item figcaption';
-  var SKIP = '[data-noi18n],.rv blockquote,.rv .more,.who,pre,.brand,script,.cmdk,.toast';
+  var SEL = '.mbox-txt>span,.mbox-go,.context,.announce>span:not(.pulse):not(.go),h1,h2,h3,h4,p,li,dt,dd,figcaption,.chip,.kicker,.btn,.nav-links a,.nav-strip a,.str-head>div,.str-name,.str-how,.str-proof,.spec-src,.result span,.kpi-l,.demo-title,.seg label,.app-bar b,.app-bar span,.fold,.see-more,.key>span,.invest-h span,.legend span,.flow-h,.step-b,.col-h b,.lab .link,.lnk b,.tool b,.tool span,.ft h3,.rv-src,.rel-tag,.trust-label,.ver-date,.rel-org,.lvl,.reviews-foot a,.cta-links small,.spec-label,.dc-result span,.patch-h,.ver,.gal-item figcaption';
+  var SKIP = '[data-noi18n],.mbox,.rv blockquote,.rv .more,.who,pre,.brand,script,.cmdk,.toast';
   var blocks = null;
   function norm(s) { return s.replace(/\s+/g, ' ').trim(); }
   function collect() {
@@ -76,6 +76,7 @@
     if (lb) { lb.textContent = t().langBtn; lb.setAttribute('aria-label', t().langLabel); }
     renderVersion();
     if (cmd.list) cmd.render();
+    if (MB.w && MB.w.classList.contains('open')) MB.paint();
     store('lang', lang);
   }
   var langBtn = document.getElementById('lang');
@@ -146,6 +147,7 @@
         {g: t().cmdActions, ic: '↓', label: t().downloadCv, run: function () { var a = document.createElement('a'); a.href = 'assets/Fabio-Macedo-CV.pdf'; a.download = ''; document.body.appendChild(a); a.click(); a.remove(); }},
         {g: t().cmdActions, ic: 'in', label: t().linkedin, run: function () { window.open('https://www.linkedin.com/in/fabiomacedonaters', '_blank', 'noopener'); }},
         {g: t().cmdActions, ic: '☏', label: t().call, run: function () { location.href = 'tel:+18572508074'; }},
+        {g: t().cmdActions, ic: '?', label: MB.L[lang].cmd, run: function () { MB.show(); }},
         {g: t().cmdActions, ic: '◐', label: t().theme, hint: 'T', run: function () { document.getElementById('theme').click(); }},
         {g: t().cmdActions, ic: 'Aa', label: t().lang, hint: 'L', run: function () { applyLang(lang === 'en' ? 'es' : 'en'); }}
       );
@@ -212,6 +214,95 @@
   });
   var openBtn = document.getElementById('cmdk-open');
   if (openBtn) openBtn.addEventListener('click', function () { cmd.show(); });
+
+
+  /* ------------------------------------------------------------------ */
+  /* 4. Mystery Box: random fun facts, no repeats until the deck is empty */
+  /* ------------------------------------------------------------------ */
+  var FACTS = [
+    {en: '<strong>I became an Arsenal fan because of the alphabet.</strong> Playing Winning Eleven as a kid, Arsenal was the first team on the list, so I always picked them. Years later, I still do, now for the right reasons.', es: '<strong>Me hice hincha del Arsenal por el abecedario.</strong> De niño, jugando Winning Eleven, el Arsenal era el primer equipo de la lista, así que siempre lo elegía. Años después lo sigo eligiendo, ahora por las razones correctas.', v: ['Loyalty', 'Lealtad']},
+    {en: '<strong>I turned my dad into an Arsenal fan.</strong> We even traveled to London together once to watch them at the Emirates. My best stakeholder alignment to date.', es: '<strong>Convertí a mi papá en hincha del Arsenal.</strong> Hasta viajamos juntos una vez a Londres para verlos en el Emirates. Mi mejor alineamiento de stakeholders hasta hoy.', v: ['Influence', 'Influencia']},
+    {en: '<strong>The day I left Lima to start my MBA, the team I support won a trophy.</strong> I watched Arsenal lift the Community Shield with my dad, on my last day at home.', es: '<strong>El día que dejé Lima para empezar mi MBA, mi equipo ganó un trofeo.</strong> Vi al Arsenal levantar la Community Shield con mi papá, en mi último día en casa.', v: ['Family', 'Familia']},
+    {en: '<strong>My personal motto is Arsenal’s: <em>Victoria Concordia Crescit</em>,</strong> “victory through harmony.” It’s also how I like to run a team.', es: '<strong>Mi lema personal es el del Arsenal: <em>Victoria Concordia Crescit</em>,</strong> “la victoria a través de la armonía”. También es como me gusta liderar un equipo.', v: ['Collaboration', 'Colaboración']},
+    {en: '<strong>My record in Call of Duty: Zombies is round 39</strong> on Kino der Toten, the classic map. Round 40 is on my roadmap.', es: '<strong>Mi récord en Call of Duty: Zombies es la ronda 39</strong> en Kino der Toten, el mapa clásico. La ronda 40 está en mi roadmap.', v: ['Persistence', 'Persistencia']},
+    {en: '<strong>Call of Duty: Zombies is how I stay close to my high school friends.</strong> Different cities, same lobby.', es: '<strong>Call of Duty: Zombies es mi forma de seguir cerca de mis amigos del colegio.</strong> Distintas ciudades, el mismo lobby.', v: ['Keeping people close', 'Mantener a la gente cerca']},
+    {en: '<strong>I love to cook. If you want to eat well, ask me for lomo saltado,</strong> a classic Peruvian stir-fry, always with a pisco sour.', es: '<strong>Me encanta cocinar. Si quieres comer bien, pídeme un lomo saltado,</strong> un clásico salteado peruano, siempre con un pisco sour.', v: ['Craft', 'Oficio']},
+    {en: '<strong>I cook two cuisines, Peruvian and Italian.</strong> My Italian signature is a bell pepper pasta.', es: '<strong>Cocino dos cocinas, peruana e italiana.</strong> Mi plato italiano estrella es una pasta de pimiento.', v: ['Range', 'Versatilidad']},
+    {en: '<strong>Before choosing business, I wanted to be a psychologist.</strong> That curiosity about why people do what they do never left; it’s always on my mind when I think about users and teammates.', es: '<strong>Antes de elegir negocios, quería ser psicólogo.</strong> Esa curiosidad por entender por qué la gente hace lo que hace nunca se fue; siempre la tengo presente cuando pienso en usuarios y en mi equipo.', v: ['Empathy', 'Empatía']},
+    {en: '<strong>My best product insight started with a hypothesis I got wrong.</strong> The data said no, so I dropped it and kept digging until I found the real problem.', es: '<strong>Mi mejor insight de producto empezó con una hipótesis equivocada.</strong> Los datos dijeron que no, así que la descarté y seguí investigando hasta encontrar el problema real.', v: ['Intellectual honesty', 'Honestidad intelectual']},
+    {en: '<strong>I’m a debate world champion.</strong> I was head delegate of the Peruvian team that won Harvard World Model United Nations in 2018. What stuck with me: losing an argument gracefully and changing my mind fast.', es: '<strong>Soy campeón mundial de debate.</strong> Fui jefe de delegación del equipo peruano que ganó Harvard World Model United Nations en 2018. Lo que me quedó: perder una discusión con elegancia y cambiar de opinión rápido.', v: ['Open-mindedness', 'Mente abierta']},
+    {en: '<strong>I’ve trained 80+ students for Model UN, and 1,000+ sales reps for an app I helped build.</strong> Teaching is one of my favorite parts of any job.', es: '<strong>He entrenado a más de 80 estudiantes para Modelo ONU y a más de 1,000 vendedores para una app que ayudé a construir.</strong> Enseñar es de las partes que más disfruto de cualquier trabajo.', v: ['Teaching', 'Enseñar']},
+    {en: '<strong>For 8 months, I led my manager’s team</strong> while also doing my own job.', es: '<strong>Durante 8 meses lideré el equipo de mi jefe</strong> mientras hacía mi propio trabajo.', v: ['Trust', 'Confianza']},
+    {en: '<strong>I was 1 of 3 people chosen from 1,700+ applicants</strong> for AB InBev’s global trainee program, then spent six years earning it.', es: '<strong>Fui 1 de 3 personas elegidas entre más de 1,700 postulantes</strong> para el programa global de trainees de AB InBev, y pasé seis años ganándome ese lugar.', v: ['Work ethic', 'Ética de trabajo']},
+    {en: '<strong>I built a bot so I’d never miss a class deadline.</strong> 15+ MIT classmates asked how to build their own.', es: '<strong>Construí un bot para no perderme nunca una entrega de clase.</strong> Más de 15 compañeros del MIT me pidieron cómo hacer el suyo.', v: ['Solve your own problems', 'Resolver tus propios problemas']},
+    {en: '<strong>This website’s domain failed for 24 hours because of one invisible character.</strong> Finding it was its own little product investigation.', es: '<strong>El dominio de este sitio falló durante 24 horas por un solo carácter invisible.</strong> Encontrarlo fue su propia pequeña investigación de producto.', v: ['Attention to detail', 'Atención al detalle']},
+    {en: '<strong>My first product job was an internship building a training app for a sales force.</strong> Years later, I’m still building tools for salespeople and shopkeepers.', es: '<strong>Mi primer trabajo de producto fue una práctica construyendo una app de capacitación para una fuerza de ventas.</strong> Años después, sigo construyendo herramientas para vendedores y bodegueros.', v: ['Consistency', 'Consistencia']},
+    {en: '<strong>In college, I helped a mental-health nonprofit double its yearly donations,</strong> just by fixing how they collected and used their data.', es: '<strong>En la universidad ayudé a una ONG de salud mental a duplicar sus donaciones anuales,</strong> solo arreglando cómo recolectaban y usaban sus datos.', v: ['Impact', 'Impacto']},
+    {en: '<strong>I helped create a beer-loving digital influencer from scratch.</strong> The character hit 5M+ views and 200K followers on Instagram and TikTok in three months.', es: '<strong>Ayudé a crear desde cero un influencer digital amante de la cerveza.</strong> El personaje superó 5M de vistas y 200K seguidores en Instagram y TikTok en tres meses.', v: ['Creativity', 'Creatividad']}
+  ];
+  var MB = {
+    L: {
+      en: {title: 'Mystery Box', again: 'Another one', again2: 'Shuffle again', of: ' of ', close: 'Close', spin: ['Rolling the box…', 'Shaking it…', 'Almost…'], done: 'You found all of them. Shuffling the box again.', cmd: 'Open the Mystery Box'},
+      es: {title: 'Mystery Box', again: 'Otro más', again2: 'Mezclar de nuevo', of: ' de ', close: 'Cerrar', spin: ['Girando la caja…', 'Agitándola…', 'Casi…'], done: 'Los encontraste todos. Mezclando la caja otra vez.', cmd: 'Abrir la Mystery Box'}
+    },
+    deck: [], seen: 0, cur: null, busy: false,
+    shuffle: function () { var a = FACTS.map(function (_, i) { return i; }); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var x = a[i]; a[i] = a[j]; a[j] = x; } this.deck = a; this.seen = 0; },
+    build: function () {
+      var w = document.createElement('div');
+      w.className = 'mbox'; w.setAttribute('role', 'dialog'); w.setAttribute('aria-modal', 'true'); w.setAttribute('aria-labelledby', 'mbox-title');
+      w.innerHTML = '<div class="mbox-card"><div class="mbox-top"><span class="mbox-kick" id="mbox-title"><i aria-hidden="true">?</i><span></span></span><button class="mbox-x" type="button">×</button></div><div class="mbox-stage" aria-live="polite"></div><div class="mbox-foot"><span class="mbox-count"></span><button class="mbox-again" type="button"></button></div></div>';
+      document.body.appendChild(w);
+      this.w = w; this.stage = w.querySelector('.mbox-stage'); this.count = w.querySelector('.mbox-count'); this.btn = w.querySelector('.mbox-again');
+      var self = this;
+      w.addEventListener('mousedown', function (e) { if (e.target === w) self.close(); });
+      w.querySelector('.mbox-x').addEventListener('click', function () { self.close(); });
+      this.btn.addEventListener('click', function () { self.draw(); });
+      w.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { e.preventDefault(); self.close(); }
+        if (e.key === 'Tab') { var f = [w.querySelector('.mbox-x'), self.btn], i = f.indexOf(document.activeElement); e.preventDefault(); f[(i + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus(); }
+      });
+    },
+    labels: function () {
+      var L = this.L[lang];
+      this.w.querySelector('.mbox-kick span').textContent = L.title;
+      this.w.querySelector('.mbox-x').setAttribute('aria-label', L.close);
+      this.btn.textContent = this.seen >= FACTS.length ? L.again2 : L.again;
+      this.count.textContent = this.seen ? this.seen + L.of + FACTS.length : '';
+    },
+    paint: function () {
+      if (this.cur === null) return;
+      var f = FACTS[this.cur];
+      this.stage.innerHTML = '<p class="mbox-fact">' + f[lang] + '</p><span class="mbox-val">→ ' + f.v[lang === 'es' ? 1 : 0] + '</span>';
+      this.labels();
+    },
+    draw: function () {
+      if (this.busy) return;
+      if (this.seen >= FACTS.length) this.shuffle();
+      var self = this, L = this.L[lang], reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var next = this.deck[this.seen++];
+      if (reduce) { this.cur = next; this.paint(); return; }
+      this.busy = true; this.btn.disabled = true; var k = 0;
+      this.stage.innerHTML = '<p class="mbox-spin"></p>';
+      var el = this.stage.firstChild;
+      var timer = setInterval(function () { el.textContent = L.spin[k % L.spin.length]; k++; }, 220);
+      el.textContent = L.spin[0];
+      setTimeout(function () { clearInterval(timer); self.busy = false; self.btn.disabled = false; self.cur = next; self.paint(); self.btn.focus(); }, 700);
+    },
+    show: function () {
+      if (!this.w) this.build();
+      if (!this.deck.length) this.shuffle();
+      this.last = document.activeElement;
+      this.w.classList.add('open'); document.body.style.overflow = 'hidden';
+      this.labels(); this.btn.focus(); this.draw();
+    },
+    close: function () {
+      if (!this.w) return;
+      this.w.classList.remove('open'); document.body.style.overflow = '';
+      if (this.last && this.last.focus) this.last.focus();
+    }
+  };
+  var mbBtn = document.getElementById('mbox-open');
+  if (mbBtn) mbBtn.addEventListener('click', function () { MB.show(); });
 
   /* ------------------------------------------------------------------ */
   /* Start                                                               */
