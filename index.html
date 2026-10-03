@@ -679,34 +679,6 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
   .hero-idrow{margin-top:24px}
 }
 
-/* ============================== simulator ============================== */
-.sim{margin-top:clamp(28px,4vw,48px); background:var(--surface); border:1px solid var(--line); border-radius:var(--r-xl); padding:clamp(20px,3vw,32px); box-shadow:var(--shadow-md)}
-.sim-head{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap}
-.sim-kicker{font:600 12px/1 var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--accent-ink)}
-.sim-title{margin-top:10px; font-size:clamp(22px,2.4vw,28px); letter-spacing:-.03em}
-.sim-sub{margin-top:8px; max-width:62ch; font-size:15px; color:var(--ink-2)}
-.sim-body{margin-top:22px; display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); gap:clamp(20px,3vw,40px); align-items:start}
-.sim-lbl{display:flex; justify-content:space-between; align-items:baseline; gap:12px; font-size:14px; color:var(--ink-2)}
-.sim-lbl b{font:600 26px/1 var(--sans); letter-spacing:-.04em; color:var(--accent-ink)}
-.sim input[type=range]{width:100%; margin:14px 0 0; accent-color:var(--accent); height:28px; cursor:pointer}
-.sim-marks{position:relative; height:26px}
-.sim-mark{position:absolute; top:2px; transform:translateX(-50%); font:600 10.5px/1 var(--mono); letter-spacing:.05em; text-transform:uppercase; padding:5px 7px; border-radius:6px; border:1px solid var(--line); background:var(--surface-2); color:var(--ink-3); cursor:pointer}
-.sim-mark--after{background:var(--accent-soft); color:var(--accent-ink); border-color:color-mix(in srgb, var(--accent) 30%, transparent)}
-.sim-chart{display:block; width:100%; height:120px; margin-top:8px; overflow:visible}
-.sim-area{fill:var(--accent-soft)}
-.sim-line{fill:none; stroke:var(--accent); stroke-width:2.5; vector-effect:non-scaling-stroke}
-.sim-cursor{stroke:var(--ink-3); stroke-width:1; stroke-dasharray:3 3; vector-effect:non-scaling-stroke}
-.sim-dot{fill:var(--surface); stroke:var(--accent); stroke-width:2.5; vector-effect:non-scaling-stroke}
-.sim-axis{display:flex; justify-content:space-between; margin-top:6px; font:500 11px/1 var(--mono); color:var(--ink-3)}
-.sim-kpis{display:grid; gap:10px}
-.sim-kpi{display:flex; align-items:baseline; gap:14px; padding:14px 16px; border-radius:var(--r-md); background:var(--surface-2); border:1px solid var(--line-2)}
-.sim-kv{font:600 26px/1 var(--sans); letter-spacing:-.04em; color:var(--ink); min-width:88px}
-.sim-kv.up{color:var(--ok)} .sim-kv.down{color:var(--warn)}
-.sim-kl{font-size:14px; color:var(--ink-2); line-height:1.4}
-.sim-read{font-size:14.5px; color:var(--ink); font-weight:500; padding:4px 2px; min-height:2.9em}
-.sim-note{margin-top:18px; font-size:14px; color:var(--ink-3); border-top:1px solid var(--line-2); padding-top:14px}
-@media (max-width:860px){.sim-body{grid-template-columns:1fr}}
-
 /* ============================== nav extras ============================== */
 .kbd-btn{display:inline-flex; align-items:center; gap:8px; height:38px; padding:0 10px; border-radius:10px; border:1px solid var(--line); background:transparent; color:var(--ink-3); cursor:pointer; flex:none; transition:color .15s, border-color .15s}
 .kbd-btn:hover{color:var(--ink); border-color:color-mix(in srgb, var(--ink) 28%, transparent)}
@@ -734,7 +706,7 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
 .cmdk-foot{display:flex; gap:14px; padding:10px 16px; border-top:1px solid var(--line-2); font:500 11px/1 var(--mono); color:var(--ink-3)}
 .toast{position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(20px); opacity:0; z-index:210; background:var(--btn); color:var(--btn-fg); padding:11px 16px; border-radius:10px; font-size:14px; box-shadow:var(--shadow-lg); transition:opacity .2s, transform .2s; pointer-events:none}
 .toast.show{opacity:1; transform:translateX(-50%) translateY(0)}
-@media print{.sim input,.sim-marks,.kbd-btn,.lang-btn,.cmdk,.toast{display:none!important}}
+@media print{.kbd-btn,.lang-btn,.cmdk,.toast{display:none!important}}
 .nav-links a[href="#roadmap"],.nav-links a[href="#build"]{display:none}
 </style>
 </head>
@@ -973,40 +945,6 @@ em.s{font-family:var(--serif); font-style:italic; font-weight:400; letter-spacin
       </div>
     </div>
 
-    <div class="sim" id="sim">
-      <div class="sim-head">
-        <div>
-          <p class="sim-kicker">Try the trade-off</p>
-          <h3 class="sim-title">Where should the discount budget go?</h3>
-          <p class="sim-sub">Drag to move budget from easy recommendations (shopkeepers who would buy anyway) to medium and hard ones (products they’ve never bought).</p>
-        </div>
-        <span class="chip chip--warn">Illustrative model, not BEES data</span>
-      </div>
-      <div class="sim-body">
-        <div class="sim-ctrl">
-          <label class="sim-lbl" for="sim-range"><span>Budget on medium/hard recommendations</span><b id="sim-pct" data-noi18n>20%</b></label>
-          <input type="range" id="sim-range" min="0" max="100" step="1" value="20" aria-describedby="sim-note">
-          <div class="sim-marks" aria-hidden="true">
-            <button type="button" class="sim-mark" data-v="20" style="left:20%">Before</button>
-            <button type="button" class="sim-mark sim-mark--after" data-v="65" style="left:65%">After</button>
-          </div>
-          <svg class="sim-chart" id="sim-chart" viewBox="0 0 300 110" preserveAspectRatio="none" role="img" aria-label="Total purchases rise as budget moves to harder recommendations, peak around 65 to 70 percent, then fall">
-            <path id="sim-area" class="sim-area"/>
-            <path id="sim-line" class="sim-line"/>
-            <line id="sim-cursor" class="sim-cursor" x1="0" x2="0" y1="0" y2="110"/>
-            <circle id="sim-dot" class="sim-dot" r="4.5"/>
-          </svg>
-          <div class="sim-axis" aria-hidden="true"><span>0%</span><span>Total purchases</span><span>100%</span></div>
-        </div>
-        <div class="sim-kpis" aria-live="polite">
-          <div class="sim-kpi"><span class="sim-kv" id="k-total" data-noi18n>–</span><span class="sim-kl">Total purchases vs. “before”</span></div>
-          <div class="sim-kpi"><span class="sim-kv" id="k-first" data-noi18n>–</span><span class="sim-kl">First-time purchases vs. “before”</span></div>
-          <div class="sim-kpi"><span class="sim-kv" id="k-waste" data-noi18n>–</span><span class="sim-kl">Budget spent on sales that would happen anyway</span></div>
-          <p class="sim-read" id="sim-read" data-noi18n></p>
-        </div>
-      </div>
-      <p class="sim-note" id="sim-note">The shape is the real lesson: past a point, pushing even harder loses more easy sales than it gains in new ones. We landed near the peak.</p>
-    </div>
   </div>
 </section>
 

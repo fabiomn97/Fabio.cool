@@ -1,5 +1,5 @@
 /* fabio.cool — interactive features: language toggle (EN/ES), command menu,
-   live version from GitHub, and the case-study trade-off simulator. */
+   live version from GitHub. */
 (function () {
   'use strict';
   var root = document.documentElement;
@@ -19,12 +19,7 @@
       call: 'Call +1 (857) 250-8074', theme: 'Toggle light / dark', lang: 'Ver en español',
       top: 'Top', sections: {feature: 'Case study', decision: 'Product decision', reviews: 'Reviews', specs: 'By the numbers', changelog: 'Changelog', roadmap: 'Roadmap', labs: 'Labs', off: 'Interests', build: 'How I built this', contact: 'Contact'},
       ver: function (ago) { return 'v5 · updated ' + ago; },
-      build: function (n, ago, msg, url) { return 'Build #' + n + ' · updated ' + ago + ' · <a href="' + url + '" target="_blank" rel="noopener" title="' + esc(msg) + '">latest change ↗</a> · built with <a href="#build">Claude Code</a>'; },
-      simRead: function (s) {
-        if (s < 35) return 'Most of the budget still rewards sales that would happen anyway.';
-        if (s <= 78) return 'Near the peak: more total purchases and far more first-time ones.';
-        return 'Too far: first-time purchases keep rising, but easy sales start to slip.';
-      }
+      build: function (n, ago, msg, url) { return 'Build #' + n + ' · updated ' + ago + ' · <a href="' + url + '" target="_blank" rel="noopener" title="' + esc(msg) + '">latest change ↗</a> · built with <a href="#build">Claude Code</a>'; }
     },
     es: {
       langBtn: 'EN', langLabel: 'View in English',
@@ -36,12 +31,7 @@
       call: 'Llamar al +1 (857) 250-8074', theme: 'Cambiar modo claro / oscuro', lang: 'View in English',
       top: 'Inicio', sections: {feature: 'Caso de estudio', decision: 'Decisión de producto', reviews: 'Recomendaciones', specs: 'En números', changelog: 'Trayectoria', roadmap: 'Objetivos', labs: 'Labs', off: 'Intereses', build: 'Cómo lo construí', contact: 'Contacto'},
       ver: function (ago) { return 'v5 · actualizado ' + ago; },
-      build: function (n, ago, msg, url) { return 'Build #' + n + ' · actualizado ' + ago + ' · <a href="' + url + '" target="_blank" rel="noopener" title="' + esc(msg) + '">último cambio ↗</a> · hecho con <a href="#build">Claude Code</a>'; },
-      simRead: function (s) {
-        if (s < 35) return 'Casi todo el presupuesto sigue premiando ventas que igual iban a ocurrir.';
-        if (s <= 78) return 'Cerca del óptimo: más compras totales y muchas más primeras compras.';
-        return 'Demasiado lejos: las primeras compras siguen subiendo, pero se pierden ventas fáciles.';
-      }
+      build: function (n, ago, msg, url) { return 'Build #' + n + ' · actualizado ' + ago + ' · <a href="' + url + '" target="_blank" rel="noopener" title="' + esc(msg) + '">último cambio ↗</a> · hecho con <a href="#build">Claude Code</a>'; }
     }
   };
   function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]; }); }
@@ -56,8 +46,8 @@
   /*    in assets/i18n-es.js. Anything without a translation stays in     */
   /*    English, and quotes from recommendations are never translated.    */
   /* ------------------------------------------------------------------ */
-  var SEL = '.context,.announce>span:not(.pulse):not(.go),h1,h2,h3,h4,p,li,dt,dd,figcaption,.chip,.kicker,.btn,.nav-links a,.nav-strip a,.str-head>div,.str-name,.str-how,.str-proof,.spec-src,.result span,.kpi-l,.demo-title,.seg label,.app-bar b,.app-bar span,.fold,.see-more,.key>span,.invest-h span,.legend span,.flow-h,.step-b,.col-h b,.lab .link,.lnk b,.tool b,.tool span,.ft h3,.rv-src,.rel-tag,.trust-label,.ver-date,.rel-org,.lvl,.reviews-foot a,.cta-links small,.sim-lbl>span,.sim-mark,.sim-axis span,.sim-kl,.spec-label,.dc-result span,.patch-h,.ver,.gal-item figcaption';
-  var SKIP = '[data-noi18n],.rv blockquote,.rv .more,.who,pre,.brand,script,.cmdk,.sim-kv,.toast';
+  var SEL = '.context,.announce>span:not(.pulse):not(.go),h1,h2,h3,h4,p,li,dt,dd,figcaption,.chip,.kicker,.btn,.nav-links a,.nav-strip a,.str-head>div,.str-name,.str-how,.str-proof,.spec-src,.result span,.kpi-l,.demo-title,.seg label,.app-bar b,.app-bar span,.fold,.see-more,.key>span,.invest-h span,.legend span,.flow-h,.step-b,.col-h b,.lab .link,.lnk b,.tool b,.tool span,.ft h3,.rv-src,.rel-tag,.trust-label,.ver-date,.rel-org,.lvl,.reviews-foot a,.cta-links small,.spec-label,.dc-result span,.patch-h,.ver,.gal-item figcaption';
+  var SKIP = '[data-noi18n],.rv blockquote,.rv .more,.who,pre,.brand,script,.cmdk,.toast';
   var blocks = null;
   function norm(s) { return s.replace(/\s+/g, ' ').trim(); }
   function collect() {
@@ -84,7 +74,7 @@
     tEl.textContent = lang === 'es' ? 'Fabio Macedo · Product Manager' : tEl.dataset.en;
     var lb = document.getElementById('lang');
     if (lb) { lb.textContent = t().langBtn; lb.setAttribute('aria-label', t().langLabel); }
-    renderVersion(); renderSim();
+    renderVersion();
     if (cmd.list) cmd.render();
     store('lang', lang);
   }
@@ -222,51 +212,6 @@
   });
   var openBtn = document.getElementById('cmdk-open');
   if (openBtn) openBtn.addEventListener('click', function () { cmd.show(); });
-
-  /* ------------------------------------------------------------------ */
-  /* 4. Trade-off simulator (illustrative model, not BEES data)           */
-  /*    s = share of the discount budget on medium/hard recommendations.  */
-  /*    Easy recs mostly convert anyway; hard ones need the discount.     */
-  /* ------------------------------------------------------------------ */
-  var range = document.getElementById('sim-range');
-  function model(s) {
-    var easy = 0.55 + 0.12 * (1 - Math.exp(-3 * (1 - s)));
-    var hard = 0.03 + 0.30 * (1 - Math.exp(-2.4 * s));
-    return {total: easy + hard, first: hard * 0.6 + 0.03, waste: (1 - s) * 0.80 + s * 0.12};
-  }
-  var BASE = model(0.2);
-  function pct(x) { var v = Math.round(x * 100); return (v > 0 ? '+' : v < 0 ? '−' : '±') + Math.abs(v) + '%'; }
-  function drawChart() {
-    var pts = [], lo = Infinity, hi = -Infinity, i;
-    for (i = 0; i <= 100; i++) { var y = model(i / 100).total; pts.push(y); lo = Math.min(lo, y); hi = Math.max(hi, y); }
-    function Y(v) { return 100 - (v - lo) / (hi - lo) * 88; }
-    var d = pts.map(function (v, i) { return (i ? 'L' : 'M') + (i * 3).toFixed(1) + ' ' + Y(v).toFixed(1); }).join(' ');
-    document.getElementById('sim-line').setAttribute('d', d);
-    document.getElementById('sim-area').setAttribute('d', d + ' L300 110 L0 110 Z');
-    drawChart.Y = Y;
-  }
-  function renderSim() {
-    if (!range) return;
-    var v = +range.value, s = v / 100, m = model(s);
-    document.getElementById('sim-pct').textContent = v + '%';
-    var kt = document.getElementById('k-total'), kf = document.getElementById('k-first'), kw = document.getElementById('k-waste');
-    kt.textContent = pct(m.total / BASE.total - 1); kt.className = 'sim-kv ' + (m.total >= BASE.total ? 'up' : 'down');
-    kf.textContent = pct(m.first / BASE.first - 1); kf.className = 'sim-kv ' + (m.first >= BASE.first ? 'up' : 'down');
-    kw.textContent = Math.round(m.waste * 100) + '%'; kw.className = 'sim-kv ' + (m.waste <= BASE.waste ? 'up' : 'down');
-    document.getElementById('sim-read').textContent = t().simRead(v);
-    var x = v * 3, y = drawChart.Y(m.total);
-    var c = document.getElementById('sim-cursor'); c.setAttribute('x1', x); c.setAttribute('x2', x);
-    var dot = document.getElementById('sim-dot'); dot.setAttribute('cx', x); dot.setAttribute('cy', y);
-    range.setAttribute('aria-valuetext', v + '%');
-  }
-  if (range) {
-    drawChart();
-    range.addEventListener('input', renderSim);
-    Array.prototype.forEach.call(document.querySelectorAll('.sim-mark'), function (b) {
-      b.addEventListener('click', function () { range.value = b.dataset.v; renderSim(); });
-    });
-    renderSim();
-  }
 
   /* ------------------------------------------------------------------ */
   /* Start                                                               */

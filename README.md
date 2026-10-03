@@ -49,6 +49,5 @@ registrar (A/AAAA records for the apex pointing to GitHub Pages, `www` CNAME to
   translation stays in English, and recommendation quotes are never translated).
 - Command menu (⌘K / Ctrl+K) to jump to sections, copy the email or download the CV.
 - Live version: the nav and footer read the latest commit from the GitHub API.
-- Case-study simulator: an illustrative model of the discount-budget trade-off (`assets/app.js`).
 - Responsive from 320 px; the case-study demo works without JavaScript (it's pure CSS).
 - Prints cleanly; respects reduced-motion settings.
