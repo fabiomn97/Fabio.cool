@@ -94,7 +94,6 @@ window.I18N_ES = {
 "Easy to convert": "<i style=\"background:color-mix(in srgb, var(--ink-3) 55%, transparent)\"></i>Fácil de convertir",
 "Medium": "<i style=\"background:var(--warn)\"></i>Media",
 "Real: medium/hard recommendations moving from #6+ to the top of the carousel, their share of SKUs sold, and the results. Illustrative: the specific products, discounts and budget split, which varied by SKU and customer.": "<b>Real:</b> las recomendaciones medianas/difíciles pasando del puesto 6+ a lo alto del carrusel, su participación en SKUs vendidos y los resultados. <b>Ilustrativo:</b> los productos, descuentos y reparto del presupuesto específicos, que variaban por SKU y cliente.",
-"Try the trade-off": "Prueba el trade-off",
 "Where should the discount budget go?": "¿A dónde debería ir el presupuesto de descuentos?",
 "Drag to move budget from easy recommendations (shopkeepers who would buy anyway) to medium and hard ones (products they’ve never bought).": "Desliza para mover presupuesto de las recomendaciones fáciles (bodegueros que comprarían igual) a las medianas y difíciles (productos que nunca han comprado).",
 "Illustrative model, not BEES data": "Modelo ilustrativo, no son datos de BEES",
@@ -259,7 +258,6 @@ window.I18N_ES = {
 "GitHub": "GitHub",
 "Hosts the code. A GitHub Actions workflow publishes it to GitHub Pages on every push, so an update goes live in about a minute.": "Aloja el código. Un flujo de GitHub Actions lo publica en GitHub Pages con cada cambio, así una actualización sale en vivo en cerca de un minuto.",
 "Building something that matters? Let’s talk.": "¿Construyendo algo que importa? <em class=\"s\">Conversemos.</em>",
-"I’m looking for product roles where the hard part is real: messy users, genuine tradeoffs, numbers that have to move. I answer everything, recruiters very much included.": "Busco roles de producto donde lo difícil sea real: usuarios complejos, trade-offs genuinos, números que tienen que moverse. Respondo todo, reclutadores incluidos.",
 "Email": "Email",
 "Phone": "Teléfono",
 "Added": "Nuevo",
@@ -272,5 +270,6 @@ window.I18N_ES = {
 "Promotion rate across my three direct reports in 2024": "Tasa de ascenso de mis tres reportes directos en 2024",
 "Where I’ve shown itIn 2024, all three of my direct reports were promoted. Managers, peers and reports describe me the same way: empathetic, collaborative, someone who lifts the team.": "<span class=\"str-lbl\">Dónde lo demostré</span><strong>En 2024, mis tres reportes directos fueron ascendidos.</strong> Jefes, pares y reportes me describen igual: empático, colaborador, alguien que levanta al equipo.",
 "ImprovedManaged three direct reports on personalized growth plans: 100% promotion rate in 2024. Led my manager’s team as acting lead for 8 months in 2024.": "<span class=\"chip chip--info\">Mejorado</span><span>Lideré a tres reportes directos con planes de crecimiento personalizados: <strong>100% de ascensos</strong> en 2024. Lideré el equipo de mi jefe como encargado durante <strong>8 meses</strong> en 2024.</span>",
-"Teams where everyone develops, like the three reports who were all promoted in 2024 and the 1,000+ reps trained through BEES School.": "Equipos donde todos se desarrollan, como los tres reportes que ascendieron en 2024 y los más de 1,000 vendedores capacitados en BEES School."
+"Teams where everyone develops, like the three reports who were all promoted in 2024 and the 1,000+ reps trained through BEES School.": "Equipos donde todos se desarrollan, como los tres reportes que ascendieron en 2024 y los más de 1,000 vendedores capacitados en BEES School.",
+"I’m looking for product roles where the hard part is real: messy users, genuine trade-offs, numbers that have to move. I answer everything, recruiters very much included.": "Busco roles de producto donde lo difícil sea real: usuarios complejos, trade-offs genuinos, números que tienen que moverse. Respondo todo, reclutadores incluidos."
 };
